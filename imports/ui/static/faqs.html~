@@ -1,0 +1,341 @@
+<template name="faqs">
+    <div class="index">
+    <section class="contact-bnr">
+        <h2>Frequently Asked Questions</h2>
+    </section>
+
+    <section class="faq-content">
+        <div class="container">
+            <div class="faq-section-hold">
+                <h3>About ibidmyhome</h3>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title ">
+                                    <span class="green-circle">1</span>
+                                    What is ibidmyhome.com?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <p>ibidmyhome.com is India's first, multi-property online auction portal created with an objective of bringing in a transparent price discovery methodology to the Indian real estate. Our objective is to bring in technology led, disruptive innovations into the real estate space so as to deliver unprecedented value to genuine buyers of real estate in India.</p>
+
+                                <p>ibidmyhome.com brings buyers and sellers together in one transparent market place</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">2</span>
+
+                                    What kind of properties are available on ibidmyhome?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <p>ibidmyhome.com is India's first, multi-property online auction portal created with an objective of bringing in a transparent price discovery methodology to the Indian real estate. Our objective is to bring in technology led, disruptive innovations into the real estate space so as to deliver unprecedented value to genuine buyers of real estate in India.</p>
+
+                                <p>ibidmyhome.com brings buyers and sellers together in one transparent market place</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">3</span>
+                                    What are Value Auctions?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <p>ibidmyhome.com is India's first, multi-property online auction portal created with an objective of bringing in a transparent price discovery methodology to the Indian real estate. Our objective is to bring in technology led, disruptive innovations into the real estate space so as to deliver unprecedented value to genuine buyers of real estate in India.</p>
+
+                                <p>ibidmyhome.com brings buyers and sellers together in one transparent market place</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-section-hold">
+                <h3>Property selection</h3>
+                <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#one" aria-expanded="false" aria-controls="collapseOne">
+                            <div class="panel-heading" role="tab" id="heading1">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">1</span>
+                                    How do I get more details about the project listed on the site?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="one" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+                            <div class="panel-body">
+                                <p>All the information that you would need to shortlist the project or the unit is provided in great detail on the site. However if you still have questions about the property then feel free to call up our call center for further details.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#two" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="panel-heading" role="tab" id="heading2">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">2</span>
+
+                                    How can I visit the project?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="two" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                            <div class="panel-body">
+                                <p>If you want to visit a property that you have selected please click on “Visit Site” button on the property page to submit the form for site Visit. Once you have submitted the form someone from our call center will get back to you with details of the site visit schedule. There will be site coordinator on the site to take you around the property you have selected.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="faq-section-hold">
+                <h3>Bidding</h3>
+                <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#four" aria-expanded="false" aria-controls="collapseOne">
+                            <div class="panel-heading" role="tab" id="heading3">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">1</span>
+                                    How participate in a bid?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="four" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
+                            <div class="panel-body">
+                                <p>On ibidmyhome bidding happens at a unit level so once you have shortlisted a project you will be required to select unit in that project. Once you are done with project and unit selection it is time to bid. </p>
+
+                                <p>The precursor to bidding is registration. So if you have not yet registered please register yourself. Placing a bid is simple. If you have to bid higher than the previous bid then just click on “Out Bid” button. </p>
+
+                                <p>To participate in the auction the system will then prompt you to pay nominal fee of Rs 499/- (auction participation fee). This is only for the first bid on the unit. You will not be prompted for fee for subsequent bid on a unit. Remember all bids are only on the base price per sq ft and outbidding will be by a pre-determined amount per sq foot. Bidding is in steps of Rs 25 on the base price. The auction is live for 14 days so you can place the bids anytime during those 14 days.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#five" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="panel-heading" role="tab" id="heading4">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">2</span>
+
+                                    What is the base price? Why is bidding on the base price?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="five" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                            <div class="panel-body">
+                                <p>Base price is the price per sqft of the house under consideration. This does not include car parking, amenities charges etc. The complete breakup of the price can be gathered by clicking on "See More" on the units page.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#six" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="panel-heading" role="tab" id="heading5">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">3</span>
+                                    Why am I supposed to pay "Auction Participation Fee"?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="six" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                            <div class="panel-body">
+                                <p>In order to ensure smooth bidding process and have serious buyers to place their bid, we ask for auction participation fee which is fully refundable to all the bidders who do not win. If the bid is withdrawn during the bidding process, this amount will not be refunded.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#seven" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="panel-heading" role="tab" id="heading6">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">4</span>
+                                    Is the "Auction Participation Fee" fully refundable?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="seven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                            <div class="panel-body">
+                                <p>To participate in the bidding, process bidders can pay a nominal feel of Rs 499/- through online payment gateway available on iBidmyhome.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#eight" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="panel-heading" role="tab" id="heading7">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">5</span>
+                                    How is the minimum bid or start bid price decided?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="eight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                            <div class="panel-body">
+                                <p>The minimum bid or the start bid price for each apartment is decided by the developer. This price is exclusively given to ibidmyhome.com by the developer across India and usually below the market price offered by the builder in market.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#nine" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="panel-heading" role="tab" id="heading8">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">6</span>
+                                    Why am I supposed to pay "Auction Participation Fee"?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="nine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+                            <div class="panel-body">
+                                <p>In order to ensure smooth bidding process and have serious buyers to place their bid, we ask for auction participation fee which is fully refundable to all the bidders who do not win. If the bid is withdrawn during the bidding process this amount will not be refunded.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#ten" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="panel-heading" role="tab" id="heading9">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">7</span>
+                                    How do I get to know when someone outbids me?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="ten" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+                            <div class="panel-body">
+                                <p>You can view your bid and its status under My Bids section and will be notified when someone outbids you. Keep tracking the auction to stay as the highest bidder for your chosen home till auction closes. </p>
+
+                                <p>You are free to modify your bid until the bidding window closes. We recommend you to visit,"My Bids" section regularly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#eleven" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="panel-heading" role="tab" id="heading10">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">8</span>
+                                    I am having trouble in placing my bid online?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="eleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                            <div class="panel-body">
+
+                                <p>Please contact our Customer Care team at <a href="mailto:support@ibimyhome.com">support@ibimyhome.com</a> or call <a href="tel:08044559966">080-4455 9966.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-section-hold  pad-btm-60">
+                <h3>Closing the deal</h3>
+                <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion3" href="#one1" aria-expanded="false" aria-controls="collapseOne">
+                            <div class="panel-heading" role="tab" id="acc1">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">1</span>
+                                    What happens once the auction is closed?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="one1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="11">
+                            <div class="panel-body">
+                                <p>Once the auction is closed and if your bid is the highest, you will be announced as a winning bidder in the “My Bids” section. To confirm your selection, you need to pay the “Unit Confirmation Deposit”, within 48 hrs, failing which the “Second Highest Bidder” will be given an opportunity to choose that unit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#two1" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="panel-heading" role="tab" id="22">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">2</span>
+                                    Is the "Unit Confirmation Deposit" refundable?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="two1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="22">
+                            <div class="panel-body">
+                                <p>The "unit confirmation deposit" will be refunded once you confirm the closing of the transaction by sending a scan copy of the booking cheque and the receipt within 7 days of confirming your bid.</p>
+
+                                <p>Incase buyer decides to backout from the closing after paying up the unit confirmation deposit then it needs to go through IBMHs review process for refund and only if the reasons for backing are found to be genuine, this amount will be refunded. This process may take up to 30 -45 days.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#three1" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="panel-heading" role="tab" id="33">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">3</span>
+                                    How do I pay the "Unit Confirmation Deposit"?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="three1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="33">
+                            <div class="panel-body">
+                                <p>You can either pay online in the “My Bid” section OR offline by sending us a cheque . Cheque should be made in the favor of – IBID HOME PVT LTD.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#four1" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="panel-heading" role="tab" id="44">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">4</span>
+                                    What happens if my bid is the 2nd highest?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="four1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="44">
+                            <div class="panel-body">
+                                <p>Only if the winning bid is withdrawn, you will be offered a chance to buy the same unit within 48 hrs by paying the unit confirmation deposit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#five1" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="panel-heading" role="tab" id="55">
+                                <h4 class="panel-title">
+                                    <span class="green-circle">5</span>
+                                    I have won the bid but I do not want to proceed with transaction? What do I do?
+                                    <i class="fa fa-angle-down active-arrow"></i>
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="five1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="55">
+                            <div class="panel-body">
+                                <p>If you do not wish to proceed with the transaction, you can withdraw your bid in the “My Bids” section by giving a valid reason. Please note that you have to take this call before depositing the confirmation amount with IBMH.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div><!--container-->
+    </section>
+    </div>
+</template>

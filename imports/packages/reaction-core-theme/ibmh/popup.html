@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+
+    <title>I bid my home</title>
+
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+   
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    
+    <link href="css/master.css" rel="stylesheet">
+<!--    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">-->
+
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+   
+   <link href="css/star-rating.min.css" rel="stylesheet">
+
+    
+    <link href="fonts/font-awesome/css/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/Montserrat/stylesheet.css">
+    
+    <link href="plugins/fancybox/css/jquery.fancybox.css" rel="stylesheet">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('.eyebtn').click(function () {
+            if ($("#password").hasClass("shown"))
+            {
+                $("#password").attr("type", "password");
+                $("#password").removeClass("shown");
+
+            } else
+            {
+                $("#password").attr("type", "text");
+                $("#password").addClass("shown");
+            }
+
+
+
+        });
+
+       
+
+    });
+
+</script>
+
+
+    <script src="js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $('.scroll-menu-div').hide();
+});
+$(window).on("scroll", function() {
+    if ($(this).scrollTop() > 1) {
+      $(".header").fadeOut();
+      $('.scroll-menu-div').fadeIn();
+       $(".scroll-menu-div").addClass('fixed-header');
+
+      
+    }
+    else {
+       $(".header").fadeIn();
+      $('.scroll-menu-div').hide();
+
+       $(".scroll-menu-div").removeClass("fixed-header");
+        // $(".header").removeClass("fixed-header");
+    }
+ });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>     
+		
+	
+	
+
+<body>
+  <!-- Header -->
+ 
+  <section class="header">
+    <div class="container">
+      <div class="logo-holder-div">
+        <div class="logo-holder">
+            <img src="images/spot-my-crib-logo.png" alt="">
+        </div>
+        <div class="menu">
+          <ul>
+            <li class="right-border"><a href="javacscript:;">HOME</a></li>
+            <li><a href="javacscript:;">MY BIDS</a></li>
+            <li><a href="javacscript:;"><img src="images/user-img.png" alt=""></a></li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </section>
+
+  
+
+
+<!-- buttons -->
+<div class="container dummy-btn">
+  <ul>
+  <li><button id="profile" class="blue-btn btns" type="button">REFUND</button></li>
+  <li><button id="confirm" class="blue-btn btns" type="button">PAY NOW</button></li>
+  <li><button id="pay-now" class="blue-btn btns" type="button">CONFIRM</button></li>
+  <li><button id="withdraw" class="blue-btn btns" type="button">WITHDRAW</button></li>
+  <li><button id="change-pass" class="blue-btn btns" type="button">CHANGE PASSWORD</button></li>
+  <li><button id="unit-page" class="blue-btn btns" type="button">unit-register</button></li>
+  <li><button id="signup" class="blue-btn btns" type="button">SIGN UP</button></li>
+  <li><button id="signin" class="blue-btn btns" type="button">SIGN IN</button></li>
+  <li><button id="forgot-pass" class="blue-btn btns" type="button">FORGOT PASSWORD</button></li>
+  <li><button id="mouse-tab" class="blue-btn btns" type="button">MOUSE-POP</button></li>
+  <li><button id="price-break" class="blue-btn btns" type="button">PRICE BREAK</button></li>
+  <li><button id="best-price" class="blue-btn btns" type="button">BEST PRICE</button></li>
+  <li><button id="kanakpura" class="blue-btn btns" type="button">KANAKPURA</button></li>
+  <li><button id="sb-breakup" class="blue-btn btns" type="button">SBUA Break up</button></li>
+  <li><button id="mobile-verification" class="blue-btn btns" type="button">MOBILE VERIFICATION</button></li>
+  <li><button id="mobile-verification1" class="blue-btn btns" type="button">MOBILE VERIFICATION for mobile</button></li>
+  </ul>
+</div>
+<!-- buttons -->
+
+
+<!-- popup -->
+ <div id="profile-popup" style="display:none;">
+  
+   <div class="refund-div"><h2>Request for a refund</h2></div>
+   <div class="profile-text">
+      <p>Are you sure you want to request for a refund?</p>
+      <ul>
+        <li><button class="transparent-btn btns" type="button">No</button></li>
+        <li><button class="blue-btn btns" type="button">Yes</button></li>
+      </ul>
+   </div>
+ </div>
+
+<!-- confirm popup -->
+ <div id="fully-confirm" style="display:none;">
+  
+   <div class="refund-div"><h2>Congratulations!</h2></div>
+   <div class="profile-text">
+      <h3>Unit no A-1304 is reserved for you</h3>
+      <p> You have to complete all paper work within 7 days. If you backout within that time, the whole amount will be refunded. Our customer support person will contact you to help you complete the procedures. A detailed e mail has been sent to your mail id.</p>
+      
+        
+        <button class="blue-btn btns" type="button">OK</button>
+     
+   </div>
+ </div>
+<!-- confirm popup -->
+
+<!-- pay now -->
+<div id="paynow-div" style="display:none;">
+  
+   <div class="refund-div"><h2>Congratulations!</h2></div>
+   <div class="profile-text">
+      <h3>You saved 5.6 Lakhs</h3>
+      <p>You have to pay the confirmatory Rs. 30,000 (refundable) to confirm your choice, as the winning bidder.</p>
+      <button class="blue-btn btns" type="button">PAY NOW</button>
+      <p>Want assistance from ibidmyhome?<a> Request assistance</a></p>
+       <h6>Terms &amp; Conditions</h6>
+   </div>
+ </div>
+<!-- pay now -->
+
+<!--withdraw-->
+<div id="withdraw-pop" style="display:none;">
+  
+   <div class="refund-div"><h2>Confirm Withdrawal</h2></div>
+   <div class="profile-text">
+      <h3>Are sure you want to withdraw ?</h3>
+      <p>As you are saving a total of Rs 4 lakhs on your purchase/investment.</p>
+        <div class="radio-bg">
+          <div class="radio-box">
+              <form action="">
+                  <input type="radio" name="gender" id="ques1"><label for="ques1">Do not wish to buy in this project /location</label><br>
+                  <input type="radio" name="gender" id="ques2"><label for="ques2">Selecting another unit</label><br>
+                  <input type="radio" name="gender" id="ques3"><label for="ques3">
+                    Price is higher than expected
+                  </label><br>
+                  <input type="radio" name="gender" id="ques4"><label for="ques4">Other
+                  <input type="text"></label>
+              </form>
+          </div>
+        </div>  
+      <ul>
+        <li><button class="transparent-btn btns" type="button">Withdraw</button></li>
+        <li><button class="blue-btn btns" type="button">Cancel</button></li>
+      </ul>
+   </div>
+ </div>
+<!-- withdraw -->
+
+<!-- change password  --> 
+<div id="changepass-div" style="display:none;">
+  
+   <div class="refund-div"><h2>Change Password</h2></div>
+   <div class="profile-text">
+      
+                    <form>
+            <div class="styled-input">
+              <input type="password" name="name" id="password" required/><br>
+              <label>ENTER CURRENT PASSWORD</label><label class="eyebtn"><img src="images/pass-eye.png"></label>
+              <span></span>
+            </div>
+              <div class="styled-input">
+              <input type="password" name="email" id="email" required/>
+              <label>ENTER NEW PASSWORD</label>
+              <span></span> 
+            </div>
+              
+              <div class="styled-input">
+              <input type="password" name="phone" id="phone" onKeyPress="return isNumberKey(event);" required/>
+              <label>CONFIRM NEW PASSWORD</label>
+              <span></span> </div>
+            
+             <p class="color-text">Passwords do not match!!</p>
+            <ul>
+        <li><button class="transparent-btn btns" type="button">CANCEL</button></li>
+        <li><button class="blue-btn btns" type="button">APPLY</button></li>
+      </ul>
+   
+          </form>     
+    </div>
+  </div>
+<!-- </div> -->
+ 
+<!-- </section> -->
+
+      
+      
+<!-- change password -->
+
+<!-- unit page -->
+<!-- pay now -->
+<div id="unitpage-div" style="display:none;">
+  
+   <div class="refund-div"><h2>Become a registered bidder</h2></div>
+   <div class="profile-text">
+      
+      <p>As  a registered bidder you can avail:</p>
+      <div class="radio-bg register">
+        <h6><span><img src="images/tick-mark.png"></span>1 bidding chance for value auctions</h6>
+      </div>
+      <p>The amount will be fully refunded on requesting. 
+        If you do not place the winning bid, it automatically carries over and you can participate in other bids. </p>
+        <h3>Pay<span><i class="fa fa-inr indian-rup"></i>999</span></h3>
+      <button class="blue-btn btns" type="button">PROCEES TO PAYMENT</button>
+      
+       
+   </div>
+ </div>
+<!-- pay now -->
+
+<!-- sign up -->
+  <div id="signup-div" style="display:none;">
+    
+     <div class="refund-div"><h2>Sign In</h2></div>
+      <div class="profile-text">
+          <h5>Enter your details here</h5>
+              
+          <form class="signin-form">
+           <div class="form-border">
+            <div class="styled-input">
+              <input type="text" name="name" id="name" required/><br>
+              <label>FULL NAME</label>
+              <span></span>
+            </div>
+              <div class="styled-input">
+              <input type="email" name="email" id="email" required/>
+              <label>EMAIL ID</label>
+              <span></span> 
+            </div>
+              
+              <div class="styled-input">
+              <input type="password" name="password" id="password" onKeyPress="return isNumberKey(event);" required/>
+              <label>PASSWORD</label>
+              <span></span> </div>
+
+              <div class="styled-input underline">
+              <input type="number" name="email" id="phone" required/>
+              <label>MOBILE</label>
+              <span></span> 
+            </div>
+          </div>  
+              
+          <div class="signup-btn">
+            <button class="blue-btn btns" type="button">SIGN UP</button>
+              <p>Already have an account? <span style="color:#0c67a6;">Sign In</span></p>
+          </div>
+         
+            
+          </form>
+           
+      </div>
+  </div>
+<!-- sign up -->
+
+<!-- sign in -->
+ <div id="signin-div" style="display:none;">
+    
+     <div class="refund-div"><h2>Sign In</h2></div>
+      <div class="profile-text">
+          
+              
+          <form autocomplete="off" class="signin-form">
+           <div class="form-border">
+            
+              <div class="styled-input">
+              <input type="email" name="email" id="email" required/>
+              <label>EMAIL ID</label>
+              <span></span> 
+            </div>
+              
+              <div class="styled-input underline">
+              <input type="password" name="password" id="password" onKeyPress="return isNumberKey(event);" required/>
+              <label>PASSWORD</label>
+              <span></span> </div>
+          </div>  
+              
+          <div class="signup-btn">
+            <button class="blue-btn btns" type="button">SIGN IN</button>
+              <h5>Forgot password?</h5>
+              <h6>Not registered? <span style="color:#0c68a7">Sign Up now</span></h6>
+          </div>
+         
+            
+          </form>
+           
+      </div>
+  </div>
+<!-- sign in -->
+
+<!-- forgot password -->
+<div id="forgotpass-div" style="display:none;">
+ <div class="refund-div"><h2>Forgot password?</h2></div>
+      <div class="profile-text">
+          <h5 class="no-capitalize">Enter your registered Email ID</h5>
+              
+          <form class="signin-form">
+           <div class="form-border">
+
+              <div class="styled-input underline">
+              <input type="email" name="email" id="email" required/>
+              <label>EMAIL ID</label>
+              <span></span> 
+            </div>
+          </div>  
+              
+          <div class="signup-btn">
+            <button class="blue-btn btns" type="button">SIGN IN</button>
+              <p class="color-text">Verification mail will be sent to the Email ID.</p>
+          </div>
+         
+            
+          </form>
+           
+      </div>
+
+</div>
+<!-- forgot password -->
+
+<!-- mouse hover popup -->
+<div id="mousetab-div" class="background-white" style="display:none; border-radius: 3px">
+  
+   <div class="refund-div new-border1"><h2 class="no-capitalize">Best price to buy</h2><h5 class="no-capitalize">Price advice by experts</h5></div>
+   <div class="profile-text">
+      
+       <ul class="nav nav-tabs bgimg-shadow" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#home" aria-controls="home" role="tab" data-toggle="tab"><img src="images/left-shadow.png"><span>Knight Frank</span><img src="images/right-shadow.png"></a>
+    </li>
+    <li role="presentation">
+      <a href="#hdfc" aria-controls="hdfc" role="tab" data-toggle="tab">
+      <img src="images/left-shadow.png"><span>HDFC</span><img src="images/right-shadow.png"></a>
+    </li>
+    <li role="presentation">
+      <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+      <img src="images/left-shadow.png"><span>JLL</span><img src="images/right-shadow.png"></a>
+    </li>
+
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content background-halfwhite bestprice-div">
+    <div role="tabpanel" class="tab-pane active" id="home">
+       <ul class="information-box">
+           <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Total basic cost of the unit:</p>
+                  <p class="color-black pull-right">1,01,18,070</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left">Agreement value (total basic price +
+                  <br> 
+infra/amenities/car park + club house)</p>
+                  <p class="color-black pull-right">1,01,18,070</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Other charges</p>
+                  <p class="color-black pull-right">1,25,000</p>
+              </div>
+          </li>
+          <li >
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Statutory government charges</p>
+                  <p class="color-black pull-right fs16">9,18,260</p>
+              </div>
+          </li>
+          <li >
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">All inclusive price of the unit</p>
+                  <p class="color-black pull-right fs16">1,16,11,331</p>
+              </div>
+          </li>
+        </ul>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="hdfc">
+      <ul class="information-box">
+           <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Total basic cost of the unit:</p>
+                  <p class="color-black pull-right">1,01,18,070</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left">Agreement value (total basic price +
+                  <br> 
+infra/amenities/car park + club house)</p>
+                  <p class="color-black pull-right">1,01,18,070</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Other charges</p>
+                  <p class="color-black pull-right">1,25,000</p>
+              </div>
+          </li>
+          <li >
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Statutory government charges</p>
+                  <p class="color-black pull-right fs16">9,18,260</p>
+              </div>
+          </li>
+          
+        </ul>
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+      <ul class="information-box">
+           <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Total basic cost of the unit:</p>
+                  <p class="color-black pull-right">1,01,18,070</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left">Agreement value (total basic price +
+                  <br> 
+infra/amenities/car park + club house)</p>
+                  <p class="color-black pull-right">1,01,18,070</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Other charges</p>
+                  <p class="color-black pull-right">1,25,000</p>
+              </div>
+          </li>
+          
+        </ul>
+
+    </div>
+    
+  </div>
+      
+       
+   </div>
+ </div>
+<!-- mouse hover -->
+
+<!-- price break -->
+<div id="pricebreak-div" class="background-white" style="display:none; border-radius: 3px">
+  
+   <div class="refund-div"><h2 class="no-capitalize">Price break up</h2>
+      <h3>Unit: A-109  - 3BHK (1843 Sqft)</h3>
+      
+   </div>
+
+   <div class="profile-text">
+   <div class="row">
+      <div class="col-md-6">
+      <h6 class="no-capitalize" style="padding-top: 20px;">Basic cost of the unit</h6>
+       <ul class="information-box new-height">
+           <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Basic rate psft</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>5220</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left text-left">Floor rise charges<br>(per Sq.ft/ per Floor)</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>20</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">PLC charges</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>250</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Total basic rate psft</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>5490</p>
+              </div>
+          </li>
+          <li>
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Total Basic Price</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>1,01,18,070</p>
+              </div>
+          </li>
+          
+        </ul>
+      </div>
+    <div class="col-md-6">     
+      <h6>Agreement Value</h6>
+         <ul class="information-box new-height">
+           <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Infrastructure/ amenities/car park value</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>2,25,000</p>
+              </div>
+          </li>
+          <li class="background-halfwhite" style="height: 190px;">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left">Club house charges</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>2,25,000</p>
+              </div>
+          </li>
+          <li>
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left text-left">Total Agreement Value<br> 
+                  (Total Basic Price + infra/amenities/<br>Car Park+Club House)
+                  </p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>1,05,68,070</p>
+              </div>
+          </li>
+          
+        </ul>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-md-6">
+       
+        <h6>Other charges</h6>
+        <ul class="information-box new-height1">
+           <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Advance maintainence</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>1,25,000</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left">Generator Back Up</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>0</p>
+              </div>
+          </li>
+          <li class="background-halfwhite" style="height: 355px;">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Charges ptayable to builder (if any)</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>0</p>
+              </div>
+          </li>
+          <li>
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Total</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>1,25,000</p>
+              </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">  
+        <h6>Statutory government charges*</h6>
+         <ul class="information-box new-height1">
+           <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Service tax</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>0</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left">VAT</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>0</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Labour cess</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>0</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Electricity/water/sewage</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>1,75,085</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Stamp Paper Charges</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>7,10,706</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Legal fees for facilitating registration &amp; miscallaneous</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>7,469</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left text-left">Other statutory Govt. charges</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>9,18,260.73</p>
+              </div>
+          </li>
+          <li>
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Total</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>1,01,18,070</p>
+              </div>
+          </li>
+        </ul>
+      </div>
+      </div>  
+        <div class="radio-bg">
+              <div class="div-holder clearfix">
+                  <p class="color-black pull-left">Total Price of the unit**</p>
+                  <p class="color-black pull-right"><i class="fa fa-inr indian-rup"></i>1,16,11,331</p>
+              </div>
+        </div>
+        <p style="font-size:12px;padding-bottom: 10px;">*Prices are subject to change without prior notice</p>
+         <p style="font-size:12px;">**The total price or total does not include the stamp duty and 
+            registration charges. Stamp duty and registration charges will be added to the total price/ total at the time of registration.</p>
+   </div>
+ </div>
+<!-- price break -->
+
+<!-- best price -->
+<div id="bestprice-div" class="background-white" style="display:none; border-radius: 3px">
+  <div class="refund-div new-border1">
+    <h2 class="no-capitalize">Best price to buy</h2><h5 class="no-capitalize">Price advice by experts</h5>
+  </div>
+    <div class="profile-text">
+        <ul class="information-box">
+           <li>
+              <div class="div-holder clearfix">
+                 <div class="table-div"><p class="color-black pull-left"><span><img src="images/knight-logo.png"></span>Knight Frank</p></div>
+                  <div class="table-div"><p class="color-black pull-right"><span>Base price</span><i class="fa fa-inr indian-rup"></i>5200 / Sq.ft</p></div>
+              </div>
+          </li>
+          <li>
+              <div class="div-holder clearfix">
+                  <div class="table-div"><p class="color-black pull-left"><span><img src="images/jill-logo.png"></span>JLL</p></div>
+                  <div class="table-div"><p class="color-black pull-right"><span>Base price</span><i class="fa fa-inr indian-rup"></i>5200 / Sq.ft</p></div>
+              </div>
+          </li>
+          <li>
+              <div class="div-holder clearfix">
+                  <div class="table-div"><p class="color-black pull-left"><span><img src="images/hdfc-logo.png"></span>HDFC</p></div>
+                  <div class="table-div"><p class="color-black pull-right"><span>Base price</span><i class="fa fa-inr indian-rup"></i>5200 / Sq.ft</p></div>
+              </div>
+          </li>  
+        </ul>
+    </div>    
+</div>
+<!-- best price -->
+
+<!-- kanakpura -->
+<div id="kanakpura-div" class="background-white" style="display:none; border-radius: 3px">
+  <div class="refund-div new-border1">
+    <h2>Prices of other properties around</h2><h5><span><img src="images/kanakpura-icon.png"></span>Kanakapura</h5>
+  </div>
+    <div class="profile-text">
+        <ul class="information-box">
+           <li>
+              <div class="div-holder clearfix">
+                 <div class="table-div"><p class="color-black pull-left">Sobha Dream Acres</p></div>
+                  <div class="table-div"><p class="color-black pull-right"><span>Base price</span><i class="fa fa-inr indian-rup"></i>5200 / Sq.ft</p></div>
+              </div>
+          </li>
+          <li>
+              <div class="div-holder clearfix">
+                  <div class="table-div"><p class="color-black pull-left">Mantri Greenwoods</p></div>
+                  <div class="table-div"><p class="color-black pull-right"><span>Base price</span><i class="fa fa-inr indian-rup"></i>5200 / Sq.ft</p></div>
+              </div>
+          </li>
+          <li>
+              <div class="div-holder clearfix">
+                  <div class="table-div"><p class="color-black pull-left">Brigade Millenium</p></div>
+                  <div class="table-div"><p class="color-black pull-right"><span>Base price</span><i class="fa fa-inr indian-rup"></i>5200 / Sq.ft</p></div>
+              </div>
+          </li>  
+        </ul>
+    </div>    
+</div>
+<!-- kanakpura -->
+
+<!-- SBUA pop up -->
+<!-- price break -->
+<div id="sbua-div" class="background-white" style="display:none; border-radius: 3px">
+  
+   <div class="refund-div"><h2 class="no-capitalize">SBUA Break up</h2>
+     
+   </div>
+   <div class="profile-text">
+
+       <ul class="information-box">
+           <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Carpet area</p>
+                  <p class="color-black pull-right">1189 sq.ft</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left">Built up area</p>
+                  <p class="color-black pull-right">1466 sq.ft</p>
+              </div>
+          </li>
+          <li class="background-halfwhite">
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Common area</p>
+                  <p class="color-black pull-right">163 sq.ft</p>
+              </div>
+          </li>
+          <li>
+              <div class="div-holder clearfix">
+                  <p class="color-grey pull-left ">Super built up area</p>
+                  <p class="color-black pull-right">1629 sq.ft</p>
+              </div>
+          </li>
+          
+        </ul>
+
+     
+   </div>
+ </div>
+<!-- price break -->
+
+<!-- SBUA pop up -->
+<!-- mobile verification -->
+<div id="verification-div" style="display:none;">
+ <div class="refund-div"><h2>Mobile verification</h2></div>
+      <div class="profile-text">
+          <h3 class="no-capitalize">Please enter your mobile number</h3>
+              
+          <form class="signin-form">
+           <div class="form-border form-border1">
+
+              <div class="styled-input underline">
+              <input type="number" name="number" id="number" required/>
+              <label>+91 - XXXXX - XXXXX</label>
+              <span></span> 
+            </div>
+          </div>  
+              
+          <div class="signup-btn">
+            <button class="blue-btn btns" type="button"><a href="#verification-div1" class="fancybox">Continue</a></button>
+              
+          </div>
+         
+            
+          </form>
+           
+      </div>
+
+</div>
+<!-- mobile verification-->
+
+<!-- mobile verification new-->
+<div id="verification-div1" style="display:none;">
+ <div class="refund-div"><h2>Mobile verification</h2></div>
+      <div class="profile-text">
+          <h3 class="no-capitalize" style="line-height: 22px;">Please enter the verification code sent to your mobile</h3>
+              
+          <form class="signin-form">
+           <div class="form-border form-border1">
+
+              <div class="styled-input underline mar-btm-30 new-border1">
+                <input type="number" placeholder="+91 - XXXXX - XXXXX" name="number" id="number" required/>
+                <button><a href="#verification-div" class="fancybox">Change</a></button>
+                
+              </div>
+              <div class="styled-input underline">
+                <input type="number" name="number" id="number" required/>
+                <label>ENTER VERIFICATION CODE</label>
+                <span></span> 
+              </div>
+          </div>  
+              
+          <div class="signup-btn">
+            <button class="blue-btn btns" type="button">Continue</button>
+            <p>Didn't receive Verification code?<a>Resend</a></p>  
+          </div>
+         
+            
+          </form>
+           
+      </div>
+
+</div>
+<!-- mobile verification new-->
+<!-- unit page -->
+<!-- popup -->
+
+
+
+
+  <!-- footer -->
+  <section class="footer-div">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4 foot-menu">
+            <ul>
+              <li><a href="javascript:;">ABOUT US </a></li>
+              <li><a href="javascript:;">CONTACT US</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 foot-logo-div"><a href="javascript:;"><img src="images/footer-logo.png"></a></div>
+          <div class="col-md-4 social-icon">
+             <ul>
+              <li><a href="javascript:;"><img src="images/facebook-icon.png"></a></li>
+              <li><a href="javascript:;"><img src="images/twitter-icon.png"></a></li>
+              <li><a href="javascript:;"><img src="images/linkedin-icon.png"></a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </section>
+  <section class="copyright">
+    <div class="container">
+    <ul class="footer-left">
+      <li>Copyright © 2016 IBidMyHome. All rights reserved. </li>
+    </ul>
+     <ul class="footer-right">
+      <li>Privacy Policy</li>
+      <li>Terms and Conditions</li>
+    </ul>
+    </div>
+  </section>
+<!-- footer -->
+
+
+
+
+
+<script src="plugins/fancybox/js/jquery.fancybox.js"></script>
+<script>
+
+    $("#profile").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#profile-popup',
+        });
+    });
+
+        $("#confirm").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#fully-confirm',
+        });
+       }); 
+
+         $("#pay-now").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#paynow-div',
+        });
+    });
+
+            $("#withdraw").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#withdraw-pop',
+        });
+    });
+            $("#change-pass").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#changepass-div',
+        });
+    });
+
+             $("#unit-page").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#unitpage-div',
+        });
+    });
+
+ $("#signup").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#signup-div',
+        });
+    });
+
+ $("#signin").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#signin-div',
+        });
+    });
+
+ $("#forgot-pass").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#forgotpass-div',
+        });
+    });
+
+ $("#mouse-tab").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#mousetab-div',
+        });
+    });
+ $("#price-break").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#pricebreak-div',
+        });
+    });
+ $("#best-price").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#bestprice-div',
+        });
+    });
+ $("#kanakpura").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#kanakpura-div',
+        });
+    });
+$("#sb-breakup").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#sbua-div',
+        });
+    });
+$("#mobile-verification").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#verification-div',
+        });
+    });
+$("#mobile-verification1").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#verification-div1',
+        });
+    });
+</script>
+<script type="text/javascript">
+  $(".fancybox").fancybox();
+
+</script>
+
+
+
+</body>  
+</html>
+

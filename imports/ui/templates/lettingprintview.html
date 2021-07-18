@@ -1,0 +1,161 @@
+<template name="lettingprintview">
+{{#if isSubsLoaded}}
+
+{{#if userLoggedIn}}
+
+    <section class="mar-top-20 no-print">
+            <div class="container">
+                <div class="filter-holder">
+                    <div class="head-border-bottom">
+                        <div class="purva">
+                            <!--<img src="/images/property-list/thumbnail/purva-small-img.png" alt="" />-->
+                            <h1>Your KEY: {{data.lettingAuctionCode}}</h1>
+
+                            <address class="mar-top-15">
+                                {{titleCase data.PD.address.address}}{{#if data.PD.address.area}}, {{titleCase data.PD.address.area}} {{/if}}{{#if data.PD.address.county}}, {{titleCase data.PD.address.county}} {{/if}}
+                            </address>
+
+                            <ul style="margin-left: 20px;">
+                                <li>
+                                    <p><span style="color:#b3b3b3;">Rent</span> :  {{data.price}}</p>
+                                </li>
+                                <li>
+                                    <p><span style="color:#b3b3b3;">Type</span> :  {{titleCase data.PD.type}}</p>
+                                </li>
+                                {{#if data.PD.furnished}}
+                                    <li>
+                                        <p>Furnished </p>
+                                    </li>
+                                {{else}}
+                                    <li>
+                                        <p>Unfurnished </p>
+                                    </li>
+                                {{/if}}
+                                <li>
+                                    <p><span style="color:#b3b3b3;">Beds</span> :  {{data.PD.bedroomsCount}}</p>
+                                </li>
+                                <li>
+                                    <p><span style="color:#b3b3b3;">Baths</span> :  {{data.PD.baths}}</p>
+                                </li>
+
+                            </ul>
+                            <h3>Please follow below steps to apply for this property.&nbsp;</h3>
+                            <ul style="margin-left: 20px;">
+                                <li>
+                                    <p>Open www.spotmycrib.ie in your laptop.</p>
+                                </li>
+                                <li>
+                                    <p>Type <strong>{{data.lettingAuctionCode}}</strong> key into key area and hit find.</p>
+                                </li>
+                                <li>
+                                    <p>Click apply.</p>
+                                    <ul style="margin-left: 20px;">
+                                        <li>
+                                            <p>If asked, login with your Facebook/Twitter/Google.</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p>Enter your offer for the property and click submit.</p>
+                                </li>
+                                <li>
+                                    <p>Upload your references in your profile.</p>
+                                </li>
+
+
+
+                            </ul>
+
+                            <div  style="padding: 10px;margin: 10px 0;background-color: #fafafa;">
+                                <h3 style="padding: 10px 0;">Privacy</h3>
+                                <p>
+                                    We at SpotMyCrib respect your privacy and will not share your personal data with anyone except your landlord &#47; agent. It will only be shown as a supporting documents for your application.
+                                </p><br/>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <div class="head-border-bottom show-only-on-print">
+        <div class="purva">
+            <!--<img src="/images/property-list/thumbnail/purva-small-img.png" alt="" />-->
+            <h1>Your KEY: {{data.lettingAuctionCode}}</h1>
+
+            <address class="mar-top-15">
+                {{titleCase data.PD.address.address}}{{#if data.PD.address.area}}, {{titleCase data.PD.address.area}} {{/if}}{{#if data.PD.address.county}}, {{titleCase data.PD.address.county}} {{/if}}
+            </address>
+
+            <ul style="margin-left: 20px;">
+                <li>
+                    <p><span style="color:#b3b3b3;">Rent</span> :  {{data.price}}</p>
+                </li>
+                <li>
+                    <p><span style="color:#b3b3b3;">Type</span> :  {{titleCase data.PD.type}}</p>
+                </li>
+                {{#if data.PD.furnished}}
+                    <li>
+                        <p>Furnished </p>
+                    </li>
+                {{else}}
+                    <li>
+                        <p>Unfurnished </p>
+                    </li>
+                {{/if}}
+                <li>
+                    <p><span style="color:#b3b3b3;">Beds</span> :  {{data.PD.bedroomsCount}}</p>
+                </li>
+                <li>
+                    <p><span style="color:#b3b3b3;">Baths</span> :  {{data.PD.baths}}</p>
+                </li>
+
+            </ul>
+            <h3>Please follow below steps to apply for this property.&nbsp;</h3>
+            <ul style="margin-left: 20px;">
+                <li>
+                    <p>Open www.spotmycrib.ie in your laptop.</p>
+                </li>
+                <li>
+                    <p>Type <strong>{{data.lettingAuctionCode}}</strong> key into key area and hit find.</p>
+                </li>
+                <li>
+                    <p>Click apply.</p>
+                    <ul style="margin-left: 20px;">
+                        <li>
+                            <p>If asked, login with your Facebook/Twitter/Google.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Enter your offer for the property and click submit.</p>
+                </li>
+                <li>
+                    <p>Upload your references in your profile.</p>
+                </li>
+
+
+
+            </ul>
+
+            <div  style="padding: 10px;margin: 10px 0;background-color: #fafafa;">
+                <h3 style="padding: 10px 0;">Privacy</h3>
+                <p>
+                    We at SpotMyCrib respect your privacy and your personal data will not be shared with anyone landlord. It will only be shown as a supporting documents for your application.
+                </p><br/>
+            </div>
+
+        </div>
+    </div>
+
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loginPageHorizontal}}
+    </section>
+{{/if}}
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loading}}
+    </section>
+{{/if}}
+</template>

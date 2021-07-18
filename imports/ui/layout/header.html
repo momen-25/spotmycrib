@@ -1,0 +1,192 @@
+<template name="headerExtended">
+    {{#if showCookieConsent}}
+        <section class="scroll-menu-div cookieConsentArea" style="">
+            <div class="container">
+
+                <div class="scroll-menu">
+                    <div class="left-menu text-center" style="color: white;"><p>  SpotMyCrib uses cookies. By continuing to use this site you consent to the use of cookies in accordance to our  <a href="{{pathFor 'cookiepolicy'}}" class=""> cookie policy </a>.<button class="green-btn btns cookieConsentBtn" type="button" style="
+    margin-left: 20px;
+">I understand</button></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    {{/if}}
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <div class="logo-holder-div">
+                <div class="xs-menu-icon-master">
+                <div class="xs-menu-icon">
+                    <span class="menu-xs sprite"></span>
+                </div>
+                </div>
+
+                <div class="logo-holder">
+                    <a href="{{pathFor 'home'}}">
+                        <img src="{{cdnPath '/images/spot-my-crib-logo.png'}}" alt="" class="logo-big">
+                        <img src="{{cdnPath '/images/spotmycrib-logo-130.jpg'}}" alt="" class="logo-xs">
+                    </a>
+                </div>
+                <div class="menu">
+
+                    <ul>
+                        <!--<li><a href="tel:+353892213737"><div class="pull-left menu-padding"><img src="/images/call-icon.png" /></div>-->
+                        <!--<div class="pull-right hidden-xs hidden-sm">-->
+                        <!--<h4 class="text-left">CALL US</h4>-->
+                        <!--<h5>+353 892213737</h5>-->
+                        <!--</div></a>-->
+                        <!--</li>-->
+                        <!--<li class="right-border hidden-xs"><a href="{{pathFor 'about'}}">ABOUT US</a></li>-->
+                        <!--<li class="right-border hidden-xs"><a href="{{pathFor 'faqs'}}">FAQ</a></li>-->
+                        <!--<li class="hidden-xs"><a href="{{pathFor 'contactus'}}">CONTACT US</a></li>-->
+                        <li class="hidden-xs"><button class="btns green-btn addPropertyHeaderBtn" type="button"><span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span> Advertise property</button></li>
+                        {{#if currentUser}}
+                            {{#unless isAgentRole}}
+                                <li class="login-menu hidden-xs"><a href="{{pathFor "account/mybids"}}">MY BIDS</a></li>
+                            {{/unless}}
+                            {{#if isAgentRole}}
+                                <li class="login-menu hidden-xs"><a href="{{pathFor "account/myProperties"}}"><span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span> MY PROPERTIES</a></li>
+                            {{/if}}
+                            <li class="login-menu hidden-xs"><a href="{{pathFor "account/profile"}}"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> MY REFERENCES</a></li>
+                            <li class="login-menu hidden-xs"><a href="javascript:void(0);" class="logoutBtn">SIGN OUT</a></li>
+                            <li>
+                                <div class="navbar-accounts">
+                                    <div class="dropdown" role="menu">
+                                        {{#if currentUser}}
+                                            <a href="{{pathFor 'account/profile'}}">
+                                                <img class="circular-icon profileBtn" src="{{getProfilePic}}" width="40px" height="40px"/>
+                                                <span id="logged-in-display-name profileBtn"> {{displayName}}
+                                                    <!--<b class="caret"></b>-->
+                                                </span>
+                                            </a>
+                                            {{#if false}}
+                                            <div class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" id="avatardropdown">
+
+                                                <img class="circular-icon profileBtn" src="{{getProfilePic}}" width="40px" height="40px"/>
+                                                <span id="logged-in-display-name profileBtn"> {{displayName}}
+                                                    <!--<b class="caret"></b>-->
+                                                </span>
+                                                <!--<div class="btn btn-primary btn-block logoutBtn" id="">Sign Out</div>-->
+                                            </div>
+                                            <div class="dropdown-menu pull-right" role="menu" aria-labelledby="avatardropdown">
+                                                <div class="user-accounts-dropdown">
+                                                    <div class="user-accounts-dropdown-content">
+
+                                                    </div>
+                                                    <div class="btn btn-primary btn-block profileBtn" ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</div>
+                                                    <div class="btn btn-primary btn-block logoutBtn" id="logout">Sign Out</div>
+                                                </div>
+                                            </div>
+                                            {{/if}}
+                                        {{else}}
+                                            <div class="accounts-dropdown" data-event-category="accounts" data-event-action="accounts-dropdown-click">
+                                                <div class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">
+                                                    <span data-i18n="accountsUI.signIn">Sign In</span><b class="caret"></b></div>
+                                                <div class="accounts-dialog accounts-layout dropdown-menu pull-right">
+                                                    {{> loginForm}}
+                                                </div>
+                                            </div>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </li>
+
+                        {{else}}
+                            <ul class="oval logedout-menu">
+                                <li><a class="right-border showLoginDialog" href="javascript:;">SIGN IN</a></li>
+                                <li><a href="javascript:;" class="showSignupDialog">SIGN UP</a></li>
+                                    <!--{{#if showLoginDialog}}-->
+                                <!--<span class="closeLoginDialog" style="position: relative;top: 33px;right: -37px;z-index: 3500;cursor: pointer;"><i class="fa fa-times"></i></span>-->
+                                <!--<div class="accounts-dialog accounts-layout dropdown-menu pull-right"-->
+                                <!--style="display:block;    top: 55px;right: 25px;">-->
+                                <!--{{> loginForm}}-->
+                                <!--</div>-->
+                                    <!--{{/if}}-->
+                            </ul>
+                        {{/if}}
+                    </ul>
+                </div>
+                <div class="xs-menu visible-xs transition">
+                    <div class="xs-menu-close-icon text-right">
+                        <span class="sprite xs-close"></span>
+                    </div>
+                    <ul class="transition">
+                        <li><a href="{{pathFor 'home'}}">HOME / SEARCH</a></li>
+                        {{#if currentUser}}
+                            <li><a href="{{pathFor 'account/profile'}}">MY REFERENCES</a></li>
+                        {{/if}}
+                        <li><a href="{{pathFor 'advertisewithus'}}">LIST PROPERTY</a></li>
+                        {{#if currentUser}}
+                            <li><a href="{{pathFor "account/myProperties"}}">MY PROPERTIES</a></li>
+                        {{/if}}
+                        {{#if false}}
+                            {{#unless isAgentRole}}
+                                <!--<li><a href="{{pathFor "account/mybids"}}">MY BIDS</a></li>-->
+                            {{/unless}}
+                            {{#if isAgentRole}}
+                                <li><a href="{{pathFor "account/myProperties"}}">MY PROPERTIES</a></li>
+                            {{/if}}
+                            <li><a href="{{pathFor 'account/profile'}}">MY PROFILE</a></li>
+                        {{/if}}
+                        <li><a href="{{pathFor 'estateagent'}}">AGENTS/LANDLORDS</a></li>
+                        <li><a href="{{pathFor 'howitworks'}}">HOW IT WORKS?</a></li>
+                        <li><a href="{{pathFor 'faqs'}}">FAQ</a></li>
+                        <!--<li><a href="{{pathFor 'about'}}">ABOUT US</a></li>-->
+                        <li><a href="{{pathFor 'contactus'}}">CONTACT US</a></li>
+                        <li><a href="{{pathFor 'careers'}}">CAREERS</a></li>
+                        {{#if currentUser}}
+                            <li><a href="javascript:void(0);" class="logoutBtn">SIGN OUT</a></li>
+                        {{/if}}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    {{loginFlowCompleteManager}}
+    <div id="errorModel" class="alert alert-danger " style="display:none;">
+        {{#each errorModel}}<p>{{this}}</p>{{/each}}
+    </div>
+    <div id="signin-div" class="signin1" style="display:none;">
+        {{#if showLoginDialog}}
+            {{> loginForm}}
+        {{/if}}
+    </div>
+    <div id="addPropertyHeader-div" class="signin1" style="display:none;">
+        {{#if showAddPropertyHeaderTemplate}}
+            <section class="mar-top-20 no-print">
+                <div class="container">
+                    <div class="filter-holder">
+                        <div class="head-border-bottom">
+
+                            <div class="refund-div">
+                                <h2 style="text-align:center;font-weight:bold;">List Your Rental For Free</h2>
+                            </div>
+                            <div style="margin-top:25px;">
+                                {{> addPropertyHeaderTemplate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        {{/if}}
+    </div>
+
+    <!-- <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KQSCJ4"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-KQSCJ4');</script> -->
+</template>
+
+
+

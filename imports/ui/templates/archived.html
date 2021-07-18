@@ -1,0 +1,1014 @@
+<template name="oldAdvertiseForm">
+    <div class="apt-info apt-info1 background-white clearfix showAddAuctionForm autoFrm">
+        {{#autoForm collection="Collections.Auctions" id="insertAuctionForm" type="insert"}}
+            {{#each afFieldNames}}
+                {{> afQuickField name=this.name options=afOptionsFromSchema}}
+            {{/each}}
+            {{> afFieldInput name="propertyId" type="hidden" value=_id }}
+
+            <ul class="bid-button-div">
+                <li>
+                    <button type="submit" class="btns blue-btn color-white ">Activate</button>
+                </li>
+                <li class=" left-line">
+                    <button class="transparent-btn hideAddAuctionForm" type=button>Cancel</button>
+                </li>
+            </ul>
+        {{/autoForm}}
+    </div>
+</template>
+<template name="addPropertyHeaderTemplate">
+    <form class="signin-form cf-1" id="addPropertyFormCF">
+
+
+        <div class="clearfix">
+            <div class="styled-input ">
+                <input type="text" name="address.address" id="address.address" required/>
+                <label id="address.address-error" class="error" for="address.address">This field is required.</label>
+                <br>
+                <label>Name and Street *</label>
+                <span></span>
+            </div>
+            <div class="styled-input ">
+                <input type="text" name="cost" required/>
+                <label id="address.address-error" class="error" for="address.address">This field is required.</label>
+                <br>
+                <label>Price *</label>
+                <span></span>
+            </div>
+            <div class="styled-input styled-input-select">
+                <label>County</label>
+                <select name="address.county" required="" autocomplete="" class="">
+                    <option value="dublin">Dublin</option>
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Area *</label>
+                <select name="address.area" required="" autocomplete="" class="">
+
+
+                    <option value="">(Select One)</option>
+
+
+
+                    <option value="Adamstown">Adamstown</option>
+
+
+
+                    <option value="Arbour Hill">Arbour hill</option>
+
+
+
+                    <option value="Ard Na Greine">Ard na greine</option>
+
+
+
+                    <option value="Artane">Artane</option>
+
+
+
+                    <option value="Ashington">Ashington</option>
+
+
+
+                    <option value="Ashtown">Ashtown</option>
+
+
+
+                    <option value="Aylesbury">Aylesbury</option>
+
+
+
+                    <option value="Ayrfield">Ayrfield</option>
+
+
+
+                    <option value="Balbriggan">Balbriggan</option>
+
+
+
+                    <option value="Baldonnell">Baldonnell</option>
+
+
+
+                    <option value="Baldoyle">Baldoyle</option>
+
+
+
+                    <option value="Balgriffin">Balgriffin</option>
+
+
+
+                    <option value="Ballinascorney">Ballinascorney</option>
+
+
+
+                    <option value="Ballinteer">Ballinteer</option>
+
+
+
+                    <option value="Ballsbridge">Ballsbridge</option>
+
+
+
+                    <option value="Ballyboden">Ballyboden</option>
+
+
+
+                    <option value="Ballybough">Ballybough</option>
+
+
+
+                    <option value="Ballyboughal">Ballyboughal</option>
+
+
+
+                    <option value="Ballybrack">Ballybrack</option>
+
+
+
+                    <option value="Ballycoolin">Ballycoolin</option>
+
+
+
+                    <option value="Ballycorus">Ballycorus</option>
+
+
+
+                    <option value="Ballycullen">Ballycullen</option>
+
+
+
+                    <option value="Ballyfermot">Ballyfermot</option>
+
+
+
+                    <option value="Ballymount">Ballymount</option>
+
+
+
+                    <option value="Ballymun">Ballymun</option>
+
+
+
+                    <option value="Balrothery">Balrothery</option>
+
+
+
+                    <option value="Balscaddan">Balscaddan</option>
+
+
+
+                    <option value="Bayside">Bayside</option>
+
+
+
+                    <option value="Beaumont">Beaumont</option>
+
+
+
+                    <option value="Belfield">Belfield</option>
+
+
+
+                    <option value="Blackrock">Blackrock</option>
+
+
+
+                    <option value="Blanchardstown">Blanchardstown</option>
+
+
+
+                    <option value="Bluebell">Bluebell</option>
+
+
+
+                    <option value="Bohernabreena">Bohernabreena</option>
+
+
+
+                    <option value="Booterstown">Booterstown</option>
+
+
+
+                    <option value="Brittas">Brittas</option>
+
+
+
+                    <option value="Cabinteely">Cabinteely</option>
+
+
+
+                    <option value="Cabra">Cabra</option>
+
+
+
+                    <option value="Carpenterstown">Carpenterstown</option>
+
+
+
+                    <option value="Carrickmines">Carrickmines</option>
+
+
+
+                    <option value="Castleknock">Castleknock</option>
+
+
+
+                    <option value="Chapelizod">Chapelizod</option>
+
+
+
+                    <option value="Cherry Orchard">Cherry orchard</option>
+
+
+
+                    <option value="Cherrywood">Cherrywood</option>
+
+
+
+                    <option value="Christchurch">Christchurch</option>
+
+
+
+                    <option value="Churchtown">Churchtown</option>
+
+
+
+                    <option value="Citywest">Citywest</option>
+
+
+
+                    <option value="Clarehall">Clarehall</option>
+
+
+
+                    <option value="Cloghran">Cloghran</option>
+
+
+
+                    <option value="Clondalkin">Clondalkin</option>
+
+
+
+                    <option value="Clonee">Clonee</option>
+
+
+
+                    <option value="Clongriffin">Clongriffin</option>
+
+
+
+                    <option value="Clonshaugh">Clonshaugh</option>
+
+
+
+                    <option value="Clonsilla">Clonsilla</option>
+
+
+
+                    <option value="Clonskeagh">Clonskeagh</option>
+
+
+
+                    <option value="Clontarf">Clontarf</option>
+
+
+
+                    <option value="Collinswood">Collinswood</option>
+
+
+
+                    <option value="Coolmine">Coolmine</option>
+
+
+
+                    <option value="Coolock">Coolock</option>
+
+
+
+                    <option value="Corduff">Corduff</option>
+
+
+
+                    <option value="Cornelscourt">Cornelscourt</option>
+
+
+
+                    <option value="Crumlin">Crumlin</option>
+
+
+
+                    <option value="Dalkey">Dalkey</option>
+
+
+
+                    <option value="Damastown">Damastown</option>
+
+
+
+                    <option value="Darndale">Darndale</option>
+
+
+
+                    <option value="Dartry">Dartry</option>
+
+
+
+                    <option value="Deans Grange">Deans grange</option>
+
+
+
+                    <option value="Dollymount">Dollymount</option>
+
+
+
+                    <option value="Dolphin's Barn">Dolphin's barn</option>
+
+
+
+                    <option value="Donabate">Donabate</option>
+
+
+
+                    <option value="Donaghmede">Donaghmede</option>
+
+
+
+                    <option value="Donnybrook">Donnybrook</option>
+
+
+
+                    <option value="Donnycarney">Donnycarney</option>
+
+
+
+                    <option value="Drimnagh">Drimnagh</option>
+
+
+
+                    <option value="Drumcondra">Drumcondra</option>
+
+
+
+                    <option value="Dublin 1">Dublin 1</option>
+
+
+
+                    <option value="Dublin 2">Dublin 2</option>
+
+
+
+                    <option value="Dublin 4">Dublin 4</option>
+
+
+
+                    <option value="Dublin 7">Dublin 7</option>
+
+
+
+                    <option value="Dublin 8">Dublin 8</option>
+
+
+
+                    <option value="Dun Laoghaire">Dun laoghaire</option>
+
+
+
+                    <option value="Dundrum">Dundrum</option>
+
+
+
+                    <option value="East Wall">East wall</option>
+
+
+
+                    <option value="Edenmore">Edenmore</option>
+
+
+
+                    <option value="Edmondstown">Edmondstown</option>
+
+
+
+                    <option value="Fairview">Fairview</option>
+
+
+
+                    <option value="Finglas">Finglas</option>
+
+
+
+                    <option value="Firhouse">Firhouse</option>
+
+
+
+                    <option value="Fox &amp;amp; Geese">Fox &amp;amp; geese</option>
+
+
+
+                    <option value="Foxrock">Foxrock</option>
+
+
+
+                    <option value="Galloping Green">Galloping green</option>
+
+
+
+                    <option value="Garristown">Garristown</option>
+
+
+
+                    <option value="Glasnevin">Glasnevin</option>
+
+
+
+                    <option value="Glasthule">Glasthule</option>
+
+
+
+                    <option value="Glenageary">Glenageary</option>
+
+
+
+                    <option value="Glenasmole">Glenasmole</option>
+
+
+
+                    <option value="Glencullen">Glencullen</option>
+
+
+
+                    <option value="Goatstown">Goatstown</option>
+
+
+
+                    <option value="Grand Canal Dock">Grand canal dock</option>
+
+
+
+                    <option value="Grange Castle">Grange castle</option>
+
+
+
+                    <option value="Greenhills">Greenhills</option>
+
+
+
+                    <option value="Hanover Quay">Hanover quay</option>
+
+
+
+                    <option value="Harold's Cross">Harold's cross</option>
+
+
+
+                    <option value="Hartstown">Hartstown</option>
+
+
+
+                    <option value="Hollystown">Hollystown</option>
+
+
+
+                    <option value="Howth">Howth</option>
+
+
+
+                    <option value="Huntstown">Huntstown</option>
+
+
+
+                    <option value="IFSC">Ifsc</option>
+
+
+
+                    <option value="Inchicore">Inchicore</option>
+
+
+
+                    <option value="Irishtown">Irishtown</option>
+
+
+
+                    <option value="Islandbridge">Islandbridge</option>
+
+
+
+                    <option value="Jobstown">Jobstown</option>
+
+
+
+                    <option value="Kilbarrack">Kilbarrack</option>
+
+
+
+                    <option value="Kill O' The Grange">Kill o' the grange</option>
+
+
+
+                    <option value="Killakee">Killakee</option>
+
+
+
+                    <option value="Killester">Killester</option>
+
+
+
+                    <option value="Killiney">Killiney</option>
+
+
+
+                    <option value="Kilmacud">Kilmacud</option>
+
+
+
+                    <option value="Kilmainham">Kilmainham</option>
+
+
+
+                    <option value="Kilmore">Kilmore</option>
+
+
+
+                    <option value="Kilnamanagh">Kilnamanagh</option>
+
+
+
+                    <option value="Kilsallaghan">Kilsallaghan</option>
+
+
+
+                    <option value="Kilshane Cross">Kilshane cross</option>
+
+
+
+                    <option value="Kilternan">Kilternan</option>
+
+
+
+                    <option value="Kiltipper">Kiltipper</option>
+
+
+
+                    <option value="Kimmage">Kimmage</option>
+
+
+
+                    <option value="Kingswood">Kingswood</option>
+
+
+
+                    <option value="Kinsealy">Kinsealy</option>
+
+
+
+                    <option value="Knocklyon">Knocklyon</option>
+
+
+
+                    <option value="Laughanstown">Laughanstown</option>
+
+
+
+                    <option value="Leopardstown">Leopardstown</option>
+
+
+
+                    <option value="Loughlinstown">Loughlinstown</option>
+
+
+
+                    <option value="Loughshinny">Loughshinny</option>
+
+
+
+                    <option value="Lucan">Lucan</option>
+
+
+
+                    <option value="Lusk">Lusk</option>
+
+
+
+                    <option value="Malahide">Malahide</option>
+
+
+
+                    <option value="Marino">Marino</option>
+
+
+
+                    <option value="Merrion">Merrion</option>
+
+
+
+                    <option value="Milltown">Milltown</option>
+
+
+
+                    <option value="Monkstown">Monkstown</option>
+
+
+
+                    <option value="Mount Merrion">Mount merrion</option>
+
+
+
+                    <option value="Mulhuddart">Mulhuddart</option>
+
+
+
+                    <option value="Naul">Naul</option>
+
+
+
+                    <option value="Navan Road (D7)">Navan road (d7)</option>
+
+
+
+                    <option value="Newcastle">Newcastle</option>
+
+
+
+                    <option value="North Circular Road">North circular road</option>
+
+
+
+                    <option value="North Strand">North strand</option>
+
+
+
+                    <option value="North Wall">North wall</option>
+
+
+
+                    <option value="Old Connaught">Old connaught</option>
+
+
+
+                    <option value="Oldbawn">Oldbawn</option>
+
+
+
+                    <option value="Oldtown">Oldtown</option>
+
+
+
+                    <option value="Ongar">Ongar</option>
+
+
+
+                    <option value="Palmerstown">Palmerstown</option>
+
+
+
+                    <option value="Park West">Park west</option>
+
+
+
+                    <option value="Perrystown">Perrystown</option>
+
+
+
+                    <option value="Phibsborough">Phibsborough</option>
+
+
+
+                    <option value="Poppintree">Poppintree</option>
+
+
+
+                    <option value="Porterstown">Porterstown</option>
+
+
+
+                    <option value="Portmarnock">Portmarnock</option>
+
+
+
+                    <option value="Portobello">Portobello</option>
+
+
+
+                    <option value="Portrane">Portrane</option>
+
+
+
+                    <option value="Priorswood">Priorswood</option>
+
+
+
+                    <option value="Raheny">Raheny</option>
+
+
+
+                    <option value="Ranelagh">Ranelagh</option>
+
+
+
+                    <option value="Rathcoole">Rathcoole</option>
+
+
+
+                    <option value="Rathfarnham">Rathfarnham</option>
+
+
+
+                    <option value="Rathgar">Rathgar</option>
+
+
+
+                    <option value="Rathmichael">Rathmichael</option>
+
+
+
+                    <option value="Rathmines">Rathmines</option>
+
+
+
+                    <option value="Rialto">Rialto</option>
+
+
+
+                    <option value="Ringsend">Ringsend</option>
+
+
+
+                    <option value="Rockbrook">Rockbrook</option>
+
+
+
+                    <option value="Rolestown">Rolestown</option>
+
+
+
+                    <option value="Ronanstown">Ronanstown</option>
+
+
+
+                    <option value="Royal Canal Park">Royal canal park</option>
+
+
+
+                    <option value="Rush">Rush</option>
+
+
+
+                    <option value="Saggart">Saggart</option>
+
+
+
+                    <option value="Sallynoggin">Sallynoggin</option>
+
+
+
+                    <option value="Sandycove">Sandycove</option>
+
+
+
+                    <option value="Sandyford">Sandyford</option>
+
+
+
+                    <option value="Sandymount">Sandymount</option>
+
+
+
+                    <option value="Santry">Santry</option>
+
+
+
+                    <option value="Shankill">Shankill</option>
+
+
+
+                    <option value="Skerries">Skerries</option>
+
+
+
+                    <option value="Smithfield">Smithfield</option>
+
+
+
+                    <option value="South Circular Road">South circular road</option>
+
+
+
+                    <option value="St Margaret's">St margaret's</option>
+
+
+
+                    <option value="St. James Gate">St. james gate</option>
+
+
+
+                    <option value="Stepaside">Stepaside</option>
+
+
+
+                    <option value="Stillorgan">Stillorgan</option>
+
+
+
+                    <option value="Stoneybatter">Stoneybatter</option>
+
+
+
+                    <option value="Strawberry Beds">Strawberry beds</option>
+
+
+
+                    <option value="Sutton">Sutton</option>
+
+
+
+                    <option value="Swords">Swords</option>
+
+
+
+                    <option value="Tallaght">Tallaght</option>
+
+
+
+                    <option value="Temple Bar">Temple bar</option>
+
+
+
+                    <option value="Templeogue">Templeogue</option>
+
+
+
+                    <option value="Terenure">Terenure</option>
+
+
+
+                    <option value="The Coombe">The coombe</option>
+
+
+
+                    <option value="The Five Roads">The five roads</option>
+
+
+
+                    <option value="The Ward">The ward</option>
+
+
+
+                    <option value="Ticknock">Ticknock</option>
+
+
+
+                    <option value="Tyrrelstown">Tyrrelstown</option>
+
+
+
+                    <option value="Walkinstown">Walkinstown</option>
+
+
+
+                    <option value="Ward">Ward</option>
+
+
+
+                    <option value="Whitehall">Whitehall</option>
+
+
+
+                    <option value="Willbrook">Willbrook</option>
+
+
+
+                    <option value="Windy Arbour">Windy arbour</option>
+
+
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Property type *</label>
+                <select name="type" required="" autocomplete="" >
+
+
+                    <option value="">(Select One)</option>
+
+
+
+                    <option value="apartment">Apartment</option>
+
+
+
+                    <option value="house">House</option>
+
+
+
+                    <option value="flat">Flat</option>
+
+
+
+                    <option value="commercial">Commercial</option>
+
+
+
+                    <option value="parkingspace">Parking Space</option>
+
+
+                </select>
+                <span></span>
+            </div>
+
+
+            <div class="styled-input styled-input-select">
+                <label>Furnished? *</label>
+                <select name="furnished" required="" autocomplete="" >
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input underline">
+                <input type="number" name="baths" id="baths" required/>
+                <label>Number of bathrooms</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input underline">
+                <input type="number" name="numBedRoomCount" id="numBedRoomCount" required/>
+                <label>Number of bedrooms</label>
+                <span></span>
+            </div>
+
+            {{#if numBedRoomCount}}
+                <div class="styled-full-width">
+                    <label class="sep-label">Ensuite? </label>
+
+                    {{#each ensuiteLoop numBedRoomCount}}
+                        <div class="styled-input-select styled-input-checkbox max-20">
+                            <div class="checkbox disabled">
+                                <label><input type="checkbox" name="bedrooms.{{@index}}.ensuite" >Bedroom {{i}} Ensuite?</label>
+                            </div>
+                            <label>Bed Type</label>
+                            <select required="" autocomplete="" name="bedrooms.{{@index}}.bedType">
+                                <option value="single">Single</option>
+                                <option value="double">Double</option>
+                                <option value="twin">Twin</option>
+                            </select>
+                            <span></span>
+                        </div>
+                    {{/each}}
+
+                </div><div class="w-100"></div>
+            {{/if}}
+
+
+
+            <div class="styled-full-width">
+                {{#if addPropertyFormSaving}}
+                    <button type="button" class="btns transparent-btn">Saving</button>
+                {{else}}
+                    <button type="submit" class="btns blue-btn addPropertyFormSaveBtn">Save</button>
+                {{/if}}
+                <!--<button type="button" class="btns blue-btn addPropertyFormSaveActivateBtn">Save and Activate</button>-->
+                <button type="button" class="btns transparent-btn addPropertyFormCancelBtn">Cancel</button>
+            </div>
+
+            <div class="w-100"></div>
+        </div>
+    </form>
+
+    <div >
+        Put your second area of email form here.
+
+
+
+    </div>
+
+    {{>loginFormHorizontal}}
+</template>
+
+<!--Contact us page-->
+<ul>
+    {{#if false}}
+        <li>
+            <h3>Address</h3>
+            <span class="bottom-line"></span>
+            <p>BHIVE WORKSPACE</p><br>
+            <p>L-148, 5th Main, 6th sector, HSR layout, Bangalore, Karnataka-560102</p>
+
+        </li>
+    {{/if}}
+    <li>
+        <h3 class="blank-div">&nbsp;</h3>
+
+        <p><a style="color:#428bca" href="mailto:support@SpotMyCrib"><i class="glyphicon glyphicon-envelopee"></i> support@SpotMyCrib.com</a></p>
+        {{#if false}}<p><a href="tel:080-44559966"><i class="glyphicon glyphicon-phone"></i>+353 </a></p><br>{{/if}}
+        <!--<p class="pad-btm-10"><span class="color-blue">Timings</span></p>-->
+        <!--<p> 9  AM  - 6 PM</p>-->
+        <!--<p> 24x7</p>-->
+    </li>
+
+</ul>

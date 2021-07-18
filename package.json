@@ -1,0 +1,29 @@
+{
+  "name": "flatbid",
+  "private": true,
+  "scripts": {
+    "start": "meteor --settings ./settings/settings.json",
+    "debug": "meteor run --inspect --settings ./settings/settings.json",
+    "debug-brk": "meteor run --inspect-brk --settings ./settings/settings.json",
+    "chimp-watch": "chimp --ddp=http://localhost:3000 --watch --mocha --path=tests",
+    "chimp-test": "chimp --mocha --path=tests"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.6",
+    "aws-sdk": "^2.948.0",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.10",
+    "filestack-js": "^0.11.5",
+    "jquery": "^2.2.4",
+    "meteor-node-stubs": "^0.2.6",
+    "minimize": "^2.2.0",
+    "phantom": "^6.3.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-mounter": "^1.2.0",
+    "simpl-schema": "^1.12.0",
+    "token-gen": "^0.5.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,528 @@
+<template name="editProperty">
+{{#if isSubsLoaded}}
+
+{{#if userLoggedIn}}
+
+{{#if propertyFound}}
+    <section class="unitspage-holder">
+        <section class="logo-below-div">
+            <div class="container">
+                <div class="logo-holder-div">
+                    <div class="logo-holder">
+                        <ul>
+                            <li><span class="backBtn" style="cursor: pointer;"><img src="{{cdnPath '/images/back-arrow.png'}}"></span></li>
+                            <li class="longTitle"><h3>{{propertyData.address.address}} {{#if propertyData.address.area}}, {{propertyData.address.area}} {{/if}}{{#if propertyData.address.county}}, {{propertyData.address.county}} {{/if}} </h3>
+                            {{#if propertyData.auction}}
+                                <h4>PROPERTY KEY : {{propertyData.auction.lettingAuctionCode}}
+                                    <span class="auction-number pad-left-15"><a target="_blank" href="{{pathFor route='letting' key=propertyData.auction.lettingAuctionCode}}" class="viewListing" style="font-size:11px;" >VIEW ADVERT</a></span>
+                                    <span class="auction-number pad-left-15"><a href="javascript:void(0);" class="showCopyDlg" style="font-size:11px;" ><i class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 11px;"></i> SHARE</a></span>
+                                </h4>
+                            {{/if}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu">
+                        {{#if propertyData.auctionId}}
+                            <button class="transparent-btn btns deactivatePropertyBtn" type="button"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deactivate</button>
+                        {{/if}}
+                            <button class="transparent-btn btns archivePropertyBtn" type="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Archive</button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mar-top-20 ">
+            <div class="container">
+                <div class="filter-holder">
+                    <div class="head-border-bottom">
+                        <div class="apt-info1 background-white clearfix showEditAuctionForm autoFrm">
+                            {{>editPropertyForm}}
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="verification-div1" id="propertyLinkDlg" style="display:none;">
+            <div class="refund-div"><h2>Share Property</h2></div>
+            <div class="profile-text text-left">
+                <p class="no-capitalize">Please use this email to use in daft.ie, rent.ie etc ads.</p>
+
+                <form class="form-inline" style="overflow: hidden;" onsubmit="return false;">
+                    <div class="form-group col-sm-10" style="padding: 0;">
+                        <input type="text" class="form-control" placeholder="" name="agentPropertyEmailField" id="agentPropertyEmailField" readonly style="width: 100%;padding: 0;">
+                    </div>
+                    <button type="submit" class="btn btn-primary col-sm-2 copyEmailBtn">Copy</button>
+                </form>
+
+                <p class="no-capitalize mar-top-15">Please use this link to share in facebook, twitter etc. </p>
+
+                <form class="form-inline" style="overflow: hidden;" onsubmit="return false;">
+                    <div class="form-group col-sm-10" style="padding: 0;">
+                        <input type="text" class="form-control" placeholder="" name="propertyLinkField" id="propertyLinkField" readonly style="width: 100%;padding: 0;">
+                    </div>
+                    <button type="submit" class="btn btn-primary col-sm-2 copyLinkBtn">Copy</button>
+                </form>
+
+                <form class="signin-form">
+
+                    <div class="signup-btn">
+                        <button class="transparent-btn btns cancelBtn" type="button">CLOSE</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+        <div id="conf-dactivate-pop" class="confPopup" style="display:none;">
+
+            <div class="refund-div"><h2>Confirm Deactivate?</h2></div>
+            <div class="profile-text">
+                <h3>Are sure you want to deactivate ?</h3>
+                {{#if propertyData.applicationsActiveCount}}<p>This property has {{propertyData.applicationsActiveCount}} active applications. You will not be able to choose any application if deactivated. </p>
+                {{else}}
+                    <p></p>
+                {{/if}}
+
+                <ul>
+                    <li><button class="transparent-btn btns deactivateConfirmBtn" type="button">{{#if deactivateInProgress}}Deactivating...{{else}}Deactivate{{/if}}</button></li>
+                    <li><button class="blue-btn btns closePopupBtn" type="button">Cancel</button></li>
+                </ul>
+            </div>
+        </div>
+        <div id="conf-archive-pop" class="confPopup" style="display:none;">
+
+            <div class="refund-div"><h2>Confirm Archive?</h2></div>
+            <div class="profile-text">
+                <h3>Are sure you want to archive? </h3>
+                {{#if propertyData.applicationsActiveCount}}<p>This property has {{propertyData.applicationsActiveCount}} active applications. You will not be able to choose any application if deactivated. </p>
+                {{else}}
+                    <p></p>
+                {{/if}}
+                <p>Please note that archiving will also deactivate it and will disable all the applications received on it.</p>
+
+                <ul>
+                    <li><button class="transparent-btn btns archiveConfirmBtn" type="button">{{#if archiveInProgress}}Archiving...{{else}}Archive{{/if}}</button></li>
+                    <li><button class="blue-btn btns closePopupBtn" type="button">Cancel</button></li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+{{else}}
+    <section class="mar-top-20 ">
+        <div class="container text-center mar-top-20 pad-btm-30">
+            <div class="filter-holder">
+                <div class="mar-top-30">
+                        <strong>This property is not found. Please try again.</strong><br/><br/>
+                        <button class="blue-btn btns backBtn" type="button">Try again</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{{/if}}
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loginPageHorizontal}}
+    </section>
+{{/if}}
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loading}}
+    </section>
+{{/if}}
+</template>
+
+<template name="imageEditView">
+    <div class="row">
+        {{#each images}}
+            {{>imgEditTag}}
+        {{/each}}
+
+    </div>
+</template>
+<template name="imgEditTag">
+    <!--<div class="col-sm-3 col-xs-6">-->
+        <div class="thumbnail">
+            <div class="frow">
+                <a href="javascript:void(0)" class="editImgBtn"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                <a href="javascript:void(0)" class="deleteImgBtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</a>
+            </div>
+            <div class="secrow">
+                {{#if handle}}
+                    <img src="https://process.filestackapi.com/resize=width:250/{{handle}}" alt="" class="img-responsive">
+                {{else}}
+                    <img src="https://process.filestackapi.com/AIPACLEs7ShGwwPh6fMTxz/resize=width:250/{{url}}" alt="" class="img-responsive">
+                {{/if}}
+            </div>
+        </div>
+    <!--</div>-->
+</template>
+<template name="oldAddPropertyFormData">
+    {{#autoForm collection="Collections.Properties" id="editPropertiesForm" type="update" doc=propertyData }}
+        {{#each afFieldNames}}
+            {{#unless inIgnoreList this.name}}
+                {{> afQuickField name=this.name options=afOptionsFromSchema}}
+            {{/unless}}
+        {{/each}}
+
+        <div class="form-group">
+            <label for="selectPropertyImages">Property images</label>
+            <input type="file" multiple="true" class="selectPropertyImages"  id="selectPropertyImages"/>
+            <!--<p class="help-block">Example block-level help text here.</p>-->
+        </div>
+        {{>imageEditView }}
+
+        <ul class="bid-button-div pull-left">
+            <li>
+                <button type="submit" class="btns green-btn color-white ">Save</button>
+            </li>
+            <li>
+                <button class="transparent-btn btns backBtn" type="button">Cancel</button>
+            </li>
+        </ul>
+    {{/autoForm}}
+    <br/><br><br><br>
+    <h2>Activation details</h2>
+    <br/>
+    {{#if propertyData.auction}}
+        {{#autoForm collection="Collections.Auctions" id="editAuctionsForm" type="update" doc=propertyData.auction }}
+            {{#each afFieldNames}}
+                {{#unless inIgnoreList this.name}}
+                    {{> afQuickField name=this.name options=afOptionsFromSchema}}
+                {{/unless}}
+            {{/each}}
+
+            <ul class="bid-button-div pull-left">
+                <li>
+                    <button type="submit" class="btns green-btn color-white ">Save</button>
+                </li>
+                <li>
+                    <button class="transparent-btn btns backBtn" type="button">Cancel</button>
+                </li>
+            </ul>
+        {{/autoForm}}
+    {{else}}
+        <p class="pull-left">This property is not active yet. Activate it first from My Properties page.</p>
+        <br>
+        <button class="transparent-btn btns backBtn" type="button">Activate</button>
+    {{/if}}
+</template>
+
+
+<template name="editPropertyForm">
+    <form class="signin-form cf-1" id="editPropertyFormCF">
+        {{#if data.auction}}
+            <h2 style="margin-bottom: 30px">Edit Advertisement</h2>
+        <input type="hidden" name="advertiseFormActive" value="yes" />
+        <input type="hidden" name="currency" value="eur" />
+        <input type="hidden" name="propertyId" value="{{_id}}" />
+        <div class="clearfix">
+            <div class="styled-input ">
+                <input type="text" name="price" id="rent" required value="{{data.auction.price}}"/>
+                <label id="rent" class="error" for="rent">This field is required.</label>
+                <br>
+                <label>Rent *</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input ">
+                <input type="text" name="readyFrom" id="readyFrom"  value="{{dateTimeFormat data.auction.readyFrom}}"/>
+                <label class="" for="rent"></label>
+                <br>
+                <label>Ready to move in from?</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Lease until?</label>
+                <select name="lease" autocomplete="" >
+                    <option value="">(Select One)</option>
+                    {{#each leaseUntil}}
+                        <option value="{{this}}" {{isEqualSelect data.auction.lease this}}>{{this}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Rent type</label>
+                <select name="rentType" autocomplete="" >
+                    <option value="">(Select One)</option>
+                    <option value="weekly"  {{isEqualSelect data.auction.rentType 'weekly'}}>Weekly</option>
+                    <option value="monthly" {{isEqualSelect data.auction.rentType 'monthly'}}>Monthly</option>
+                    <option value="other" {{isEqualSelect data.auction.rentType 'other'}}>Other</option>
+                </select>
+                <span></span>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="sep-section">
+                <label class="sep-label">Contact person for this advertisement</label>
+                <div class="styled-input underline">
+                    <input type="text" name="advertContacts.0.name"  value="{{advertisementContact.name}}"/>
+                    <label>Name</label>
+                    <span></span>
+                </div>
+                <div class="styled-input underline">
+                    <input type="text" name="advertContacts.0.phone"  value="{{advertisementContact.phone}}" />
+                    <label>Mobile</label>
+                    <span></span>
+                </div>
+                <div class="styled-input underline">
+                    <input type="email" name="advertContacts.0.email"  value="{{advertisementContact.email}}"/>
+                    <label>Email</label>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="w-100"></div>
+
+
+            <div class="styled-full-width">
+                {{#if editPropertyFormSaving}}
+                    <button type="button" class="btns transparent-btn">Saving</button>
+                {{else}}
+                    <button type="submit" class="btns blue-btn editPropertyFormSaveBtn">Save</button>
+                {{/if}}
+                <!--<button type="button" class="btns blue-btn addPropertyFormSaveActivateBtn">Save and Activate</button>-->
+                <button type="button" class="btns transparent-btn editPropertyFormCancelBtn">Cancel</button>
+            </div>
+
+            <div class="w-100"></div>
+        </div>
+            {{else}}
+            <h2 style="margin-bottom: 30px">Edit Advertisement</h2>
+            <p>This property is not advertised. <a href="javascript:void(0)" class="backBtn">Visit</a> previous page to advertise. </p>
+        {{/if}}
+
+        <h2 style="margin-bottom: 30px">Edit Property</h2>
+
+        <div class="clearfix">
+            <div class="styled-input ">
+                <input type="text" name="address.address" id="address.address" required value="{{data.address.address}}"/>
+                <label id="address.address-error" class="error" for="address.address">This field is required.</label>
+                <br>
+                <label>Name and Street *</label>
+                <span></span>
+            </div>
+            <div class="styled-input styled-input-select">
+                <label>Country</label>
+                <select name="address.country" required="" autocomplete="" >
+                    {{#each countries}}
+                        <option value="{{value}}" {{isEqualSelect data.address.country value}}>{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+            <div class="styled-input styled-input-select">
+                <label>County</label>
+                <select name="address.county" required="" autocomplete="" class="countySelected">
+                    <option value="">(Select One)</option>
+                    {{#each counties}}
+                        <option value="{{value}}" {{isEqualSelect data.address.county value}}>{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Area *</label>
+                <select name="address.area" required="" autocomplete="" class="">
+                    <option value="">(Select One)</option>
+                    {{#each areas}}
+                        <option value="{{value}}" {{isEqualSelect data.address.area value}}>{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Property type *</label>
+                <select name="type" required="" autocomplete="" >
+                    <option value="">(Select One)</option>
+                    {{#each propertyTypes}}
+                        <option value="{{value}}" {{isEqualSelect data.type value}}>{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+
+            <div class="styled-input styled-input-select">
+                <label>Furnished? *</label>
+                <select name="furnished" required="" autocomplete="" >
+                    {{#each furnishedOptions data.furnished}}
+                        <option value="{{value}}" {{selected}}>{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input underline">
+                <input type="number" name="baths" id="baths" required value="{{data.baths}}"/>
+                <label>Number of bathrooms</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input underline">
+                <input type="number" name="numBedRoomCount" id="numBedRoomCount" required value="{{arrLength data.bedrooms}}"/>
+                <label>Number of bedrooms</label>
+                <span></span>
+            </div>
+
+            {{#if numBedRoomCount}}
+                <div class="styled-full-width">
+                    <label class="sep-label">Ensuite? </label>
+
+                    {{#each ensuiteLoop numBedRoomCount}}
+                        <div class="styled-input-select styled-input-checkbox max-20">
+                            <div class="checkbox {{#unless ensuiteLoopCheckbox @index}}disabled{{/unless}}">
+                                <label><input type="checkbox" name="bedrooms.{{@index}}.ensuite" {{ensuiteLoopCheckbox @index}}>Bedroom {{i}} Ensuite?</label>
+                            </div>
+                            <label>Bed Type</label>
+                            <select required="" autocomplete="" name="bedrooms.{{@index}}.bedType">
+                                {{#each ensuiteLoopBedTypeOptions @index}}
+                                    <option value="{{value}}" jns {{sel}} nha>{{label}}</option>
+                                {{/each}}
+                            </select>
+                            <span></span>
+                        </div>
+                    {{/each}}
+
+                </div><div class="w-100"></div>
+            {{/if}}
+
+            <div class="styled-full-width">
+                <label class="cf-title">About</label><br/>
+                <textarea name="about" class="styled-input-textarea autoGrowTA" placeholder="Enter any additional info about this letting." value="{{data.about}}"></textarea>
+
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="styled-full-width styled-input-checkbox">
+                <label class="cf-title">Amenities</label><br/>
+                <div class="cb-subsec">
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Parking" {{hasAmenityCheckbox "Parking"}}>Parking</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Club House" {{hasAmenityCheckbox "Club House"}}>Club House</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Swimming Pool"  {{hasAmenityCheckbox "Swimming Pool"}}>Swimming Pool</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Mini Theater"  {{hasAmenityCheckbox "Mini Theater"}}>Mini Theater</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Gym"  {{hasAmenityCheckbox "Gym"}}>Gym</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Meditation Hall"  {{hasAmenityCheckbox "Meditation Hall"}}>Meditation Hall</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Cable Television"  {{hasAmenityCheckbox "Cable Television"}}>Cable Television</label>
+                    </div>
+                </div>
+                <div class="cb-subsec">
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Dishwasher"  {{hasAmenityCheckbox "Dishwasher"}}>Dishwasher</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Garden / Patio / Balcony"  {{hasAmenityCheckbox "Garden / Patio / Balcony"}}>Garden / Patio / Balcony</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Internet"  {{hasAmenityCheckbox "Internet"}}>Internet</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Serviced Property"  {{hasAmenityCheckbox "Serviced Property"}}>Serviced Property</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Washing Machine"  {{hasAmenityCheckbox "Washing Machine"}}>Washing Machine</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Central Heating"  {{hasAmenityCheckbox "Central Heating"}}>Central Heating</label>
+                    </div>
+                </div>
+                <div class="cb-subsec">
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Dryer"  {{hasAmenityCheckbox "Dryer"}}>Dryer</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="House Alarm"  {{hasAmenityCheckbox "House Alarm"}}>House Alarm</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Microwave"  {{hasAmenityCheckbox "Microwave"}}>Microwave</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Pets Allowed"  {{hasAmenityCheckbox "Pets Allowed"}}>Pets Allowed</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Smoking"  {{hasAmenityCheckbox "Smoking"}}>Smoking</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Wheelchair Access" {{hasAmenityCheckbox "Wheelchair Access"}}>Wheelchair Access</label>
+                    </div>
+                </div>
+                <span></span>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="sep-section">
+                <label class="sep-label">Contact details of the property owner if any</label>
+                <div class="styled-input underline">
+                    <input type="text" name="contacts.0.name" value="{{propertyContact.name}}"/>
+                    <label>Owners Name <i title="This info will not be displayed to users. It confidential and will be used only for record purpose.">(Private)</i></label>
+                    <span></span>
+                </div>
+                <div class="styled-input underline">
+                    <input type="text" name="contacts.0.phone" value="{{propertyContact.phone}}" />
+                    <label>Owners Mobile <i title="This info will not be displayed to users. It confidential and will be used only for record purpose.">(Private)</i></label>
+                    <span></span>
+                </div>
+                <div class="styled-input underline">
+                    <input type="email" name="contacts.0.email" value="{{propertyContact.email}}"/>
+                    <label>Owners Email <i title="This info will not be displayed to users. It confidential and will be used only for record purpose.">(Private)</i></label>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="w-100"></div>
+
+
+            <div class="styled-full-width">
+                <button class="btns blue-btn openFileUploader">Add Images</button>
+                <!--<label for="selectPropertyImages">Property images</label>-->
+                <!--<input type="file" multiple="true" class="selectPropertyImages"  id="selectPropertyImages"/>-->
+                <!--<p class="help-block">Example block-level help text here.</p>-->
+            </div>
+
+            <div class="w-100"></div>
+
+
+            {{>imageEditView }}
+
+            <div class="styled-full-width">
+                {{#if editPropertyFormSaving}}
+                    <button type="button" class="btns transparent-btn">Saving</button>
+                {{else}}
+                    <button type="submit" class="btns blue-btn editPropertyFormSaveBtn">Save</button>
+                {{/if}}
+                <!--<button type="button" class="btns blue-btn addPropertyFormSaveActivateBtn">Save and Activate</button>-->
+                <button type="button" class="btns transparent-btn editPropertyFormCancelBtn">Cancel</button>
+            </div>
+
+            <div class="w-100"></div>
+        </div>
+    </form>
+</template>

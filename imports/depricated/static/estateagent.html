@@ -1,0 +1,508 @@
+<template name="estateagent">
+    <link rel="stylesheet" href="css/estateagent.css">
+    <section class="topheader" id="topheader">
+        <div class="container-fluid">
+            <div class="container container-fixed rdc">
+                <div class="col-md-12 logo">
+                    <a href="{{urlFor 'home'}}"><img src="/images/estateagentpage/logo.png"/></a>
+                </div>
+                <div class="col-md-10 col-md-offset-1 property_listings">
+                    <h2>Post Your Property listings and Select your tenant now</h2>
+                    <div class="box-places home-page-box-places" style="background: none;padding: 0;">
+                        <ul>
+                            <li>
+                                {{> knowmoreform}}
+                            </li>
+                        </ul>
+                    </div>
+                    <!--<div class="col-md-10 col-md-offset-1 ">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <input type="email" class="input-group form-control" id="email" placeholder="Enter email">
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="submit" class="btn green-btn">Know More!</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>-->
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Header Section End-->
+    <!--Spot Your Tenant Section Start-->
+    <section class="spotyourtenant">
+        <div class="container-fluid">
+            <div class="container container-fixed rdc">
+                <div class="col-md-12 rdc">
+                    <div class="col-md-6 " >
+                        <h2>Spot Your Tenant</h2>
+                        <p>SpotMyCrib makes your work easy. You can <br>post your property and screen tenants online. The screening process includes a rental application <br>with their references and their complete social profiles.</p>
+                    </div>
+                    <div class="col-md-6 ">
+                       <img src="/images/estateagentpage/video.png" class="img-responsive"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Spot Your Tenant Section Start-->
+    <!--Spot Your Tenant Section Start-->
+    <section class="many_properties_area" style="min-height: 700px;">
+        <div class="container-fluid">
+
+            <div class="container rdc container-fixed">
+                <div class="col-md-12 rdc text-center">
+                    <h2>How Many Properties are you listing?</h2>
+                    <!--<span id="lcountInline">10</span>-->
+
+                    <div class="wrappernew">
+                        <div class="colThree" style="margin: 0px 0 20px 0px; text-align:left;">
+
+                            <div id="contenta">
+                                <div id="lcount">10</div>
+                                <span>1</span><span style="float:right">2000</span>
+                                <div id="many_properties_area_slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container container-fixed">
+                    <div class="col-md-12 rdc">
+
+                        <article class="col oneline">
+
+                            <div class="circle-in">
+                                <div class="viewingsSaved">300</div>
+                                <p>Viewings Saved</p></div>
+                        </article>
+                        <article class="col oneline">
+
+                            <div class="circle-in">
+                                <div class="tripsSaved">10</div>
+                                <p>Travel trips Saved</p>
+                            </div>
+                        </article>
+                        <article class="col oneline">
+
+                            <div class="circle-in">
+                                <div><span class="hoursSaved">20</span><strong>Hours</strong></div>
+                                <p>Time Saved</p>
+                            </div>
+                        </article>
+                        <article class="col oneline">
+
+                            <div class="circle-in">
+                                <div>&euro;<span class="moneySaved">800</span></div>
+                                <p>Money Saved</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+                <div class="col-md-12 btn-account_area">
+                    <button type="submit" class="btn green-btn joinNowBtn">Claim your Free Account</button>
+                </div>
+                <div class="container rdc">
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+    <!--Spot Your Tenant Section Start-->
+    <!--Business Section Start-->
+    <section class="business_area" style="min-height: 970px;">
+        <div class="container-fluid">
+            <div class="container  rdc">
+                <div class="col-md-12 rdc business_area_onesecton">
+                    <h2>Expand / Develop Your Business with these BENEFITS</h2>
+                    <div class="col-md-4 competitive">
+                        <img src="/images/estateagentpage/img_01.png" class="img-responsive"/>
+                        <h3>Competitive Advantage</h3>
+                        <p style="line-height:30px;font-size:17px;">Get the competitive edge you need to excel in this extremely competitive market. </p>
+                        <!--This value added service will give you the competitive edge you need in an extremely competitive market-->
+                    </div>
+                    <div class="col-md-4 competitive">
+                        <img src="/images/estateagentpage/img_02.png" class="img-responsive"/>
+                        <h3>Reduced Admin</h3>
+                        <p style="line-height:30px;font-size:17px;">Save time and money by automating <br>renting, managing and maintaining <br>your property.</p>
+                    </div>
+                    <div class="col-md-4 competitive">
+                        <img src="/images/estateagentpage/img_03.png" class="img-responsive"/>
+                        <h3>Safe secure system</h3>
+                        <p style="line-height:30px;font-size:17px;">SpotMyCrib uses state of art<br>technology to keep your data<br> safe and secure.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 rdc business_area_onesecton">
+                    <div class="col-md-4 competitive">
+                        <img src="/images/estateagentpage/img_04.png" class="img-responsive"/>
+                        <h3>Digital accounting and maintenance</h3>
+                        <p style="line-height:30px;font-size:17px;">Post your property instantly on the<br>go, from your mobile phone. Save valuable time.</p>
+                    </div>
+                    <div class="col-md-4 competitive">
+                        <img src="/images/estateagentpage/img_05.png" class="img-responsive"/>
+                        <h3>Screen tenants</h3>
+                        <p style="line-height:30px;font-size:17px;">Receive and access all your tenant <br/>references and applications from one centralised account. Access them anytime, anywhere across the globe. </p>
+                        <!--No more manual uploading into your 3rd party file storage.-->
+                    </div>
+                    <div class="col-md-4 competitive">
+                        <img src="/images/estateagentpage/img_06.png" class="img-responsive"/>
+                        <h3>Verify social profiles</h3>
+                        <p style="line-height:30px;font-size:17px;"> LinkedIn, twitter and facebook profile verification.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 rdc business_area_onesecton">
+    
+                    <div class="col-md-4 competitive">
+                        <img src="/images/estateagentpage/img_10.png" class="img-responsive"/>
+                        <h3>Report</h3>
+                        <p style="line-height:30px;font-size:17px;">Get intelligent reports on rental and maintenance costs identifying patterns to add revenue streams.</p>
+                        <!--Intelligent reporting on rents received, maintenance costs to identify patterns to boost business and add new revenue streams.-->
+                    </div>
+                    <div class="col-md-4 competitive">
+                        <img src="/images/estateagentpage/img_08.png" class="img-responsive"/>
+                        <h3>Get Paid</h3>
+                        <!--<p style="line-height:30px;font-size:17px;">Set your own Application Fee.<br>The Applicants will pay you online</p>-->
+                        <p style="line-height:30px;font-size:17px;">Auto rent collection, friendly rental reminders 24 hours prior to rent date, failure to pay on time leads to warning notices being issued and much more.</p>
+                    </div>
+                    <div class="col-md-4 competitive">
+                        <img src="/images/estateagentpage/img_09.png" class="img-responsive"/>
+                        <h3>e-Sign Lease</h3>
+                        <p style="line-height:30px;font-size:17px;">Generate and sign lease/contracts<br>online.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!--Business Section End-->
+    <!--How It Work Section End-->
+    <section class="howitwork_section" style="min-height: 650px;">
+        <div class="container-fluid">
+            <div class="container rdc">
+                <h2>How it works</h2>
+                <div class="col-md-12 rdc">
+                    <div class="col-md-3 posting_section" style="padding-bottom:81px;">
+                        <h3>POSTING LETTING</h3>
+                        <img src="/images/estateagentpage/workimg_01.png" class="img-responsive"/>
+                        <p style="line-height:30px;font-size:17px;">Market your property through spotmycrib.com and find your ideal tenant effortlessly. Post your property photographs n details.</p>
+                        <p style="line-height:30px;font-size:17px;">Market your property through spotmycrib.com and find your ideal tenant effortlessly. Post your property photographs and particulars.</p>
+                    </div>
+                    <div class="col-md-3 posting_section" style="padding-bottom:56px;">
+                        <h3>SCREEN TENANTS</h3>
+                        <img src="/images/estateagentpage/workimg_02.png" class="img-responsive"/>
+                        <p style="line-height:30px;font-size:17px;">Our applicants apply for your property online via SpotMyCrib. View all their details, references, social profiles online and screen them. Click "choose" and select your tenant. It is as simple as that.</p>
+                    </div>
+                    <div class="col-md-3 posting_section" style="padding-bottom:81px;">
+                        <h3>SIGN DIGITAL LEASE</h3>
+                        <img src="/images/estateagentpage/workimg_03.png" class="img-responsive"/>
+                        <p style="line-height:30px;font-size:17px;">Generate and sign legally binding lease/contracts online. Automatic reminder and reporting on lease expiry dates. </p>
+                    </div>
+                    <div class="col-md-3 posting_section" style="padding-bottom:81px;">
+                        <h3>COLLECT RENTS</h3>
+                        <img src="/images/estateagentpage/workimg_04.png" class="img-responsive"/>
+                        <p style="line-height:30px;font-size:17px;">Let your tenants pay rent online. Automated rent collection and owner disbursements. Reminders and reporting on all payments.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 btn-account_area">
+                    {{#if knowMore}}
+                        <button class="btn green-btn knowMoreBtn">Know Less!</button>
+                    {{else}}
+                        <button class="btn green-btn knowMoreBtn">Know More!</button>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--How It Work Section End-->
+    {{#if knowMore}}
+    <!--Property Area Section Start-->
+    <section id="knowmorebegin" class="property_area" style="min-height: 700px;">
+        <div class="container-fluid">
+            <div class="container container-fixed rdc">
+                <h2 style="margin-bottom: 60px;">Make your life faster and easier!!</h2>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <h3>Post your property</h3>
+                        <p style="">Here is your chance to post your property in the best light possible. Describe it, is it furnished? What amenities are available? Pets allowed? Add all the desirable features of it. Post the best photographs of it. Have tenants fall in love with your property time and time again.</p>
+                        <a href="{{urlFor 'advertisewithus'}}" class="btn green-btn" >Post your letting</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/images/post.png" class="img-responsive"  style="box-shadow:none;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Property Area Section End-->
+    <!--Property Area Section Start-->
+    <section class="screentenants_area" style="min-height: 700px;">
+        <div class="container-fluid">
+            <div class="container container-fixed rdc">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <img src="/images/estateagentpage/screen-tenants.jpg" class="img-responsive"/>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <h3>Screen Tenants</h3>
+                        <p>Find your best tenant by screening them online. You get all their details, references, social profiles as they apply for your property. Their application package will also include credentials like their experian credit check, criminal check, previous rental history and all other necessary details. Screen them faster and close your deal.</p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Manage rent-->
+    <section class="property_area" style="min-height: 700px;">
+        <div class="container-fluid">
+            <div class="container container-fixed rdc">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <h3 >Manage Rent Online</h3>
+                        <p>No more paperwork. Manage your rental income online. SpotMyCrib is safe and reliable. You can also check the deposits, rent amount and deadlines here. No more hassle with cash payments or standing orders.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/images/payment.png" class="img-responsive"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Online Lease Signing-->
+    <section class="property_area" style="min-height: 700px;">
+        <div class="container-fluid">
+            <div class="container container-fixed rdc">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <img src="/images/e-sign.png" class="img-responsive" />
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <h3>Online Lease Signing</h3>
+                        <p>Simply upload your necessary details. Get your legally binding document back with minimal effort. SpotMyCrib makes your job much easier and simpler. Store your contract online and view it any time you wish.</p>
+                        <!--Generate rental agreements online and get them to e-sign. -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/if}}
+    <!--receive Section Start-->
+    <section class="receive_area">
+        <div class="container-fluid">
+            <div class="container container-fixed rdc">
+                <div class="col-md-12 rdc text-center">
+                    <h2>Receive a Special Introductory Offer</h2>
+                    {{#if f2Success}}
+                        <p style="margin-bottom: 20px;color: black;" class="text-center">Thank you for your interest.</p>
+                        <button class="btn green-btn sinterestformtryagain" type="submit">Add another</button>
+                    {{else}}
+
+                    <form role="form" class="sinterest-form">
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                            <input autocomplete="email" type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                            <input autocomplete="name" type="text" class="form-control" id="fullname" name="fullname" placeholder="Your full name">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                            <input autocomplete="organization" type="text" class="form-control" id="company" name="company" placeholder="Company">
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                            <input autocomplete="tel" type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="clearfix"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 submit">
+                            <button type="submit" class="btns green-btn">Learn More!</button>
+                        </div>
+                    </form>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--receive Section End-->
+    <section class="frequently_area">
+        <div class="container-fluid">
+            <section class="faq-content mar-btm-20">
+                <div class="container container-fixed rdc">
+                    <div class="faq-section-hold">
+                        <h2>Frequently asked questions</h2>
+                        <div class="panel-group agent-panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title ">
+                                            <span class="green-circle">1</span>
+                                            <p class="position">It is my understanding that current legislation will not allow for bidding that exceeds the permitted rent amount. </p>
+                                            <i class="glyphicon glyphicon-menu-down active-arrow"></i>
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>We have an option to disable the bidding and have done so.</li>
+                                            <li>We have contacted the RTB: Residential Tenancies Board in Ireland (in writing) and asked them if a tenant offers more rent and a landlord agrees to it - is that legal. They confirmed it is legal if both sides agree to it.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title ">
+                                            <span class="green-circle">2</span>
+                                            <p class="position">What would the knock effect be should there be arrears, can warning letters be sent? etc</p>
+                                            <i class="glyphicon glyphicon-menu-down active-arrow"></i>
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>We can send warning emails/ reminder emails and report on who are due rents, arrears.</li>                                              <li>SpotMyCrib also remembers the history of a tenants arrears, etc</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <span class="green-circle">3</span>
+
+                                            <p class="position">What responsibility is there on the agent, from a Data Protection perspective, If references are sent to a website?</p>
+                                            <i class="glyphicon glyphicon-menu-down active-arrow"></i>
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>All Data is being held and maintained by SpotMyCrib within Europe and the key system ensures the data is being shared within in the terms of the consumer's signup.</li>
+                                            <li>There is no responsibility on the agent, Users agree to terms of service, privacy when they upload their references. This actively operates within the GDPR (<a target="_blank" href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation"> Data protection Regulation</a>) framework. </li>
+                                            <li>Customers retain at all times the option to have all of their data removed, inspected or deletion if we're contacted in writing directly or indirectly by the agent on the consumer's behalf.</li>
+                                            <li>The key system ensures the agent can deal with all Data Protection issues for a renter, speedily and thoroughly within the regulations.</li>
+                                            <li>Plus we are 100% compliant with data being stored within Europe, all of our data is stored on Amazon Ireland.</li>
+                                            <li>We also use https encryption, which encrypts all the communication between user and spotmycrib.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <span class="green-circle">4</span>
+                                            <p class="position">Is there a benefit to the references being collect by Spot my crib rather than say our personal emails? </p>
+                                            <i class="glyphicon glyphicon-menu-down active-arrow"></i>
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
+                                    <div class="panel-body">
+                                        <p>There are many other advantages as given below. </p>
+                                        <ul>
+                                            <li>Centralised records, no more going through emails back and forth to gain references.</li>
+                                            <li>Time tracking applications and sequencing</li>
+                                            <li>Elimination of duplication.</li>
+                                            <li>Time-saving - as discussed on our previous meeting, let's say Neptune gets 30 viewings per house and for 100 units, its 3000 viewings - that is 3k digital applications</li>
+                                            <li>Instant social profile checks - verify users to check if they would they be a good fit for the property.</li>
+                                            <li>Digital fingerprint background Checks - of all the references</li>
+                                            <li>Instant salary affordability checks - Check if the tenants can afford the house</li>
+                                            <li>No more paper to get lose.</li>
+                                            <li>No longer tied to office - checks can be made from anywhere, any device, laptop/mobile.</li>
+                                            <li>Customised filters - to choose only the best tenants using an Agent's experience.</li>
+                                            <li>Set up invites for viewing - only invite selected applicants for the viewing.</li>
+                                            <li>The key ensures it is a particular property and eliminates confusion for the renter.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <span class="green-circle">5</span>
+                                            <p class="position">How does someone who Is looking for an Apt know to go to Spot my Crib?. They will think My Home and Daft. </p>
+                                            <i class="glyphicon glyphicon-menu-down active-arrow"></i>
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
+                                    <div class="panel-body">
+
+                                        <ul>
+                                            <li>Tenants can search for the property directly from our home page.</li>
+                                            <li>A property's link/key is shared either in the ad or with the ad in daft, myhome etc.</li>
+                                            <li>A property's link/key can also be posted on the Agent&#39;s website.</li>
+                                            <li>Agents can print the key and give a hardcopy of the key to viewers when they visit the property. </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 btn-account_area">
+                            <a href="{{urlFor 'faqs'}}" class="btn green-btn">More FAQs!</a>
+                        </div>
+                    </div>
+
+                </div><!--container-->
+
+            </section>
+        </div>
+    </section>
+
+
+
+</template>
+<template name="knowmoreformWithoutPropertyPage">
+    {{#if f1Success}}
+        <p style="margin-bottom: 20px;">Thank you for your interest.</p>
+        <button class="btn green-btn knowmoreformtryagain" type="submit">Add another</button>
+    {{else}}
+        <form class="knowmore-form">
+            <div class="input-group">
+                <input autocomplete="email" type="text" class="form-control emailaddress" name="emailaddress" placeholder="Enter your email." style="padding-left: 10px;z-index: 0;">
+                <span class="input-group-btn" style="z-index: 0;">
+                                <button class="btn green-btn" type="submit">Know More!</button>
+                </span>
+            </div>
+        </form>
+    {{/if}}
+</template>
+<template name="knowmoreform">
+    <form class="knowmore-form">
+        <div class="input-group">
+            <span class="input-group-btn" style="z-index: 0;margin: 0;">
+                <a href="{{urlFor 'advertisewithus'}}" class="btn green-btn" >Advertise your property</a>
+            </span>
+        {{#if f1Success}}
+            <p style="margin-bottom: 20px;">Thank you for your interest.</p>
+            <button class="btn green-btn knowmoreformtryagain" type="submit">Add another</button>
+        {{else}}
+            <input autocomplete="email" type="text" class="form-control emailaddress" name="emailaddress" placeholder="Enter your email." style="padding-left: 10px; z-index: 0;">
+            <span class="input-group-btn" style="z-index: 0;">
+                <button class="btn transparent-btn" type="submit">Know More!</button>
+            </span>
+        {{/if}}
+        </div>
+    </form>
+</template>

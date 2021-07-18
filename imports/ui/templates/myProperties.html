@@ -1,0 +1,981 @@
+<template name="myProperties">
+{{#if isSubsLoaded}}
+{{#if userLoggedIn}}
+    <section class="unitspage-holder">
+        <section class="logo-below-div">
+            <div class="container">
+                <div class="logo-holder-div">
+                    <div class="logo-holder">
+                        <ul>
+                            <!--<li><span class="backBtn" style="cursor: pointer;"><img src="{{cdnPath '/images/back-arrow.png'}}"></span></li>-->
+                            <li><h3>MY PROPERTIES</h3>
+                                <h4>Total : {{data.totalResultsCount}} </h4>
+                                <!--<h4 style="">Showing 3 of 14 (<a href="javascript:void(0)" style="color:#18bc9c">Edit filters</a>)</h4>-->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <!--<li class="left-border">-->
+                                <!--<h4>Filters (<a href="javascript:void(0)" style="color: #18bc9c;">Edit</a>)</h4>-->
+                                <!--<h3 class="pad-btm-0 text-center">2</h3>-->
+                            <!--</li>-->
+                            <li class="left-border">
+                                <h4 >ACTIVE PROPERTIES</h4>
+                                <h3 class="pad-btm-0 text-center">{{agentStats.activeAuctions}}</h3>
+                            </li>
+                            <li class="left-border">
+                                <h4 >APPLICATIONS RECEIVED</h4>
+                                <h3 class="pad-btm-0 text-center">{{agentStats.totalBidsReceived}}</h3>
+                            </li>
+                            <li class="left-border  text-left">
+                                <h4 >EST. PROFIT</h4>
+                                <h3 class="pad-btm-0 text-center">&euro; {{agentStats.bidProfit}}</h3>
+                            </li>
+                            <li class="addPropertyBtnLi">
+{{#if showAddProperty}}<button class="transparent-btn btns addPropertyBtn" type="button">HIDE</button>{{else}}
+                                <button class="green-btn btns addPropertyBtn" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> ADD PROPERTY</button>
+{{/if}}
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{#if showAddProperty}}
+        <section class="mar-top-20 ">
+            <div class="container background-white">
+                <div class="filter-holder mar-top-20">
+                    <div class="autoFrm">
+                        <h3>Add Property Form</h3>
+                        <p>Enter the details of the property below and click submit.<br/><br/></p>
+
+                        {{> addPropertyForm}}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{/if}}
+
+        {{#if showFilters}}
+        <!-- units property div -->
+        <section class="mar-top-20 xs-filter">
+            <div class="container">
+                <!--  <div class="head-border-bottom"><h2>Choose Your Home</h2></div> -->
+                <!-- filter section -->
+                <div class="filter-holder">
+                    <span class="visible-xs filter-close fancybox-close"></span>
+                    <div class="head-border-bottom">
+                        <ul class="new-filter">
+                            <li><div class="pad-bot-15">
+                                <h4 class="color-grey text-left"><label> Home type</label></h4>
+                                <select id="myselect" class="form-control filterUnitType">
+                                    <option value="any">Any</option>
+                                    {{#each projectData.filter.homeType}}
+                                        <option value="{{this}}">{{this}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            </li>
+                            <li>
+                                <div class="pad-bot-15">
+                                    <h4 class="color-grey text-left"><label> Facing</label></h4>
+                                    <select id="myselect2" class="form-control filterUnitFacing">
+                                        <option value="any">Any</option>
+                                        {{#each projectData.filter.facing}}
+                                            <option value="{{this}}">{{this}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-field">
+                                    <h4 class="color-grey text-uppercase text-left pad-btm-30">Floor level</h4>
+                                    <div class="range-holder">
+                                        <div class="range-value-holder clearfix">
+                                            <div class="left value pull-left">
+                                                <p class="filterS1l">{{projectData.filter.floor.[0]}}</p>
+                                            </div>
+                                            <div class="right value pull-right">
+                                                <p class="filterS1h">{{projectData.filter.floor.[1]}}</p>
+                                            </div>
+                                        </div>
+                                        <div id="range-input"></div>
+                                        <div class="input-select-new">
+                                            <select id="input-select"></select>
+                                            <span class="cross-new"><img src="{{cdnPath '/images/clear-cross-btn.png'}}" class="close-icon"></span>
+                                        </div>
+                                        <div class="input-new">
+                                            <input type="number" min="3" max="25" step="1" id="input-number"><span class="cross-new1"><img src="{{cdnPath '/images/clear-cross-btn.png'}}" class="close-icon"></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="input-field">
+                                    <h4 class="color-grey text-uppercase text-left pad-btm-30">Rent range</h4>
+                                    <div class="range-holder">
+                                        <div class="range-value-holder clearfix">
+                                            <div class="left value pull-left">
+                                                <p class="filterS2l">{{numDifferentiation projectData.filter.priceRange.[0]}}</p>
+                                            </div>
+                                            <div class="right value pull-right">
+                                                <p class="filterS2h">{{numDifferentiation projectData.filter.priceRange.[1]}}</p>
+                                            </div>
+                                        </div>
+                                        <div id="range-input1"></div>
+                                        <div class="input-select-new1">
+                                            <select id="input-select1"></select><span class="cross-new2"><img src="{{cdnPath '/images/clear-cross-btn.png'}}" class="close-icon"></span>
+                                        </div>
+                                        <div class="input-new1">
+                                            <input type="number" min="67.45" max="97.45" step="1" id="input-number1"><span class="cross-new3"><img src="{{cdnPath '/images/clear-cross-btn.png'}}" class="close-icon"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- filter section -->
+                    <!--  for clear div section -->
+                    <div class="clear-all-div clearfix hidden-xs">
+                        {{#if filters}}
+                            <ul class="for-left-side">
+                                {{#each objectToPairs filters.data}}
+                                    <li class="list1"><h5 key="{{key}}">{{key}}
+                                        {{#each value}}
+                                            <span val="{{this}}">{{this}} <a href="javascript:void(0)"><img src="{{cdnPath '/images/clear-cross-btn.png'}}"
+                                                                                                            class="clearFilterBtn"></a>&nbsp;
+                    </span>
+                                        {{/each}}
+                                    </h5></li>
+                                {{/each}}
+                            </ul>
+                            <ul class="for-right-side">
+                                {{#if filters.count}}
+                                    <li><button class="transparent-btn btns clearFilters" type="button">CLEAR ALL</button></li>
+                                {{/if}}
+                            </ul>
+                        {{else}}
+
+                        {{/if}}
+                        <!--<ul class="for-left-side">-->
+                        <!--<li class="list1"><h5><span>2 BHK <a><img src="{{cdnPath '/images/clear-cross-btn.png'}}"></a></span></h5></li>-->
+                        <!--&lt;!&ndash; <li><h5>Floor<span>2 to 15 <a><img src="{{cdnPath '/images/clear-cross-btn.png'}}"></a></span></h5></li> &ndash;&gt;-->
+                        <!--<li  class="list2"><h5><span>East<a><img src="{{cdnPath '/images/clear-cross-btn.png'}}"></a></span></h5></li>-->
+                        <!--</ul>-->
+                        <!--<ul class="for-right-side">-->
+                        <!--<li><button class="transparent-btn btns for-hide clearFilters" type="button">CLEAR ALL</button></li>-->
+                        <!--</ul>-->
+                    </div>
+                    <div class="text-center mar-top-15 mar-btm-20 visible-xs">
+                        <button class="blue-btn btns filterCloseBtn" type="button" >Close</button>
+                    </div>
+                </div>
+                <!--  for clear div section -->
+            </div>
+        </section>
+        <section class="text-center visible-xs xs-filter-btn">
+            <a id="filter-slide" class="green-btn">Filter</a>
+        </section>
+        {{else}}
+            <section class="mar-top-20 ">
+                &nbsp;
+            </section>
+        {{/if}}
+    </section>
+
+    <section class="paginationArea">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                {{> pagination data.pagination}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {{#each data.results}}
+        {{> propertyList }}
+    {{/each}}
+
+    {{#if showDemoProp}}
+        {{#each demoProperty}}
+            {{> propertyList}}
+        {{/each}}
+    {{/if}}
+
+
+    <section class="paginationArea">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {{> pagination data.pagination}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="verification-div1" id="propertyLinkDlg" style="display:none;">
+        <div class="refund-div"><h2>Share Property</h2></div>
+        <div class="profile-text text-left">
+            <p class="no-capitalize">Please use this email to use in daft.ie, rent.ie etc ads.</p>
+
+            <form class="form-inline" style="overflow: hidden;" onsubmit="return false;">
+                <div class="form-group col-sm-10" style="padding: 0;">
+                    <input type="text" class="form-control" placeholder="" name="agentPropertyEmailField" id="agentPropertyEmailField" readonly style="width: 100%;padding: 0;">
+                </div>
+                <button class="btn btn-primary col-sm-2 copyEmailBtn">Copy</button>
+            </form>
+
+            <p class="no-capitalize mar-top-15">Please use this link to share in facebook, twitter etc. </p>
+
+            <form class="form-inline" style="overflow: hidden;" onsubmit="return false;">
+                <div class="form-group col-sm-10" style="padding: 0;">
+                    <input type="text" class="form-control" placeholder="" name="propertyLinkField" id="propertyLinkField" readonly style="width: 100%;padding: 0;">
+                </div>
+                <button class="btn btn-primary col-sm-2 copyLinkBtn">Copy</button>
+            </form>
+
+            <form class="signin-form">
+
+                <div class="signup-btn">
+                    <button class="transparent-btn btns cancelBtn" type="button">CLOSE</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loginPageHorizontal}}
+    </section>
+{{/if}}
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loading}}
+    </section>
+{{/if}}
+
+
+</template>
+
+<template name="propertyList">
+    <section class="main-holder border-top" id="property_{{_id}}">
+        {{#if expanded}}{{else}}
+            <section class="border-top act-div">
+                <div class="container">
+                    <div class="act-box">
+                        <div class="background-white">
+                            <div class="logo-holder-div">
+                                <div class="logo-holder">
+                                    <ul>
+                                        <li>
+                                            <h3 class="pad-btm-0">{{titleCase address.address}}{{#if address.area}}, {{titleCase address.area}} {{/if}}{{#if address.county}}, {{titleCase address.county}} {{/if}} <span class="auction-number pad-left-10"><a href="javascript:void(0)" class="managePropertyLink" style="font-size:11px;">MANAGE</a></span></h3>
+                                            {{#if auctionId}}
+                                                <span class="auction-number"><span style="font-size:11px;color: #9d9d9d;" >LETTING CODE </span><span style="color:#000;font-size:11px">:  {{auction.lettingAuctionCode}}</span></span>
+                                                <span class="auction-number pad-left-15"><span style="font-size:11px;color: #9d9d9d;" >VIEWS </span><span style="color:#000;font-size:11px">: {{auction.views}}</span></span>
+                                                <span class="auction-number pad-left-15"><span style="font-size:11px;color: #9d9d9d;" >APPLICATIONS </span><span style="color:#000;font-size:11px">: {{auction.bids}}</span></span>
+                                                <span class="auction-number pad-left-15"><a target="_blank" href="{{pathFor route='letting' key=auction.lettingAuctionCode}}" class="viewListing" style="font-size:11px;" >VIEW ADVERT</a></span>
+<span class="auction-number pad-left-15"><a href="javascript:void(0);" class="showCopyDlg" style="font-size:11px;" ><i class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 11px;"></i> SHARE</a></span>
+                                            {{/if}}
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="menu">
+                                    <ul class="pull-right" style="list-style-type: none;">
+            {{#unless auctionId}}
+                                        <li>
+                                            {{#if showAddAuctionForm}}
+                                                <button class="btns transparent-btn hideAddAuctionForm" type="button">Cancel</button>
+                                            {{else}}
+                                                <button class="btns blue-btn color-white ActivateBtn" type="button">Advertise</button>
+                                                {{/if}}
+
+                                        </li>
+            {{/unless}}
+                                        <li class="see-more-li">
+                                            {{#if expanded}}
+                                                <p class="see_more_btn">See less<span style="margin-left:8px;"><img src="{{cdnPath '/images/accord-top-arrow.png'}}"></span></p>
+                                            {{else}}
+                                                <p class="see_more_btn">See more<span style="margin-left:8px;"><img src="{{cdnPath '/images/accord-bottom-arrow.png'}}"></span></p>
+                                            {{/if}}
+
+                                            <p class="showEditPropertyForm"><a href="{{showEditPropertyForm}}" style="color: #0c68a7">Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></p>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+
+                            <!--<div class="see-more-btn1"></div>-->
+
+
+
+
+                        </div>
+
+                        {{#if showAddAuctionForm}}
+                            <div class="apt-info apt-info1 background-white clearfix showAddAuctionForm autoFrm">
+                                {{>advertiseForm}}
+                                <br/><br/>
+                            </div>
+                        {{/if}}
+
+                        <!--act-box-->
+                        {{#unless isSubsLoaded}}
+                            <div class="apt-info apt-info1 text-center background-white clearfix property_auction_{{auctionId}}">
+                                Loading...
+                            </div>
+                        {{/unless}}
+                        {{#if auction}}
+                            <div class="apt-info apt-info1 background-white clearfix property_auction_{{auctionId}}">
+                                <ul class="superbuilt-div">
+                                    <li>
+                                        <h5>Rent</h5>
+                                        <h6>&euro; {{auction.price}}</h6>
+                                    </li>
+                                    <li>
+                                        <h5>Lease</h5>
+                                        <h6>  {{auction.lease}}</h6>
+                                    </li>
+                                    <li>
+                                        <h5>Rent Type</h5>
+                                        <h6> {{titleCase auction.rentType}}</h6>
+                                    </li>
+                                    <li>
+                                        <h5>Ready From</h5>
+                                        <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">{{dateFormat auction.readyFrom}} </h6>
+                                    </li>
+                                    <li>
+                                        <h5>Activated On</h5>
+                                        <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">{{dateFormat auction.createdAt}} </h6>
+                                    </li>
+                                </ul>
+                                <ul class="bid-button-div left-line pull-right">
+                                    <li>
+                                        <a href="{{urlFor route='lettingprintview' key=lettingprintviewData }}" target="_blank" class="transparent-btn btns printView">Print KEY</a>
+                                    </li>
+                                    <li>
+                                        <button class="green-btn btns viewApplications">View Applications</button>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        {{/if}}
+                        <!--act-box-->
+                    </div>
+                </div>
+            </section>
+        {{/if}}
+
+        {{#if expanded}}
+            <!--hide-accord-->
+            <section class="{{showMyBidsClass}}">
+                <div class="container">
+                    <div class="act-box">
+                        <div class="background-white">
+                            <div class="logo-holder-div">
+                                <div class="logo-holder">
+                                    <ul>
+                                        <li>
+                                            <h3 class="pad-btm-0">{{titleCase address.address}}{{#if address.area}}, {{titleCase address.area}} {{/if}}{{#if address.county}}, {{titleCase address.county}} {{/if}} <span class="auction-number pad-left-10"><a href="javascript:void(0)" class="managePropertyLink" style="font-size:11px;">MANAGE</a></span></h3>
+            {{#if auctionId}}
+<span class="auction-number"><span style="font-size:11px;color: #9d9d9d;" >AUCTION CODE </span><span style="color:#000;font-size:11px">:  {{auction.lettingAuctionCode}}</span></span>
+<span class="auction-number pad-left-15"><span style="font-size:11px;color: #9d9d9d;" >VIEWS </span><span style="color:#000;font-size:11px">: {{auction.views}}</span></span>
+<span class="auction-number pad-left-15"><span style="font-size:11px;color: #9d9d9d;" >APPLICATIONS </span><span style="color:#000;font-size:11px">: {{auction.bids}}</span></span>
+<span class="auction-number pad-left-15"><a target="_blank" href="{{pathFor route='letting' key=auction.lettingAuctionCode}}" class="viewListing" style="font-size:11px;" >VIEW ADVERT</a></span>
+<span class="auction-number pad-left-15"><a href="javascript:void(0);" class="showCopyDlg" style="font-size:11px;" ><i class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 11px;"></i> SHARE</a></span>
+<!--<span class="auction-number pad-left-15"><a href="javascript:void(0);" class="viewApplications">(view)</a></span>-->
+            {{/if}}
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        {{#if auctionId}}
+                            <div class="apt-info apt-info1 background-white clearfix">
+                                <ul class="superbuilt-div">
+                                    <li>
+                                        <h5>Rent</h5>
+                                        <h6>&euro; {{auction.price}}</h6>
+                                    </li>
+                                    <li>
+                                        <h5>Lease</h5>
+                                        <h6>  {{auction.lease}}</h6>
+                                    </li>
+                                    <li>
+                                        <h5>Rent Type</h5>
+                                        <h6> {{titleCase auction.rentType}}</h6>
+                                    </li>
+                                    <li>
+                                        <h5>Ready From</h5>
+                                        <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">{{dateFormat auction.readyFrom}} </h6>
+                                    </li>
+                                    <li>
+                                        <h5>Activated On</h5>
+                                        <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">{{dateFormat auction.createdAt}} </h6>
+                                    </li>
+                                </ul>
+                                <ul class="bid-button-div left-line pull-right">
+                                    <li>
+                                        <a href="{{urlFor route='lettingprintview' data=lettingprintviewData }}" target="_blank" class="transparent-btn btns printView">Print Tokens</a>
+                                    </li>
+                                    <li>
+                                        <button class="green-btn btns viewApplications">View Applications</button>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        {{/if}}
+                        <div class="apt-info background-white">
+                            <div class="box-bdr">
+                                <div class=" box-inner">
+                                    <div class="clearfix accord-open-border background-halfwhite">
+                                        <div class="col-md-2 col-xs-6 col-sm-6">
+                                            <h5>Type</h5>
+                                            <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">{{type}}</h6>
+                                        </div>
+                                        <div class="col-md-2 col-xs-6 col-sm-6">
+                                            <h5>Beds</h5>
+                                            <h6>  {{bedroomsCount}} </h6>
+                                        </div>
+                                        <div class="col-md-2 col-xs-6 col-sm-6">
+                                            <h5>Baths</h5>
+                                            <h6>  {{baths}} </h6>
+                                        </div>
+                                        <div class="col-md-2 col-xs-6 col-sm-6">
+                                            <h5>Furnished</h5>
+                                            <h6>  {{#if furnished}}Yes{{else}}No{{/if}}</h6>
+                                        </div>
+                                        <div class="col-md-2 col-xs-6 col-sm-6">
+                                            <h5>Added On</h5>
+                                            <h6> {{dateFormat createdAt}} </h6>
+                                        </div>
+                                        <div class="col-md-2 col-xs-6 col-sm-6">
+                                            <h5>Edited On</h5>
+                                            <h6> {{dateFormat updatedAt}} </h6>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix accord-open-border background-halfwhite">
+                                        <div class="col-md-2 col-xs-2 col-sm-2">
+                                            <h5>Images</h5>
+                                            <h6>
+                                                {{#if gallery}}
+                                                    {{gallery.length}}
+                                                {{else}}
+                                                    0
+                                                {{/if}}
+                                            </h6>
+                                        </div>
+                                        <div class="col-md-3 col-xs-6 col-sm-3">
+                                            <h5>Bedrooms</h5>
+                                            <h6>
+                                                {{#if bedrooms}}
+                                                    {{#each objectToPairs bedrooms}}{{#if key}}, {{/if}}{{value.bedType}} {{#if value.ensuite}}(Ensuite){{/if}}{{/each}}
+                                                {{else}}
+                                                    N/A
+                                                {{/if}}
+                                            </h6>
+                                        </div>
+                                        <div class="col-md-3 col-xs-6 col-sm-3 ">
+                                            <h5>Amenities</h5>
+                                            <h6>
+                                                {{#if amenities}}
+                                                {{addCommaToEach amenities}}
+                                                {{else}}
+                                                    N/A
+                                                {{/if}}
+                                            </h6>
+                                        </div>
+                                        <!--<div class="col-md-3 col-xs-6 col-sm-3">-->
+                                            <!--<h5></h5>-->
+                                            <!--<h6>-->
+                                                <!--<a href="http://www.google.com/maps/place/{{address.geoCodeLat}},{{address.geoCodeLong}}" target="_blank">-->
+                                                    <!--<span style="margin-right:8px;vertical-align:middle;" class="glyphicon glyphicon-map-marker" ></span><span style="vertical-align:middle;" class="color-blue">Location</span>-->
+                                                <!--</a>-->
+                                            <!--</h6>-->
+                                        <!--</div>-->
+                                        <div class="col-md-3 col-xs-6 col-sm-3">
+                                            <h5>BER</h5>
+                                            <h6>
+                                                {{#if BER}}
+                                                    {{addCommaToEach BER}}
+                                                {{else}}
+                                                    N/A
+                                                {{/if}}
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    {{#if contacts}}
+                                    <div class="clearfix accord-open-border background-halfwhite">
+                                        {{#each contacts}}
+                                        <div class="col-md-3 col-xs-6 col-sm-3 ">
+                                            <h5>Contact details of the property owner</h5>
+                                            <h6>
+                                                {{name}}
+                                                {{#if phone}} ({{phone}})<br/>{{/if}}
+                                                {{#if email}}{{email}}{{/if}}
+                                            </h6>
+                                        </div>
+                                        {{/each}}
+
+                                    </div>
+                                    {{/if}}
+                                    {{#if auctionId}}
+                                    <div class="clearfix accord-open-border background-halfwhite">
+                                        {{#each auction.contacts}}
+                                        <div class="col-md-3 col-xs-6 col-sm-3 ">
+                                            <h5>Contact persons for this advert</h5>
+                                            <h6>
+                                                {{name}}
+                                                {{#if phone}} ({{phone}})<br/>{{/if}}
+                                                {{#if email}}{{email}}{{/if}}
+                                            </h6>
+                                        </div>
+                                        {{/each}}
+
+                                    </div>
+                                    {{/if}}
+                                </div>
+                                <div class="clearfix accord-open-border accord-top-border background-halfwhite">
+                                    <p class="accor-padd">{{{nlToBr about}}}</p>
+                                </div>
+
+                            </div>
+                            <div class="see-more-btn1 see_more_btn">
+                                <p>See less<span style="margin-left:8px;"><img src="{{cdnPath '/images/accord-top-arrow.png'}}"></span></p>
+                                <p class="showEditPropertyForm"><a href="{{showEditPropertyForm}}" style="color: #0c68a7">Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></p>
+                            </div>
+                        </div><!--act-box-->
+                    </div>
+                </div>
+            </section>
+
+        {{/if}}
+    </section>
+</template>
+
+
+<template name="advertiseForm">
+    <h3>Advertise Form</h3>
+    <p style="text-align: left;margin-bottom: 20px;">Enter the rent details of the property below and click submit.<br/><br/></p>
+
+    <form class="signin-form cf-1" id="advertiseFormCF">
+
+        <input type="hidden" name="currency" value="eur" />
+        <input type="hidden" name="propertyId" value="{{_id}}" />
+        <div class="clearfix">
+            <div class="styled-input ">
+                <input type="text" name="price" id="rent" required/>
+                <label id="rent" class="error" for="rent">This field is required.</label>
+                <br>
+                <label>Rent *</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input ">
+                <input type="text" name="readyFrom" id="readyFrom"/>
+                <label class="" for="rent"></label>
+                <br>
+                <label>Ready to move in from?</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Lease until?</label>
+                <select name="lease" autocomplete="" >
+
+
+
+                        <option value="">(Select One)</option>
+
+
+
+                        <option value="1 month">1 month</option>
+
+
+
+                        <option value="2 months">2 months</option>
+
+
+
+                        <option value="3 months">3 months</option>
+
+
+
+                        <option value="4 months">4 months</option>
+
+
+
+                        <option value="5  months">5  months</option>
+
+
+
+                        <option value="6 months">6 months</option>
+
+
+
+                        <option value="7 months">7 months</option>
+
+
+
+                        <option value="8 months">8 months</option>
+
+
+
+                        <option value="9 months">9 months</option>
+
+
+
+                        <option value="10 months">10 months</option>
+
+
+
+                        <option value="11 months">11 months</option>
+
+
+
+                        <option value="1 year">1 year</option>
+
+
+
+                        <option value="More than a year">More than a year</option>
+
+
+
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Rent type</label>
+                <select name="rentType" autocomplete="" >
+                    <option value="">(Select One)</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="other">Other</option>
+                </select>
+                <span></span>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="sep-section">
+                <label class="sep-label">Contact person for this advertisement</label>
+                <div class="styled-input underline">
+                    <input type="text" name="contacts.0.name" />
+                    <label>Name</label>
+                    <span></span>
+                </div>
+                <div class="styled-input underline">
+                    <input type="text" name="contacts.0.phone"  />
+                    <label>Mobile</label>
+                    <span></span>
+                </div>
+                <div class="styled-input underline">
+                    <input type="email" name="contacts.0.email" />
+                    <label>Email</label>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="w-100"></div>
+
+
+            <div class="styled-full-width">
+                {{#if advertiseFormSaving}}
+                    <button type="button" class="btns transparent-btn">Saving</button>
+                {{else}}
+                    <button type="submit" class="btns blue-btn">Save</button>
+                {{/if}}
+                <button type="button" class="btns transparent-btn advertiseFormCancelBtn">Cancel</button>
+            </div>
+
+            <div class="w-100"></div>
+        </div>
+    </form>
+</template>
+<template name="addPropertyForm">
+    <form class="signin-form cf-1" id="addPropertyFormCF">
+        <div class="clearfix">
+{{#if isSA}}
+            <div class="styled-full-width">
+                <label class="cf-title">Importer</label><br/>
+                <input type="text" name="url" class="styled-input-textarea url text-left" style="text-align:left;" placeholder="Enter any url"/>
+            </div>
+
+           <input type="hidden" name="isImported" value="true"/>
+{{/if}}
+            <div class="w-100"></div>
+
+            <div class="styled-input ">
+                <input type="text" name="address.address" id="address.address" required/>
+                <label id="address.address-error" class="error" for="address.address">This field is required.</label>
+                <br>
+                <label>Name and Street *</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input ">
+                <input type="text" name="price"/>
+                <!--<label id="address.address-error" class="error" for="address.address">This field is required.</label>-->
+                <br>
+                <label>Rent *</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Country</label>
+                <select name="address.country" required="" autocomplete="" class="">
+                    {{#each countries}}
+                        <option value="{{value}} {{selected}}">{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+            <div class="styled-input styled-input-select">
+                <label>County</label>
+                <select name="address.county" required="" autocomplete="" class="countySelected">
+                    <option value="">(Select One)</option>
+                    {{#each counties}}
+                        <option value="{{value}}">{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Area *</label>
+                <select name="address.area" required="" autocomplete="" class="">
+                    <option value="">(Select One)</option>
+                    {{#each areas}}
+                        <option value="{{value}}">{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Property type *</label>
+                <select name="type" required="" autocomplete="" >
+                    <option value="">(Select One)</option>
+                    {{#each propertyTypes}}
+                        <option value="{{value}}" >{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+
+            <div class="styled-input styled-input-select">
+                <label>Furnished? *</label>
+                <select name="furnished" required="" autocomplete="" >
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input underline">
+                <input type="number" name="baths" id="baths" required/>
+                <label>Number of bathrooms</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input underline">
+                <input type="number" name="numBedRoomCount" id="numBedRoomCount" required/>
+                <label>Number of bedrooms</label>
+                <span></span>
+            </div>
+
+            {{#if numBedRoomCount}}
+            <div class="styled-full-width">
+                <label class="sep-label">Ensuite? </label>
+
+                {{#each ensuiteLoop numBedRoomCount}}
+                <div class="styled-input-select styled-input-checkbox max-20">
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="bedrooms.{{@index}}.ensuite" >Bedroom {{i}} Ensuite?</label>
+                    </div>
+                    <label>Bed Type</label>
+                    <select required="" autocomplete="" name="bedrooms.{{@index}}.bedType">
+                        <option value="single">Single</option>
+                        <option value="double">Double</option>
+                        <option value="twin">Twin</option>
+                    </select>
+                    <span></span>
+                </div>
+            {{/each}}
+
+            </div><div class="w-100"></div>
+            {{/if}}
+
+            <div class="styled-full-width">
+                <label class="cf-title">About</label><br/>
+                <textarea name="about" class="styled-input-textarea autoGrowTA" placeholder="Enter any additional info about this letting."></textarea>
+
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="styled-full-width styled-input-checkbox">
+                <label class="cf-title">Amenities</label><br/>
+                <div class="cb-subsec">
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Parking">Parking</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Club House">Club House</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Swimming Pool">Swimming Pool</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Mini Theater">Mini Theater</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Gym">Gym</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Meditation Hall">Meditation Hall</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Cable Television">Cable Television</label>
+                    </div>
+                </div>
+                <div class="cb-subsec">
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Dishwasher">Dishwasher</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Garden / Patio / Balcony">Garden / Patio / Balcony</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Internet">Internet</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Serviced Property">Serviced Property</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Washing Machine">Washing Machine</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Central Heating">Central Heating</label>
+                    </div>
+                </div>
+                <div class="cb-subsec">
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Dryer">Dryer</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="House Alarm">House Alarm</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Microwave">Microwave</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Pets Allowed">Pets Allowed</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="amenities" value="Smoking ">Smoking</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="amenities" value="Wheelchair Access">Wheelchair Access</label>
+                    </div>
+                </div>
+                <span></span>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="sep-section">
+                <label class="sep-label">Contact details of the property owner if any</label>
+                <div class="styled-input underline">
+                    <input type="text" name="contacts.0.name" />
+                    <label>Owners Name <i title="This info will not be displayed to users. It confidential and will be used only for record purpose.">(Private)</i></label>
+                    <span></span>
+                </div>
+                <div class="styled-input underline">
+                    <input type="text" name="contacts.0.phone"  />
+                    <label>Owners Mobile <i title="This info will not be displayed to users. It confidential and will be used only for record purpose.">(Private)</i></label>
+                    <span></span>
+                </div>
+                <div class="styled-input underline">
+                    <input type="email" name="contacts.0.email" />
+                    <label>Owners Email <i title="This info will not be displayed to users. It confidential and will be used only for record purpose.">(Private)</i></label>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="w-100"></div>
+
+
+            <div class="styled-full-width">
+                <button class="btns blue-btn openFileUploader">Add Images</button>
+                <!--<label for="selectPropertyImages">Property images</label>-->
+                <!--<input type="file" multiple="true" class="selectPropertyImages"  id="selectPropertyImages"/>-->
+                <!--<p class="help-block">Example block-level help text here.</p>-->
+            </div>
+
+            <div class="w-100"></div>
+
+
+            {{>imageView}}
+
+            <div class="styled-full-width">
+                {{#if addPropertyFormSaving}}
+                    <button type="button" class="btns transparent-btn">Saving</button>
+                {{else}}
+                    <button type="submit" class="btns blue-btn addPropertyFormSaveBtn">Save</button>
+                {{/if}}
+                <button type="button" class="btns blue-btn addPropertyFormSaveAdvertiseBtn">Save and Advertise</button>
+                <button type="button" class="btns transparent-btn addPropertyFormCancelBtn">Cancel</button>
+            </div>
+
+            <div class="w-100"></div>
+        </div>
+    </form>
+</template>
+<template name="addPropertyForm1">
+    {{#autoForm collection="Collections.Properties" id="insertPropertiesForm" type="insert"}}
+        {{#each afFieldNames}}
+            {{> afQuickField name=this.name options=afOptionsFromSchema}}
+        {{/each}}
+
+        <div class="form-group">
+            <label for="selectPropertyImages">Property images</label>
+            <input type="file" multiple="true" class="selectPropertyImages"  id="selectPropertyImages"/>
+            <!--<p class="help-block">Example block-level help text here.</p>-->
+        </div>
+
+        {{>imageView}}
+
+
+        <button type="submit" class="btns blue-btn addPropertyFormSaveBtn">Save</button>
+        <button type="button" class="btns transparent-btn addPropertyFormCancelBtn">Cancel</button>
+
+    {{/autoForm}}
+
+
+
+
+</template>
+

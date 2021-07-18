@@ -1,0 +1,461 @@
+<template name="profile">
+{{#if isSubsLoaded}}
+
+{{#if userLoggedIn}}
+
+    {{#if currentUser}}
+        {{> userProfile}}
+    {{else}}
+
+    {{/if}}
+
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loginPageHorizontal}}
+    </section>
+{{/if}}
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loading}}
+    </section>
+{{/if}}
+</template>
+<template name="accountProfileExtended">
+    {{#if currentUser}}
+        {{> userProfile}}
+    {{else}}
+
+    {{/if}}
+</template>
+<template name="userProfile">
+    <div class="profile-page">
+        <section class="logo-below-div">
+            <div class="container">
+                <div class="logo-holder-div">
+                    <div class="logo-holder">
+                        <ul>
+                            {{#if backBtnNeeded}}<li><span class="backBtn" style="cursor: pointer;"><img src="{{cdnPath '/images/back-arrow.png'}}"></span></li>{{/if}}
+                            <li>
+                                <h2>
+                                    {{#if displayName}}{{displayName}}&#39;s Profile
+                                            {{else}}My Profile
+                                    {{/if}}
+                                </h2>
+                            </li>
+                        </ul>
+                    </div>
+                    {{#if backBtnNeeded}}
+                        <div class="menu">
+                            <ul>
+                                <li class="text-center">
+                                    <button class="blue-btn btns backBtn" type="button" style="margin-bottom: 5px;">
+                                        Back to Property
+                                    </button>
+
+                                </li>
+                            </ul>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        </section>
+
+        <section class="myprofile-info mar-top-20 mar-btm-30 pad-btm-20">
+            <div class="container">
+                <div class="text-center">
+                    <!--<h2 class="text-center">{{displayName}}</h2>-->
+                    <p class="text-center">Wouldn't it be great if landlords find you? Make your profile public now to find house faster. Its safe and quick. </p>
+                    <h3 class="text-center {{#if data.userData.profile.isPublic}}green-text{{else}}text-warning{{/if}}"><select class="togglePublicProfileSetting"><option value="yes" {{isPublicProfileSelectYes}}>Yes</option><option value="no" {{isPublicProfileSelectNo}}>No</option></select>
+                        {{#if data.userData.profile.isPublic}}Landlords can find and invite me for house viewings.
+                        {{else}}Landlords can't find me.{{/if}}
+                    </h3>
+{{#if data.userData.profile.isPublic}}
+                    {{#if data.userData.profile.username}}
+                        <form class="profileurl-form" >
+                            <div class="input-group">
+                                <input type="text" value="https://www.spotmycrib.ie/tenant/{{data.userData.profile.username}}" class="form-control profileLinkField" name="profileLinkField" id="profileLinkField" style="">
+                                <span class="input-group-btn">
+                                <button class="btns transparent-btn profileLinkCopyBtn" type="button" >Copy</button>
+                            </span>
+                            </div>
+                        </form>
+                    {{/if}}
+{{/if}}
+                </div>
+                <div class="background-white mar-top-20 pad-btm-30">
+                    <div class="padding30">
+
+                    </div>
+                    <div class="grey-box ">
+                        <div class="text-center"><h3>Profile completion</h3>
+                            <div class="progress" style="height: 21px;margin: 0 auto;margin-bottom: 10px;">
+                                <div class="progress-bar {{progress.css}}" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{progress.percent}};height: 21px;line-height: 21px;">
+                                    {{progress.percent}}
+                                </div>
+                            </div>
+
+                            <p> Complete profiles are given preference. </p>
+
+                            {{#each progress.issues}}
+                                <p>{{this}}</p>
+                            {{/each}}
+
+                        </div>
+
+                        <form action="">
+                            <div class="inp-wrap mar-btm-20">
+                                <label>
+                                    Email
+                                </label>
+                                <div class="inp-hold">
+                                    <input type="email" value="{{data.userEmail}}" class="form-control"/>
+                                    <span class="overlay-text" placeholder="abc@gmail.com">{{data.userEmail}}</span>
+                                    <!--<span class="color-green green-bdr-btm change-clk change-click change-text">Change</span>-->
+                                    <!--<button class="color-green green-bdr-btm change-clk save-btn transition" type="button">Save</button>-->
+                                    <!--<div class="cancel-div transition"><button class="color-green green-bdr-btm cancel-clk" type="button">Cancel</button></div>-->
+                                </div>
+                            </div>
+                                <!--{{#if data.userEmailVerified}}{{else}}-->
+                            <!--<div class="inp-wrap mar-btm-20">-->
+                            <!--<div class="request-hold hideen-div">-->
+                            <!--<h5>Email not verified?</h5>-->
+                            <!--<span class="color-blue blue-bdr-btm request-clk sendEmailVerification">Send verification link</span>-->
+                            <!--<span class="sent-req color-grey transition"><span class="fa-check fa color-green pad-right-10"></span>Request Sent</span>-->
+
+                            <!--</div>-->
+                            <!--</div>-->
+                                <!--{{/if}}-->
+                            <div class="inp-wrap mar-btm-20">
+                                <label>
+                                    Mobile
+                                </label>
+                                <div class="alert alert-success mobileValidationErrors" style="">
+
+                                </div>
+                                <div class="inp-hold">
+                                    <input type="text" placeholder="{{data.userData.profile.mobile}}" value="{{data.userData.profile.mobile}}" class="form-control db-data changeMobileValue"/>
+                                    <span class="overlay-text">{{data.userData.profile.mobile}}</span>
+                                    <span class="color-blue blue-bdr-btm change-clk change-click change-text">Change</span>
+                                    <button class="color-blue blue-bdr-btm change-clk save-btn transition changeMobileConfirmation"
+                                            type="button">Save</button>
+                                    <div class="cancel-div transition"><button class="color-blue blue-bdr-btm cancel-clk" type="button">Cancel</button></div>
+                                </div>
+                            </div>
+                            {{#if hasPasswordSetReqCompleted}}
+                            {{#if hasPasswordSet}}
+                                <div class="inp-wrap request-hold mar-btm-20 change-pwd-link">
+                                    <h5>Change password?</h5>
+                                    <button class="changepass1 changePwdBtn" type="button">Change Password</button>
+                                </div>
+                            {{else}}
+                                <div class="inp-wrap request-hold mar-btm-20 change-pwd-link">
+                                    <h5>Set password</h5>
+                                    <button class="changepass1 setPwdBtn" type="button">Set Password</button>
+                                </div>
+                            {{/if}}
+                            {{/if}}
+                            <div class="inp-wrap request-hold mar-btm-20 change-pwd-link">
+                                <h5>{{#if currentUser.services.facebook}}<span class="green-text">Connected to Facebook</span>{{else}}Link with Facebook{{/if}}</h5>
+                                {{#unless currentUser.services.facebook}}<button class="changepass1 linkWithFacebookBtn" type="button">Link with Facebook</button>{{/unless}}
+                            </div>
+                            <div class="inp-wrap request-hold mar-btm-20 change-pwd-link">
+                                <h5>{{#if currentUser.services.twitter}}<span class="green-text">Connected to Twitter</span>{{else}}Link with Twitter{{/if}}</h5>
+                                {{#unless currentUser.services.twitter}}<button class="changepass1 linkWithTwitterBtn" type="button">Link with Twitter</button>{{/unless}}
+                            </div>
+                            <div class="inp-wrap request-hold mar-btm-20 change-pwd-link">
+                                <h5>{{#if currentUser.services.linkedin}}<span class="green-text">Connected to LinkedIn</span>{{else}}Link with LinkedIn{{/if}}</h5>
+                                {{#unless currentUser.services.linkedin}}<button class="changepass1 linkWithLinkedInBtn" type="button">Link with LinkedIn</button>{{/unless}}
+                            </div>
+                            <div class="inp-wrap request-hold mar-btm-20 change-pwd-link">
+                                <h5>{{#if currentUser.services.google}}<span class="green-text">Connected to Google</span>{{else}}Link with Google{{/if}}</h5>
+                                {{#unless currentUser.services.google}}<button class="changepass1 linkWithGoogleBtn" type="button">Link with Google</button>{{/unless}}
+                            </div>
+                            <div class="inp-wrap mar-btm-20">
+                                <label>
+                                    Employer name
+                                </label>
+                                <div class="inp-hold">
+                                    <input type="text" placeholder="{{data.userData.profile.references.employerName}}" value="{{data.userData.profile.references.employerName}}" class="form-control db-data changeEmployerNameValue"/>
+                                    {{#if data.userData.profile.references.employerName}}
+                                        <span class="overlay-text" placeholder="">{{data.userData.profile.references.employerName}}</span>
+                                    {{else}}
+                                        <span class="overlay-text" placeholder=""> ? </span>
+                                    {{/if}}
+                                    <span class="color-blue blue-bdr-btm change-clk change-click change-text">Update</span>
+                                    <button class="color-blue blue-bdr-btm change-clk save-btn transition changeEmployerNameConfirmation" type="button">Save</button>
+                                    <div class="cancel-div transition"><button class="color-blue green-bdr-btm cancel-clk" type="button">Cancel</button></div>
+                                </div>
+                            </div>
+                            <div class="inp-wrap mar-btm-20">
+                                <label title="This information will not be shared with anyone, it will only be used to calculate your profile completion score. ">
+                                    Monthly take home salary (private) <a href="javascript:void(0);" class="privacyTermsMore_btn">{{#if privacyTermsMore}}less{{else}}more{{/if}}</a>
+                                    {{#if privacyTermsMore}}
+                                        <br/><span>This information will not be shared with anyone, it will only be used to calculate your profile completion score. <a href="{{pathFor 'privacy'}}">Privacy</a></span>{{/if}}
+                                </label>
+                                <div class="inp-hold">
+                                    <input type="text" placeholder="{{data.userData.profile.references.employerTakeHome}}" value="{{data.userData.profile.references.employerTakeHome}}" class="form-control db-data changeEmployerTakeHomeValue"/>
+                                    {{#if data.userData.profile.references.employerTakeHome}}
+                                        <span class="overlay-text" placeholder="">{{data.userData.profile.references.employerTakeHome}}</span>
+                                    {{else}}
+                                        <span class="overlay-text" placeholder=""> ? </span>
+                                    {{/if}}
+                                    <span class="color-blue blue-bdr-btm change-clk change-click change-text">Update</span>
+                                    <button class="color-blue blue-bdr-btm change-clk save-btn transition changeEmployerTakeHomeConfirmation" type="button">Save</button>
+                                    <div class="cancel-div transition"><button class="color-blue green-bdr-btm cancel-clk" type="button">Cancel</button></div>
+                                </div>
+                            </div>
+
+                            {{> fileUploadArea title="Passport" hasIt=data.userData.profile.references.hasPassport link=data.userData.profile.references.passport.url}}
+                            {{> fileUploadArea title="Work Reference" hasIt=data.userData.profile.references.hasWorkRef link=data.userData.profile.references.workRef.url}}
+                            {{> fileUploadArea title="Landlord Reference" hasIt=data.userData.profile.references.hasLandlordRef link=data.userData.profile.references.landlordRef.url}}
+                            {{> fileUploadArea title="PPS" hasIt=data.userData.profile.references.hasPPS link=data.userData.profile.references.PPS.url}}
+                            {{> fileUploadArea title="Financial Reference" hasIt=data.userData.profile.references.hasFinancialRef link=data.userData.profile.references.financialRef.url}}
+                            {{> fileUploadArea title="Government ID" hasIt=data.userData.profile.references.hasGovtID link=data.userData.profile.references.govtID.url}}
+                            {{> fileUploadArea title="Resume" hasIt=data.userData.profile.references.hasResume link=data.userData.profile.references.resume.url}}
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- change password  -->
+    <div id="changepass-dlg" class="changepass-div" style="display:none;">
+        <div class="refund-div"><h2>Change Password</h2></div>
+        <div class="profile-text">
+            {{>loginFormChangePassword}}
+        </div>
+    </div>
+    <!-- </div> -->
+
+    <div id="setpass-dlg" class="changepass-div" style="display:none;">
+        <div class="refund-div"><h2>Set Password</h2></div>
+        <div class="profile-text">
+            {{>loginFormSetPassword}}
+        </div>
+    </div>
+
+    {{showHideFileDlg}}
+    <div id="fileupload-dlg" class="fileupload-dlg" style="display:none;">
+        {{#if showFileTemplate}}
+            {{>fileUploadDlgTemplate}}
+        {{/if}}
+    </div>
+
+</template>
+<template name="loginFormSetPassword">
+    <form>
+
+        <div class="styled-input {{hasError messages.errors.password1}}">
+            <input type="password" name="name"  required for="currentPassword_{{uniqueId}}"  value="{{password1}}" class="newpwd login-input--password1 show-pwd"/><br>
+            <label for="currentPassword_{{uniqueId}}" >ENTER NEW PASSWORD</label><label class="eyebtn"><img src="/images/pass-eye.png"></label>
+            <span></span>
+            {{#if hasError messages.errors.password1}}
+                <span class="help-block" style="position: relative;background: none !important;min-height:30px;">
+                    {{#each messages.errors.password1}}
+                        <p>{{reason}}</p>
+                    {{/each}}
+                </span>
+            {{/if}}
+        </div>
+
+
+        <div class="styled-input {{hasError messages.errors.password2 }}">
+            <input type="password" name="email" required for="password_{{uniqueId}}" class="newpwdconfirm login-input--password2" value="{{password2}}"/>
+            <label for="password_{{uniqueId}}" >CONFIRM NEW PASSWORD</label>
+            <span></span>
+            {{#if hasError messages.errors.password2}}
+                <span class="help-block" style="position: relative;background: none !important;min-height:30px;">
+                    {{#each messages.errors.password2}}
+                        <p>{{reason}}</p>
+                    {{/each}}
+                </span>
+            {{/if}}
+        </div>
+
+        <!--<div class="styled-input">-->
+        <!--<input type="password" name="phone" id="phone" onKeyPress="return isNumberKey(event);" required/>-->
+        <!--<label>CONFIRM NEW PASSWORD</label>-->
+        <!--<span></span> </div>-->
+
+        <!--<p class="color-text">Passwords do not match!!</p>-->
+        {{> loginFormMessages messages=messages}}
+        <ul>
+            <li><button class="transparent-btn btns noBtn" type="button" data-event-category="accounts" data-event-action="change-password-cancel">CANCEL</button></li>
+            <li>
+                {{#if isLoading}}
+                    <button class="transparent-btn btns" >Loading...</button>
+                {{else}}
+                    <button class="blue-btn btns" type="Submit" data-event-category="accounts" data-event-action="change-password">APPLY</button>
+                {{/if}}
+            </li>
+        </ul>
+
+    </form>
+</template>
+<template name="loginFormChangePassword">
+    <form>
+
+        <div class="styled-input {{hasError messages.errors.oldPassword}}">
+            <input type="password" name="name"  required for="currentPassword_{{uniqueId}}"  value="{{oldPassword}}" class="oldpwd login-input--oldPassword show-pwd"/><br>
+            <label for="currentPassword_{{uniqueId}}" >ENTER CURRENT PASSWORD</label><label class="eyebtn"><img src="/images/pass-eye.png"></label>
+            <span></span>
+            {{#if hasError messages.errors.oldPassword}}
+                <span class="help-block" style="position: relative;background: none !important;min-height:30px;">
+                    {{#each messages.errors.oldPassword}}
+                        <p>{{reason}}</p>
+                    {{/each}}
+                </span>
+            {{/if}}
+        </div>
+
+
+        <div class="styled-input {{hasError messages.errors.password }}">
+            <input type="password" name="email"  required for="password_{{uniqueId}}" class="newpwd login-input--password" value="{{password}}"/>
+            <label for="password_{{uniqueId}}" >ENTER NEW PASSWORD</label>
+            <span></span>
+            {{#if hasError messages.errors.password}}
+                <span class="help-block" style="position: relative;background: none !important;min-height:30px;">
+                    {{#each messages.errors.password}}
+                        <p>{{reason}}</p>
+                    {{/each}}
+                </span>
+            {{/if}}
+        </div>
+
+        <!--<div class="styled-input">-->
+        <!--<input type="password" name="phone" id="phone" onKeyPress="return isNumberKey(event);" required/>-->
+        <!--<label>CONFIRM NEW PASSWORD</label>-->
+        <!--<span></span> </div>-->
+
+        <!--<p class="color-text">Passwords do not match!!</p>-->
+        {{> loginFormMessages messages=messages}}
+        <ul>
+            <li><button class="transparent-btn btns noBtn" type="button" data-event-category="accounts" data-event-action="change-password-cancel">CANCEL</button></li>
+            <li>
+                {{#if isLoading}}
+                    <button class="transparent-btn btns" >Loading...</button>
+                {{else}}
+                    <button class="blue-btn btns" type="Submit" data-event-category="accounts" data-event-action="change-password">APPLY</button>
+                {{/if}}
+
+            </li>
+        </ul>
+
+    </form>
+</template>
+<template name="fileUploadArea">
+    <div class="inp-wrap request-hold mar-btm-20 change-pwd-link profileFileUploadArea">
+        <span class="col-md-4  col-xs-12" style="padding-left: 0;"><h5>{{title}}</h5></span>
+        <span class="col-md-4  col-xs-6">
+            {{#if hasIt}}
+                <a href="{{link}}" target="_blank">View</a>
+            {{else}}
+                {{#if uploading}}
+                    <p class="" >Uploading...</p>
+                {{else}}
+                    <p class="" >Please upload your {{title}}</p>
+                {{/if}}
+            {{/if}}
+        </span>
+        <span class="col-md-3 col-xs-6">
+        <!--<label >-->
+            <!--<span class="btns {{#if hasIt}} transparent-btn {{else}}{{/if}} blue-btn">{{#if hasIt}}Update{{else}}Upload{{/if}}</span>-->
+            <!--<input type="file" cate="{{title}}" class="uploadBtn" accept="{{validFileExtensions}}">-->
+        <!--</label>-->
+            <a class="showUploadDlg btns {{#if hasIt}} transparent-btn {{else}}{{/if}} blue-btn">{{#if hasIt}}Update{{else}}Upload{{/if}}</a>
+        </span>
+    </div>
+</template>
+<template name="fileUploadDlgTemplate">
+    <div class="refund-div"><h2>{{dlgTitle}}</h2></div>
+    <div class="profile-text">
+
+        <div class="step1">
+            <div class="hidden-xs">
+                <div class="blue-btn btns showCamera" style="display: inline;">Take a picture from Camera</div>
+                <label style="display: inline;">
+                    <div style="margin-top: 10px;" class="btns {{#if hasIt}} transparent-btn {{else}} blue-btn {{/if}} " >{{#if hasIt}}Update{{else}}Upload{{/if}} from photos / files</div>
+                <input type="file" cate="{{title}}" class="uploadBtn" accept="{{validFileExtensions}}">
+                </label>
+            </div>
+
+            <div class="visible-xs">
+                <div class="blue-btn btns showCamera">Take a picture from Camera</div>
+                <label class="mar-top-5">
+                    <div style="margin-top: 10px;" class="btns {{#if hasIt}} transparent-btn {{else}} blue-btn {{/if}} " >{{#if hasIt}}Update{{else}}Upload{{/if}} from photos / files</div>
+                <input type="file" cate="{{title}}" class="uploadBtn" accept="{{validFileExtensions}}">
+                </label>
+            </div>
+
+            {{#if uploading}}
+                <div class="radio-bg register uploadingMessageArea">
+                    <p class="color-text ">Uploading...</p>
+                </div>
+            {{else}}
+                {{#if existingFile}}
+                <div class="radio-bg register uploadingMessageArea">
+                    <p class="color-text ">Existing file {{existingFile.name}} <a class="" href="{{existingFile.url}}" target="_blank">View</a></p>
+                </div>
+                {{/if}}
+            {{/if}}
+        </div>
+        <div class="step2">
+            <p>Adjust your image below and click upload at the bottom.</p>
+            <div id="uploadImagePreviewArea">
+                <img style="display: none;" class="img-responsive" id="cropImage"/>
+            </div>
+            <div class="cropBtns">
+
+                <div class="btn-group">
+                    <button type="button" class="transparent-btn btn zoomInBtn" data-method="zoom" data-option="0.1" title="Zoom In">
+            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="" data-original-title="Zoom In">
+              <span class="glyphicon glyphicon-zoom-in"></span>
+            </span>
+                    </button>
+                    <button type="button" class="transparent-btn btn zoomOutBtn" data-method="zoom" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="" data-original-title="Zoom Out">
+              <span class="glyphicon glyphicon-zoom-out"></span>
+            </span>
+                    </button>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="transparent-btn btn rotateLeftBtn" data-method="rotate" data-option="-45" title="Rotate Left">
+            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="" data-original-title="Rotate Left">
+              <span class="glyphicon glyphicon-repeat"></span>
+            </span>
+                    </button>
+                    <button type="button" class="transparent-btn btn rotateRightBtn" data-method="rotate" data-option="45" title="Rotate Right">
+            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="" data-original-title="Rotate Right">
+              <span class="glyphicon glyphicon-repeat"></span>
+            </span>
+                    </button>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="transparent-btn btn resetBtn" data-method="reset" title="Reset">
+                        <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="" data-original-title="Reset"><span class="glyphicon glyphicon-refresh"></span> Reset</span>
+                    </button>
+                </div>
+
+
+            </div>
+            <button class="btns blue-btn getCroppedImage" style="display: inline">Upload</button>
+            <button class="btns blue-btn goToStep1" style="display: inline">Back</button>
+            <button class="btns blue-btn closeDlg" style="display: inline">Cancel</button>
+        </div>
+
+        <!--{{#if isStep 3}}-->
+        <div class="step3">
+            <div id="finalImageArea">
+                <img style="display: none;" class="img-responsive" id="finalImage"/>
+            </div>
+            <!--{{/if}}-->
+            <button class="btns blue-btn closeDlg" style="display: inline">Close</button>
+        </div>
+    </div>
+</template>
+

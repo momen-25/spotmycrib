@@ -1,0 +1,121 @@
+<template name="loginPageHorizontal">
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+
+        {{#if isTemplateLoaded}}
+            <div class="container">
+                <div class="filter-holder">
+                    <div class="head-border-bottom">
+                        {{>loginFormHorizontal}}
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            {{>loading}}
+        {{/if}}
+
+    </section>
+</template>
+<template name="socialLoginButtons">
+    <div id="facebook-login" class="blue-btn btns social-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">{{buttonForText}} with Facebook</div>
+    <!--<div id="twitter-login" style="margin-top: 10px;" class="blue-btn btns social-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">{{buttonForText}} with Twitter</div>-->
+    <div id="google-login" style="margin-top: 10px;" class="blue-btn btns social-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">{{buttonForText}} with Google</div>
+    {{#if dontShow}}
+        <!--Not properly working. will create a new user if there is not existing link.-->
+        <div id="linkedin-login" style="margin-top: 10px;" class="blue-btn btns social-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">Login with LinkedIn</div>
+    {{/if}}
+
+    <br/>
+    {{> loginFormMessages messages=errorMessages}}
+    <br/>
+</template>
+<template name="loginFormHorizontal">
+    <div class="loginForm onpageSignin-form">
+        <div class="row">
+            {{>socialLoginButtons}}
+        </div>
+        <div class="row text-center">
+            <div class="col-md-6 col-sm-12">
+                {{#if showForgotForm}}
+                    {{>loginFormResetPasswordView onPage=true }}
+                {{else}}
+                    {{> loginFormSignInView onPage=true }}
+                {{/if}}
+            </div>
+            <div class="col-md-6 col-sm-12">
+                {{#if isLandLordMode}}
+                    {{> loginFormSignUpViewLandlord onPage=true }}
+                {{else}}
+                    {{> loginFormSignUpView onPage=true }}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>
+<template name="loginPage">
+    <section class="mar-top-20 no-print">
+        <div class="container">
+            <div class="filter-holder">
+                <div class="head-border-bottom">
+                    {{>loginForm}}
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<template name="loginForm">
+    <div class="loginForm">
+        {{#if showForgotForm}}
+            {{>loginFormResetPasswordView}}
+        {{else}}
+            {{#if showSignupForm}}
+                {{#if isLandLordMode}}
+                    {{> loginFormSignUpViewLandlord}}
+                {{else}}
+                    {{> loginFormSignUpView }}
+                {{/if}}
+            {{else}}
+                {{> loginFormSignInView }}
+            {{/if}}
+        {{/if}}
+    </div>
+</template>
+<template name="loginFormMessages">
+    {{#if messages.info}}
+        {{#each messages.info}}
+            <div class="changePwdAlertMsgs alert alert-info" role="alert">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbsp; {{reason}}
+            </div>
+        {{/each}}
+    {{/if}}
+    {{#if messages.warning}}
+        {{#each messages.warning}}
+            <div class="changePwdAlertMsgs alert alert-warning" role="alert">
+                <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>&nbsp; {{reason}}
+            </div>
+        {{/each}}
+    {{/if}}
+    {{#if messages.success}}
+        {{#each messages.success}}
+            <div class="changePwdAlertMsgs alert alert-success" role="alert">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp; {{reason}}
+            </div>
+        {{/each}}
+    {{/if}}
+    {{#if messages.errors}}
+        {{#each messages.errors}}
+            <div class="changePwdAlertMsgs alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; {{reason}}
+            </div>
+        {{/each}}
+    {{/if}}
+    {{#if false}}
+
+
+        <!--<div class="changePwdAlertMsgs">-->
+            <!--{{#each messages.alerts}}-->
+        <!--<p class="color-text alerts">{{reason}}</p>-->
+            <!--{{/each}}-->
+        <!--</div>-->
+    {{/if}}
+</template>

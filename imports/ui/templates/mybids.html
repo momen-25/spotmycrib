@@ -1,0 +1,379 @@
+<template name="accountMyBids">
+{{#if currentUser}}
+    <section class="logo-below-div">
+        <div class="container">
+            <div class="head-border-bottom"><h2>My Bids</h2></div>
+
+        </div>
+    </section>
+
+
+  {{#if data.hasResults}}
+    <!-- units property div -->
+    <section>
+        <div class="container">
+            <div class="head-border-bottom background-grey"><h2>Active bids</h2></div>
+
+        </div>
+    </section>
+
+
+      <!--{{#each data.results}}-->
+        <!--<section class="if{{#if isArchived}}archive {{else}} {{getClass @index}}{{/if}} border-top">-->
+          <!--{{> mybidsUnitDetail }}-->
+        <!--</section>-->
+      <!--{{/each}}-->
+
+    {{#each data.results}}
+      {{> pduvUnitDetail}}
+    {{/each}}
+
+  {{else}}
+      <section>
+          <div class="container">
+              <div class="head-border-bottom background-grey min-heigh"><h2>You have not placed any bids. <a href="{{pathFor 'valueAuctions' }}" class="">Click here</a> to see active bids.
+              </h2></div>
+
+          </div>
+      </section>
+  {{/if}}
+{{else}}
+<br/><br/>
+{{/if}}
+  <!-- pay now -->
+  <div id="paynow-div" style="display:none;">
+
+      <div class="refund-div"><h2>Congratulations!</h2></div>
+      <div class="profile-text">
+          <h3>You saved <span class="amountSaved" ></span>  on your home!</h3>
+          <!-- <p>You have to pay the confirmatory Rs. 30,000 (refundable) to confirm your choice, as the winning bidder.</p> -->
+          <p>To confirm your selection, you need to pay the 'Unit Confirmation Deposit' of Rs 30,000/- within 48 hours, failing which the "Second Highest Bidder" will be given an opportunity to choose that unit. This amount is fully refunded once you confirm the closing of the transaction within 7 days of confirming your bid.</p>
+          <button class="blue-btn btns payNowBtn" type="button"> PAY NOW </button>
+          <p>Want assistance from ibidmyhome?
+            {{#if assistanceAlreadyRequested}}
+                <a> Assistance requested</a>
+            {{else}}
+                <a href="javascript:void(0);" class="requestAssistanceBtn"> Request assistance</a>
+            {{/if}}
+          </p>
+          <h6><a href="{{pathFor 'terms'}}" target="_blank">Terms &amp; Conditions</a></h6>
+      </div>
+  </div>
+  <!-- pay now -->
+  <!--withdraw-->
+  <div id="withdraw-pop" class="withdrawlPopup" style="display:none;">
+
+      <div class="refund-div"><h2>Confirm Withdrawal</h2></div>
+      <div class="profile-text">
+          <h3>Are sure you want to withdraw ?</h3>
+          <p>As you are saving a total of Rs <span class="amountSaved" ></span> on your purchase/investment.</p>
+          <div class="radio-bg">
+              <div class="radio-box">
+                  <form action="">
+                      <input type="radio" name="gender" id="ques1"><label for="ques1">Do not wish to buy in this project /location</label><br>
+                      <input type="radio" name="gender" id="ques2"><label for="ques2">Selecting another unit</label><br>
+                      <input type="radio" name="gender" id="ques3"><label for="ques3">
+                      Price is higher than expected
+                  </label><br>
+                      <input type="radio" name="gender" id="ques4"><label for="ques4">Other
+                      <input type="text"></label>
+                  </form>
+              </div>
+          </div>
+          <ul>
+              <li><button class="transparent-btn btns withdrawConfirmBtn" type="button" bidid="">Withdraw</button></li>
+              <li><button class="blue-btn btns cancelBtn" type="button">Cancel</button></li>
+          </ul>
+      </div>
+  </div>
+  <!-- withdraw -->
+    <!-- confirm popup -->
+    <div id="fully-confirm" style="display:none;">
+
+        <div class="refund-div"><h2>Congratulations!</h2></div>
+        <div class="profile-text">
+            <h3>Unit no <span class="fullyConfirmBlgUnitNumber"></span> is reserved for you</h3>
+            <p> You have to complete all paper works within 7 days. If you backout within that time whole amount will be refunded. Our customer
+                support person will contact you to help to complete the procedures.
+                A detailed e mail has been sent to your mail id.</p>
+
+
+            <button class="blue-btn btns fullyConfirmBlgOKBtn" type="button">OK</button>
+
+        </div>
+    </div>
+    <!-- confirm popup -->
+  {{> sbuaBreakUp}}
+  {{> priceBreakUp}}
+    <!-- pay now -->
+    <div id="becomeRegisteredBidder-popup" class="profile-popup" style="display:none;">
+
+        <div class="refund-div"><h2>Become a registered bidder</h2></div>
+        <div class="profile-text">
+
+            <p>In order to place their bids, all registered users need to pay a nominal 'Auction Participation Fee' of <i class="fa fa-inr indian-rup"></i>499/-
+            This amount is fully refundable to all the bidders who do not win. For winning bidders, this will be adjusted against the final purchase value of their home . </p>
+            <h3>Pay<span><i class="fa fa-inr indian-rup"></i>999</span></h3>
+            <button class="blue-btn btns becomeRegisteredBidderPaymentBtn" type="button">PROCEES TO PAYMENT</button>
+
+
+        </div>
+    </div>
+
+    <!-- pay now -->
+    <div id="outBidSuccess-popup" class="green-popup  pop-up" style="display: none;">
+        <div class="clearfix popup-pad-30">
+            <ul>
+                <li class="green-tick"><a><img src="/images/tick-mark.png" alt=""></a></li>
+                <li class="pad-right-45 pad-left-15">
+                    <h3 class="margin0 pad-btm-10">You have successfully placed your bid for unit <span class="outBidSuccessUnitNo"></span></h3>
+                    <h5 class="pad-btm-0 no-capitalize">You will be notified if somebody outbids you. You can view your bids in 'My Bids' page </h5>
+                </li>
+                <!--<li class="pad-left-25 pad-right-15"><h5><a href="javascript:;" class="fancy-close"><img src="/images/clear-cross-btn.png" alt=""></a></h5></li>-->
+            </ul>
+        </div>
+    </div>
+    <!-- pay now -->
+
+
+
+</template>
+
+<template name="mybidsUnitDetail">
+
+        <div class="container">
+            <div class="act-box">
+                <div class="background-white">
+                    <div class="logo-holder-div">
+                        <div class="logo-holder">
+                            <ul>
+                                <li>
+                                    <h4>PROPERTY KEY :  {{auctionCode}}</h4>
+                                    <h3 class="pad-btm-0">
+                                      {{ project.projectDetails.name}}, {{ project.projectDetails.address.address }}, {{ project.projectDetails.address.area }}, {{ project.projectDetails.address.county }}
+                                    </h3>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li class="left-border">
+                                  {{#if isAuctionClosed}}
+                                    <h2>Auction closed</h2>
+                                  {{else}}
+                                    <h4 class="text-left">ENDS IN</h4>
+                                    <h3 class="timer pad-btm-0"><span id="days1">{{time.day}}</span><i>Days</i><span id="time1">{{time.hour}}</span><i>hrs</i><span id="minutes1">{{time.min}}</span><i>Mins</i></h3>
+                                  {{/if}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="apt-no background-white clearfix">
+                    <h3 class="pull-left">{{unit.unitNumber}}  {{unit.homeType}} , Floor {{unit.floorLevel}} </h3>
+                    <a href="#!" class="pull-right color-blue">View other homes</a>
+                </div>
+                <div class="apt-info background-white">
+                    <div class="box-bdr">
+                        <div class=" box-inner">
+                            <div class="clearfix accord-open-border background-halfwhite">
+                                <div class="col-md-3">
+                                    <h5>Super built up area</h5>
+                                    <h6 class="color-green cursor-ptr" id="super-bulit-up-area1">{{unit.superBuiltUpArea}} Sq.ft</h6>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Tower</h5>
+                                    <h6>{{unit.tower}}</h6>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Car park</h5>
+                                    <h6>{{unit.carPark}}</h6>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Category</h5>
+                                    <h6>{{unit.category}}</h6>
+                                </div>
+                            </div>
+                            <div class="clearfix accord-open-border background-halfwhite">
+                                <div class="col-md-3">
+                                    <h5>Facing</h5>
+                                    <h6>{{unit.facing}} </h6>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>No. of toilets</h5>
+                                    <h6>{{unit.noOfToilets}}</h6>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Vastu complaint</h5>
+                                    <h6>{{unit.vastuCompliant}}</h6>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Primary view from living room</h5>
+                                    <h6>{{unit.primaryViewFromLivingRoom}}</h6>
+                                </div>
+                            </div>
+                            <div class="clearfix accord-open-border background-halfwhite">
+                                <div class="col-md-3">
+                                    <h5>Deficiency</h5>
+                                    <h6>{{unit.deficiency}}</h6>
+                                </div>
+                                <div class="col-md-3">
+
+                                    <h6 class="color-blue mar-top-30"><a href="{{unit.typicalFloorPlanLink}}">Typical floor plan</a></h6>
+                                </div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix accord-open-border background-halfwhite">
+                            <div class="col-md-6 pad-left-35 padding0" >
+                                <div>
+                                    <h6>Developer's current price</h6>
+                                    <div class="col-md-6 padding0">
+                                        <div class="left-line">
+                                            <h5>Base price</h5>
+                                            <h3 class="pad-btm-0"><i class="fa fa-inr indian-rup"></i><span>{{pricing.currentprice}} / sq
+                                        .ft</span></h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 padding0">
+                                        <div class="left-line">
+                                            <h5>Total price</h5>
+                                            <h3 class="color-green pad-btm-0"><i class="fa fa-inr
+                                    indian-rup"></i><span>{{pricing.currentpriceTot}}</span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 padding0">
+                                <h6>Best price to puy</h6>
+                                <div class="col-md-6 padding0">
+                                    <div class="left-line">
+                                        <h5>Base price</h5>
+                                        <h3 class="pad-btm-0 "><i class="fa fa-inr indian-rup"></i><span>{{pricing.bestPricel}}  to {{pricing.bestPriceu}} / sq.ft</span></h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padding0">
+                                    <div class="left-line">
+                                        <h5>Total price</h5>
+                                        <h3 class="color-green pad-btm-0"><i class="fa fa-inr indian-rup"></i><span>{{pricing.bestPricelTot}} - {{pricing.bestPriceuTot}}</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix accord-open-border background-halfwhite">
+                            <p>All the bids are at base price per sqft only</p>
+                        </div>
+                        <div class="clearfix accord-open-border">
+                            <div class="col-md-9 padding0">
+                                <div>
+
+                                    <div class="col-md-6 pad-left-35 padding0">
+
+                                        <div class="col-md-6" style="padding:0">
+                                            <div class="left-line">
+                                                <h4>Your bid</h4>
+                                                <h3 class="pad-btm-0">{{yourBid.basePrice}} / sq.ft</h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 padding0">
+                                            <div class="left-line">
+                                                <h4>Total </h4>
+                                                <h3 class="color-green pad-btm-0">{{yourBid.total}} lakhs </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 padding0">
+
+                                        <div class="col-md-6 padding0">
+                                            <div class="left-line">
+                                                <h4>Current highest bid</h4>
+                                                <h3 class="pad-btm-0">{{auction.highestBidBasePrice}} / sq.ft</h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 padding0">
+                                            <div class="left-line">
+                                                <h4>Total</h4>
+                                                <h3 class="color-green pad-btm-0">{{auction.highestBidTotal}} lakhs </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 padding0">
+
+
+
+                                <div>
+                                  {{#if biddingStatus.showOutBid}}
+                                      <button class="blue-btn btns outBidBtn" type="button" value="{{auctionId}}">OUTBID BY <i class="fa fa-inr indian-rup"></i><span>25/ SQ.FT</span></button>
+                                  {{/if}}
+                                  {{#if biddingStatus.showOutBidConfirm}}
+                                      <button class="blue-btn btns outBidConfirmBtn" type="button"
+                                              id="my-bid-confirm"  value="{{auctionId}}">CONFIRM</button>
+                                      <button class="transparent-btn outBidCancelBtn" type="button" >CANCEL</button>
+                                  {{/if}}
+                                    {{#if biddingStatus.isHigestBidder}}
+                                      <button class="btns grey-btn" type="button">Your bid is highest</button>
+                                    {{/if}}
+                                  {{#if biddingStatus.isConfirmationAmountPaid}}
+                                      <button class="btns grey-btn" type="button">Your bid is confirmed</button>
+                                  {{/if}}
+                                  {{#if biddingStatus.isArchived}}
+                                      <button class="btns grey-btn" type="button">Confirmed/ Withdrawn</button>
+                                  {{/if}}
+                                </div>
+
+                            </div>
+                        </div>
+                        {{#if biddingStatus.hasPlacedWinningBid}}
+                          <div class="clearfix background-orange">
+                              <ul class="congrats-msg-div">
+                                  <li><a><img src="/images/tick-mark.png"></a></li>
+                                  <li>
+                                      <h3>Congratulations ! You have placed the winning bid, confirm  to go ahead.</h3>
+                                      <h5>You have to confirm on or before {{config.auctionEndDay}} of this month.</h5>
+                                  </li>
+                                  <li class="button-width">
+                                      <button class="blue-btn btns bidConfirmBtn" type="button" id="my-bid-confirm">CONFIRM</button>
+                                      <button class="transparent-btn bidWithdrawBtn" type="button"
+                                              bidId="{{_id}}">WITHDRAW</button>
+                                  </li>
+                              </ul>
+                          </div>
+                        {{/if}}
+                        {{#if biddingStatus.hasPlacedSecondHigestWinningBid}}
+                        <div class="clearfix background-orange">
+                            <ul class="congrats-msg-div">
+                                <li><a><img src="/images/tick-mark.png"></a></li>
+                                <li>
+                                    <h3>Congratulations! You are the 2nd highest bidder.</h3>
+                                    <h5> If the winning bid is withdrawn, you would be offered a chance to buy this
+                                        unit/home at your bid.</h5>
+                                </li>
+
+                            </ul>
+                        </div>
+                        {{/if}}
+                        {{#if biddingStatus.hasWonAuctionConfirmed}}
+                        <div class="clearfix background-orange">
+                            <ul class="congrats-msg-div">
+                                <li><a><img src="/images/tick-mark.png"></a></li>
+                                <li style="width: 95%;">
+                                    <h3>Congratulations! Your bid is confirmed and unit no {{unit.unitNumber}} is reserved for you</h3>
+                                    <h5 style="line-height: 16px;"> You have to complete all paper works within 7 days. If you backout within that time whole amount will be refunded. Our customer
+                                        support person will contact you to help to complete the procedures.
+                                        A detailed email has been sent to your mail id.</h5>
+                                </li>
+
+                            </ul>
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div><!--act-box-->
+        </div>
+
+</template>

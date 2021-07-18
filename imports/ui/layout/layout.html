@@ -1,0 +1,24 @@
+<template name="reactLayout">
+    {{> headerExtended }}
+    <main role="main" id="main">
+        {{> Template.dynamic template=templateName data=dataContext}}
+    </main>
+    <footer class="footer-default">
+        {{>footerExtended}}
+    </footer>
+
+</template>
+
+<template name="reactPlainLayout">
+    {{> Template.dynamic template=templateName data=dataContext}}
+</template>
+
+<template name="printExtended">
+        {{> yield}}<!---->
+</template>
+
+<template name="plainLayout">
+    {{> yield}}
+</template>
+
+

@@ -1,0 +1,164 @@
+<template name="tenants">
+{{#if isSubsLoaded}}
+
+{{#if userLoggedIn}}
+
+    {{#unless dataFull.totalResultsCount}}
+        <div class="container text-center mar-top-20 pad-btm-30"><strong>No public tenants profiles. </strong></div>
+    {{else}}
+        <section class="mar-top-30 "></section>
+        {{#each dataFull.results}}
+            {{> tenantList user=this }}
+        {{/each}}
+    {{/unless}}
+
+    <section class="mar-top-20">
+        <section class="border-top act-div">
+            <div class="container">
+                <div class="row">
+                    {{> pagination dataNonChosen.pagination}}
+                </div>
+            </div>
+        </section>
+    </section>
+
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loginPageHorizontal}}
+    </section>
+{{/if}}
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loading}}
+    </section>
+{{/if}}
+</template>
+
+<template name="tenantList">
+        <section class="main-holder border-top mar-btm-10" id="unit_{{_id}}">
+
+            <!--<section class="border-top act-div"></section>-->
+            <div class="container">
+                <div class="act-box">
+                    <div class="background-white">
+                        <div class="logo-holder-div">
+                            <div class="logo-holder">
+                                <ul>
+                                    <li>
+                                        <h3 class="pad-btm-0">
+                                            {{#if user.profile.picture}}<img class="circular-icon" src="{{user.profile.picture}}" alt="avatar" />{{/if}}
+                                            {{titleCase userFirstName}}&#39;s References
+
+                                            {{#if user.services.facebook}}
+                                                <a title="{{titleCase userFirstName}}&#39;s profile is connected with facebook" target="_blank">
+                                                    <img src="{{cdnPath '/images/facebook-icon.png'}}" alt="Fb">
+                                                    <!--<span style="color:#000;font-size:11px" class="socicon socicon-facebook"></span>-->
+                                                </a>
+                                            {{/if}}
+                                            {{#if user.services.twitter}}
+                                                <a title="{{titleCase userFirstName}}&#39;s profile is connected with Twitter" target="_blank">
+                                                    <img src="{{cdnPath '/images/twitter-icon.png'}}" alt="Tw">
+                                                    <!--<span style="color:#000;font-size:11px" class="socicon socicon-twitter"></span>-->
+                                                </a>
+                                            {{/if}}
+                                            {{#if user.services.linkedin}}
+                                                <a title="{{titleCase userFirstName}}&#39;s profile is connected with linkedIn." target="_blank">
+                                                    <img src="{{cdnPath '/images/linkedin-icon.png'}}" alt="Li">
+                                                </a>
+                                            {{/if}}
+                                            {{#if user.services.google}}
+                                                <span title="{{titleCase userFirstName}}&#39;s has a verified google email" class="google-icon-box" target="_blank">
+                                            <img src="{{cdnPath '/images/google-icon.png'}}" alt="G+">
+                                        </span>
+                                            {{/if}}
+
+                                        </h3>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="menu">
+                                <ul>
+                                    <li class="left-border">
+                                        <a class="btns transparent-btn" href="mailto:{{user.profile.email}}">Email</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="btns green-btn inviteToApply" >Invite to Apply</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--act-box-->
+
+                        <div class="apt-info apt-info1 background-white clearfix">
+                            <p>{{titleCase userFirstName}}&#39;s references are hidden. Invite them to apply for your property to view their references.</p>
+                        </div>
+
+                    <!--{{#if user.profile.message}}-->
+                    <!--<div class="apt-info background-white clearfix bidMessageArea">-->
+                    <!--<blockquote class="">-->
+                    <!--{{user.profile.message}}-->
+                    <!--</blockquote>-->
+                    <!--</div>-->
+                        <!--{{/if}}-->
+                    <!--act-box-->
+                </div>
+            </div>
+
+
+
+
+        </section>
+    {{#if currentUser}}
+        <div id="inviteToApplyDlg" style="display:none;" class="verification-div1">
+            {{>inviteToApply}}
+        </div>
+    {{/if}}
+</template>
+<template name="inviteToApply">
+    <div class="refund-div"><h2>Invite to Apply</h2></div>
+    <div class="profile-text">
+        <p class="no-capitalize">Invite {{userFirstName}} to apply for your advertisement. Please choose your advertisement.</p>
+        {{#if myAdvertisements.totalResultsCount}}
+        <form class="signin-form">
+            <div class="form-border" style=" padding: 20px 0;">
+
+                <div class="styled-input underline">
+
+                    <select multiple placeholder="" class="selectedAdvertisements" name="selectedAdvertisements" required style="margin-bottom: 30px;">
+                        {{#each myAdvertisements.results}}
+                            <option value="{{_id}}">{{titleCase property.address.address}}</option>
+                        {{/each}}
+                    </select>
+
+                </div>
+
+                <!--<div class="input-group date">-->
+                <!--<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>-->
+                <!--<input class="set-due-date form-control moveindate" type="text" id="moveindate"/>-->
+                <!--</div>-->
+
+            </div>
+        </form>
+        <p class="color-text" style="margin-top: 20px;">Please note that this will send an email to the tenant.</p>
+        {{else}}
+        <p class="color-text mar-top-20" style="text-align: center;margin-top:20px;">You have no active advertisements.</p>
+        <p style="text-align: center;" class=" mar-btm-20">
+            <button href="advertiseMyProperty" style="max-width: 250px;margin: 0 auto;padding: 7px 15px;" class="transparent-btn btns advertiseMyProperty" type="button">Advertise My Property</button>
+        </p>
+        {{/if}}
+
+        <ul>
+            {{#if inviteInProgress}}
+                <li><button class="transparent-btn  btns " disabled="true" type="button">Wait for it... </button></li>
+            {{else}}
+                <li><button class="blue-btn  btns confirmInviteBtn" type="button">Invite </button></li>
+            {{/if}}
+            <li><button class="transparent-btn btns closePopupBtn" disabled="{{inviteInProgress}}" type="button">Cancel</button></li>
+        </ul>
+    </div>
+</template>
+

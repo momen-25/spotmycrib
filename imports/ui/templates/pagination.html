@@ -1,0 +1,44 @@
+<template name="pagination">
+    <nav>
+        {{#if false}}
+        <ul class="pagination">
+            <li>
+                <a href="{{prevPage.href}}" aria-label="{{prevPage.text}}">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {{#each pages}}
+                <li><a href="{{href}}">{{text}}</a></li>
+            {{/each}}
+            <!--<li><a href="javascript:void(0)">2</a></li>-->
+            <!--<li><a href="javascript:void(0)">3</a></li>-->
+            <!--<li><a href="javascript:void(0)">4</a></li>-->
+            <!--<li><a href="javascript:void(0)">5</a></li>-->
+            <li>
+                <a href="{{nextPage.href}}" aria-label="{{nextPage.text}}">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+        {{/if}}
+        <ul class="pagination">
+            <li class="page-item {{prevPage.disabled}}">
+                <a class="page-link" href="{{prevPage.href}}" tabindex="-1">{{prevPage.text}}</a>
+            </li>
+            {{#each pages}}
+                {{#if current}}
+                    <li class="page-item active">
+                        <a class="page-link" href="{{href}}">{{text}} <span class="sr-only">(current)</span></a>
+                    </li>
+                {{else}}
+                    <li class="page-item"><a class="page-link" href="{{href}}">{{text}}</a></li>
+                {{/if}}
+            {{/each}}
+            <li class="page-item {{nextPage.disabled}}">
+                <a class="page-link" href="{{nextPage.href}}">{{nextPage.text}}</a>
+            </li>
+        </ul>
+    </nav>
+
+
+</template>

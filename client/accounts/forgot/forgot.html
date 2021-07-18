@@ -1,0 +1,52 @@
+
+<template name="loginFormResetPasswordView">
+
+    {{#unless showForm}}
+        <div class="refund-div"><h2>We just emailed you a link</h2></div>
+        <div class="profile-text">
+            <h5 class="no-capitalize">Please check your email and click the secure link.</h5>
+            <div class="signup-btn">
+                <button class="transparent-btn btns tryAgainBtn" >Try again</button>
+            </div>
+            <p></p>
+            <p class="color-text contactusBtn">If you don’t see our email, check your spam folder or <a href="{{pathFor 'contactus'}}">Contact us</a></p>
+
+        </div>
+        {{else}}
+
+    <div class="refund-div"><h2>Forgot password?</h2></div>
+
+    <div class="profile-text">
+        <h5 class="no-capitalize">Enter your registered Email ID</h5>
+
+        <form class="signin-form">
+            <div class="form-border">
+
+                <div class="styled-input underline  {{hasError messages.errors.email}}">
+                    <input  class="login-input-email" value="{{credentials.email}}" type="email" name="email" required  for="email-{{uniqueId}}"/>
+                    <label for="email-{{uniqueId}}">EMAIL ID</label>
+                    <span></span>
+                  {{#if hasError messages.errors.email}}
+                      <span class="help-block">
+                        {{messages.errors.email}}
+                      </span>
+                  {{/if}}
+                </div>
+            </div>
+
+            <div class="signup-btn">
+
+                {{#if isLoading}}
+                    <button class="transparent-btn btns" >Loading...</button>
+                {{else}}
+                    <button class="blue-btn btns" type="Submit"   data-event-category="accounts" data-event-action="reset-password">Reset My Password</button>
+                {{/if}}
+                <!--<p class="color-text">Verification mail will be sent to the Email ID.</p>-->
+              {{> loginFormMessages messages=messages}}
+                <h6><span style="color:#0c68a7"   data-event-category="accounts" data-event-action="signIn">Sign In</span></h6>
+            </div>
+        </form>
+    </div>
+    {{/unless}}
+
+</template>

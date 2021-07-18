@@ -1,0 +1,74 @@
+<template name="contactus">
+    <div class="index">
+    <section class="contact-bnr">
+        <h2>Contact Us</h2>
+    </section>
+
+    <section class="contact-content mar-btm-20" style="background:white;">
+        <div class="container">
+
+            <p class="text-center" style="margin-bottom: 10px;">
+                Please contact the owner directly for queries regarding the properties advertised on our site as we do not own or deal diretly with them. For other queries please email at below email or fill the form below.
+            </p>
+            <p class="text-center" ><a style="color:#428bca" href="mailto:support@SpotMyCrib"><i class="glyphicon glyphicon-envelopee"></i> support@spotmycrib.com</a></p>
+            {{#if false}}<p><a href="tel:080-44559966"><i class="glyphicon glyphicon-phone"></i>+353 </a></p><br>{{/if}}
+            <!--<p class="pad-btm-10"><span class="color-blue">Timings</span></p>-->
+            <!--<p> 9  AM  - 6 PM</p>-->
+            <!--<p> 24x7</p>-->
+            <p class="text-center"> Or </p>
+            {{>contactUsForm}}
+
+        </div>
+    </section>
+    </div>
+</template>
+<template name="contactUsForm">
+    <form class="signin-form cf-1" id="contactUsForm">
+
+        <div class="w-100"></div>
+        <div class="sep-section">
+            <label class="sep-label">Write to us</label>
+            <div class="styled-input underline">
+                <input type="text" name="name" required/>
+                <label>Name *</label>
+                <span></span>
+            </div>
+            <div class="styled-input underline">
+                <input type="email" name="email" required/>
+                <label>Email *</label>
+                <span></span>
+            </div>
+            <div class="styled-input underline">
+                <input type="text" name="mobile" />
+                <label>Mobile </label>
+                <span></span>
+            </div>
+            <div class="styled-full-width">
+                <textarea name="message" class="styled-input-textarea autoGrowTA" id="contactAG" placeholder="Enter your message" required></textarea>
+            </div>
+            <div class="styled-full-width mar-top-10">
+            {{#if contactFormSaving}}
+                <button type="button" class="btns transparent-btn">Saving</button>
+            {{else}}
+                <button type="submit" class="btns blue-btn">Submit</button>
+            {{/if}}
+            </div>
+    {{#if contactFormSavedSuccess}}
+            <div class="styled-full-width">
+                <div class="alert alert-success" role="alert">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Thank you for contacting us, we will reach out to you as soon as possible.
+                </div>
+            </div>
+    {{/if}}
+        </div>
+
+
+
+        <div class="w-100"></div>
+
+
+    </form>
+
+
+
+</template>

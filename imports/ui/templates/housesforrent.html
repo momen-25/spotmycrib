@@ -1,0 +1,127 @@
+<template name="housesforrent">
+    <section class="logo-below-div value-div">
+        <div class="container">
+            <div class="logo-holder-div">
+                <div class="logo-holder">
+                    <ul>
+                        <li><h2 style="margin-bottom: 10px;">{{#if propertyTypeSelected}}{{propertyTypeSelected}}{{else}}Houses{{/if}} for rent {{#if countySelected}} in {{#if areaSelected}}{{areaSelected}} of {{else}}{{/if}}county {{countySelected}}{{else}}{{/if}}</h2>
+                            <h4 style="padding-bottom: 5px;">Found {{totalCount}}</h4></li>
+                    </ul>
+                </div>
+                <div class="menu houseForRentFilters">
+                    <ul>
+                        <!--<li class="left-border">-->
+                            <!--<h4>Total</h4>-->
+                            <!--<h3 class="pad-btm-0 text-center">{{totalCount}}</h3>-->
+                        <!--</li>-->
+                        <!--<li class=""></li>-->
+                        <li class="left-border pad-right-0 cf-1">
+                            <p class="color-grey">Change County</p>
+                            <div class="styled-input styled-input-select" style="">
+                                <select name="furnished" required="" autocomplete=""  style="margin:0" class="countyDropdown countySelected">
+                                    <option value="" {{isEqualSelect countySelected ""}}>All</option>
+                                    {{#each counties}}
+                                        <option value="{{value}}" {{isEqualSelect countySelected value}}>{{label}}</option>
+                                    {{/each}}
+                                </select>
+                                <span></span>
+                            </div>
+
+                        </li>
+
+                        <li class="cf-1 pad-right-0">
+                            <p class="color-grey">Area</p>
+                            <div class="styled-input styled-input-select" style="">
+                                <select name="furnished" required="" autocomplete=""  style="margin:0" class="areaDropdown areaSelected">
+                                    <option value="" {{isEqualSelect areaSelected ""}}>All</option>
+                                    {{#each areas}}
+                                        <option value="{{value}}" {{isEqualSelect areaSelected value}}>{{label}}</option>
+                                    {{/each}}
+                                </select>
+                                <span></span>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{#unless dataFull.totalResultsCount}}
+        <div class="container text-center mar-top-20 pad-btm-30"><strong>No advertisements found{{#if countySelected}} in {{#if areaSelected}}area {{areaSelected}} of {{else}}{{/if}}county {{countySelected}}{{else}}{{/if}}. Click show all below to search other areas.</strong><br/><br/>
+            {{#if countySelected}}
+                <button class="blue-btn btns clearFilters" type="button">Show all</button>
+            {{/if}}
+        </div>
+    {{/unless}}
+    {{#if dataFull.totalResultsCount}}
+        <section class="paginationArea mar-top-20 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        {{> pagination dataFull.pagination}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="proplist-sec property-list">
+            <div class="container">
+                <div class="row">
+                  {{#each dataFull.results}}
+                    {{> housesforrentGrid}}
+                  {{/each}}
+                </div>
+            </div>
+        </section>
+        <section class="paginationArea">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        {{> pagination dataFull.pagination}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/if}}
+</template>
+
+
+<template name="housesforrentGrid">
+
+    <div class="col-md-4 col-sm-6 img-hold-div {{projectDetails.address.county}}">
+	<div class="proj-card">
+        <div class="prop-img-hold">
+            <div class="image-holder">
+                {{#if projectBanner}}
+                    <img class="img-responsive" src="{{projectBanner}}"/>
+                {{else}}
+                    <div class="item active">
+                        <img src="/images/no-photo.png" class="img-responsive"/>
+                    </div>
+                {{/if}}
+
+                <div class="image-position" style="display:none;">
+                    <h2 class="color-white">{{#if projectDetails.address.area}}{{titleCase projectDetails.address.area}} {{/if}}</h2>
+                    <h4>{{#if projectDetails.address.county}}{{titleCase projectDetails.address.county}} {{/if}}</h4>
+                </div>
+
+
+            </div>
+            <div class="bg-opacity"></div>
+        </div>
+        <div class="textbox-holder" style="margin: 0;padding: 20px;height:130px;">
+            <h4>{{titleCase projectDetails.address.address}}{{#if projectDetails.address.area}}, {{titleCase projectDetails.address.area}} {{/if}}{{#if projectDetails.address.county}}, {{titleCase projectDetails.address.county}} {{/if}}</h4>
+            <ul>
+                <li class="left-border">
+                    <h4>Rent</h4>
+                    <h2>&euro;<span>{{price}}</span></h2>
+                </li>
+                <li class="pad-right-0"><a class="transparent-btn btns view-details" href="{{urlFor 'letting' key=lettingAuctionCode}}" type="button"
+                                                id="enter-auction">view
+                    details</a></li>
+            </ul>
+        </div>
+	</div>
+    </div>
+</template>
+

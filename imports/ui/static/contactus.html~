@@ -1,0 +1,35 @@
+<template name="contactus">
+    <div class="index">
+    <section class="contact-bnr">
+        <h2>Contact Us</h2>
+    </section>
+
+    <section class="contact-content">
+        <div class="container">
+            <ul>
+                <li>
+                    <h3>For registration and refund of Rs.549 deposit:</h3>
+                    <span class="bottom-line"></span>
+                    <p><a href="mailto:support@ibidmyhome.com"><i class="fa fa-envelope"></i>support@ibidmyhome.com</a></p>
+                    <p><a href="tel:08044559966"><i class="fa fa-phone"></i>080-44559966</a></p>
+
+                </li>
+                <li>
+                    <h3>To contact HDFC realty's sales representative</h3>
+                    <span class="bottom-line"></span>
+
+
+                    <p><a href="mailto:valueauctions@hdfcrealty.com"><i class="fa fa-envelope"></i>valueauctions@hdfcrealty.com</a></p>
+                    <p><a href="tel:02267221919"><i class="fa fa-phone"></i>022-67221919</a></p>
+                </li>
+                <li>
+                    <h3>To contact developer's sales representative</h3>
+                    <span class="bottom-line"></span>
+                    <p><a href="mailto:puravankara@ibidmyhome.com"><i class="fa fa-envelope"></i>puravankara@ibidmyhome.com</a></p>
+                    <p><a href="mailto:sobha@ibidmyhome.com"><i class="fa fa-envelope"></i>sobha@ibidmyhome.com</a></p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    </div>
+</template>

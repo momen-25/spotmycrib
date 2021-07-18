@@ -1,0 +1,565 @@
+<template name="propertyApplications">
+{{#if isSubsLoaded}}
+
+{{#if userLoggedIn}}
+
+    <section class="unitspage-holder">
+        <section class="logo-below-div">
+            <div class="container">
+                <div class="logo-holder-div logoHolderTitleSection">
+                    <div class="logo-holder">
+                        <ul>
+                            <li><span class="backBtn" style="cursor: pointer;"><img src="{{cdnPath '/images/back-arrow.png'}}"></span></li>
+                            <li><h3>{{propertyData.address.address}} {{#if propertyData.address.area}}, {{propertyData.address.area}} {{/if}}{{#if propertyData.address.county}}, {{propertyData.address.county}} {{/if}} </h3>
+                                <h4>PROPERTY KEY : {{propertyData.auction.lettingAuctionCode}}
+                                    <span class="auction-number pad-left-15"><a href="{{pathFor route='letting' key=propertyData.auction.lettingAuctionCode}}" class="viewListing" style="font-size:11px;" >VIEW</a></span>
+<span class="auction-number pad-left-15"><a href="javascript:void(0);" class="showCopyDlg" style="font-size:11px;" ><i class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 11px;"></i> SHARE</a></span>
+                                </h4>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <!--<li class="left-border">-->
+                                <!--<h4 >APPLICATIONS RECEIVED</h4>-->
+                                <!--<h3 class="pad-btm-0 text-center">{{propertyData.applicationsReceivedCount}}</h3>-->
+                            <!--</li>-->
+                            <!--<li class="left-border">-->
+                                <!--<h4 >ACTIVE APPLICATIONS</h4>-->
+                                <!--<h3 class="pad-btm-0 text-center">{{propertyData.applicationsActiveCount}}</h3>-->
+                            <!--</li>-->
+                            <li class="left-border">
+                                <h4 >ACTIVE APPLICATIONS</h4>
+                                <h3 class="pad-btm-0 text-center">{{dataFull.totalResultsCount}}</h3>
+                            </li>
+                            <li class="left-border">
+                                <h4 >AVG. OFFER</h4>
+                                <h3 class="pad-btm-0 text-center">&euro;{{#if avgOffer}}{{avgOffer}}{{else}}0{{/if}}</h3>
+                            </li>
+                            <li class="text-center">
+                                <button class="blue-btn btns showEditPropertyForm" type="button" style="margin-bottom: 5px;">EDIT PROPERTY DETAILS</button>
+                                <button class="transparent-btn btns deactivatePropertyBtn" type="button">Deactivate</button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{#if showFilters}}
+        <section class="logo-below-div filterMenu">
+            <div class="container">
+                <div class="logo-holder-div">
+                    <h3>FILTERS</h3>
+                    <ul class="new-filter">
+                        <li style="display: none;"><div class="pad-bot-15">
+                            <h4 class="color-grey text-left"><label> Name</label></h4>
+                            <div class="styled-input ">
+                                <input type="text" name="address.address" id="address.address" required/>
+                                <label id="address.address-error" class="error" for="address.address">This field is required.</label>
+                                <br>
+                                <label>Name and Street *</label>
+                                <span></span>
+                            </div>
+                        </div>
+                        </li>
+                        <li style="display: none;"><div class="pad-bot-15">
+                            <h4 class="color-grey text-left"><label> Name</label></h4>
+                            <input id="myselect" class="form-control filterUnitType"/>
+                        </div>
+                        </li>
+                        <li style="top: -7px;position: relative;">
+                            <div class="input-field">
+                                <h4 class="color-grey text-uppercase text-left pad-btm-30">Offer range</h4>
+                                <div class="range-holder">
+                                    <div class="range-value-holder clearfix" style="padding-top: 4px;">
+                                        <div class="left value pull-left">
+                                            <p class="filterS1l"></p>
+                                        </div>
+                                        <div class="right value pull-right">
+                                            <p class="filterS1h"></p>
+                                        </div>
+                                    </div>
+                                    <div id="offerRangeInput"></div>
+                                    <div class="input-select-new1">
+                                        <select id="input-select1"></select><span class="cross-new2"><img src="/images/clear-cross-btn.png" class="close-icon"></span>
+                                    </div>
+                                    <div class="input-new1">
+                                        <input type="number" min="67.45" max="97.45" step="1" id="input-number1"><span class="cross-new3"><img src="/images/clear-cross-btn.png" class="close-icon"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin-left: 20px;" >
+                            <div class="pad-left-15">
+                                <div class="button-group cf-1 referenceFilter">
+                                    <button type="button" class="transparent-btn btns dropdown-toggle jns-dropdown-btn" data-toggle="dropdown">References <span class="caret"></span></button>
+                                    <ul class="dropdown-menu styled-input-checkbox jns-dropdown-area" style="">
+                                        <li>
+                                            <div class="checkbox disabled" >
+                                                <label>
+                                                    <input type="checkbox" name="refInput" value="all" />
+                                                    All</label>
+                                            </div>
+                                        </li><li>
+                                            <div class="checkbox disabled" >
+                                                <label>
+                                                    <input type="checkbox" name="refInput" value="clearall" />
+                                                    Clear all</label>
+                                            </div>
+                                        </li>
+                                        {{#each userFilters.check}}
+                                            <li>
+                                                <div class="checkbox {{#unless enabled}}disabled{{/unless}}" >
+                                                    <label>
+                                                        <input type="checkbox" name="refInput" value="{{val}}" {{enabled}} />
+                                                        {{label}}</label>
+                                                </div>
+                                            </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+            {{initFilters}}
+        {{/if}}
+
+
+    </section>
+    {{#unless propertyData.auctionId}}
+        <div class="container text-center mar-top-20 pad-btm-30"><h2>This property is not activated. Go back and activate it first. </h2></div>
+    {{else}}
+
+        {{#unless dataFull.totalResultsCount}}
+                <div class="container text-center mar-top-20 pad-btm-30"><h2>No applications yet</h2>
+                    <p style="margin:10px 0;">Find references, social profiles and full details of people who apply for your property here.</p>
+                    <p>You may <a href="javascript:void(0);" class="showCopyDlg" style="font-size:11px;" ><i class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 11px;"></i>  SHARE</a> your property link in <a target="_blank" href="https://www.facebook.com/groups/Rentdublin/">Facebook group</a> to get more applications.</p>
+                </div>
+        {{/unless}}
+
+
+        {{#if dataChosen.totalChosenCount}}
+            <div class="container text-center mar-top-20 pad-btm-30"><h2>Chosen Tenants</h2></div>
+            {{#each dataChosen.resultsChosen}}
+                {{> bidList }}
+            {{/each}}
+        {{/if}}
+
+        {{#if dataFull.totalResultsCount}}
+            {{#if dataNonChosen.paginationNeeded}}
+            <section class="paginationArea mar-top-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{> pagination dataNonChosen.pagination}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{/if}}
+
+            {{#unless dataChosen.totalChosenCount}}
+                    <div class="container text-center mar-top-20 pad-btm-30"><h2>Choose Your Tenant</h2></div>
+            {{else}}
+                {{#if dataNonChosen.totalNonChosenCount}}
+                        <div class="container text-center mar-top-20 pad-btm-30"><h2>Pick another? </h2></div>
+                {{else}}
+                    <div class="container text-center mar-top-20 pad-btm-30"><h2>No more applications left. </h2></div>
+                {{/if}}
+            {{/unless}}
+            {{#each dataNonChosen.resultsNonChosen}}
+                {{> bidList }}
+            {{/each}}
+
+            {{#if dataNonChosen.paginationNeeded}}
+            <section class="paginationArea">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{> pagination dataNonChosen.pagination}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{/if}}
+        {{/if}}
+
+        {{#if dataEmailEnquiries.totalEnquiryCount}}
+            <div class="container text-center mar-top-20 mar-btm-20">
+                <hr style="border-top:1px solid #0b69a8">
+                <h2 class="mar-top-30">Email Enquiries</h2>
+            </div>
+            {{#if dataEmailEnquiries.paginationNeede}}
+            <section class="paginationArea mar-top-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{> pagination dataEmailEnquiries.pagination}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{/if}}
+
+            {{#each dataEmailEnquiries.resultsEnquiries}}
+                {{> emailEnquiryList }}
+            {{/each}}
+
+            {{#if dataEmailEnquiries.paginationNeede}}
+            <section class="paginationArea">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{> pagination dataEmailEnquiries.pagination}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{/if}}
+        {{/if}}
+
+
+    {{/unless}}
+
+
+    <div id="conf-dactivate-pop" class="confPopup" style="display:none;">
+
+        <div class="refund-div"><h2>Confirm Deactivate?</h2></div>
+        <div class="profile-text">
+            <h3>Are sure you want to deactivate ?</h3>
+            {{#unless propertyData.chosenApplicationCount}}
+            {{#if propertyData.applicationsActiveCount}}
+                <p>This property has {{propertyData.applicationsActiveCount}} active applications. You will not be able to choose any application if deactivated. </p>
+            {{else}}
+                <p></p>
+            {{/if}}
+            {{else}}
+                <p></p>
+            {{/unless}}
+
+            <ul>
+                <li><button class="transparent-btn btns deactivateConfirmBtn" type="button">{{#if deactivateInProgress}}Deactivating...{{else}}Deactivate{{/if}}</button></li>
+                <li><button class="blue-btn btns closePopupBtn" type="button">Cancel</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="verification-div1" id="propertyLinkDlg" style="display:none;">
+        <div class="refund-div"><h2>Share Property</h2></div>
+        <div class="profile-text text-left">
+            <p class="no-capitalize">Please use this email to use in daft.ie, rent.ie etc ads.</p>
+
+            <form class="form-inline" style="overflow: hidden;" onsubmit="return false;">
+                <div class="form-group col-sm-10" style="padding: 0;">
+                    <input type="text" class="form-control" placeholder="" name="agentPropertyEmailField" id="agentPropertyEmailField" readonly style="width: 100%;padding: 0;">
+                </div>
+                <button type="submit" class="btn btn-primary col-sm-2 copyEmailBtn">Copy</button>
+            </form>
+
+            <p class="no-capitalize mar-top-15">Please use this link to share in facebook, twitter etc. </p>
+
+            <form class="form-inline" style="overflow: hidden;" onsubmit="return false;">
+                <div class="form-group col-sm-10" style="padding: 0;">
+                    <input type="text" class="form-control" placeholder="" name="propertyLinkField" id="propertyLinkField" readonly style="width: 100%;padding: 0;">
+                </div>
+                <button type="submit" class="btn btn-primary col-sm-2 copyLinkBtn">Copy</button>
+            </form>
+
+            <form class="signin-form">
+
+                <div class="signup-btn">
+                    <button class="transparent-btn btns cancelBtn" type="button">CLOSE</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+    <div id="inviteForViewingDlg" style="display:none;" class="verification-div1">
+        {{>inviteForViewing}}
+    </div>
+
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loginPageHorizontal}}
+    </section>
+{{/if}}
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loading}}
+    </section>
+{{/if}}
+</template>
+<template name="inviteForViewing">
+    <div class="refund-div"><h2>Invite for viewing</h2></div>
+    <div class="profile-text">
+        <h5 class="no-capitalize">Invite {{data.user.profile.name}} for viewing. Please choose viewing date and time</h5>
+
+        <form class="signin-form">
+            <div class="form-border" style=" padding: 20px 0;">
+
+                <div class="styled-input underline">
+                    <input class="inviteDate" type="datetime" placeholder="" value="" name="inviteDate" id="inviteDate" required />
+                </div>
+
+                <div class="styled-input underline">
+                        <textarea class="form-control inviteMessage" id="inviteMessage" rows="2" placeholder="You may enter a personal message to landlord if you wish." maxlength="500" readonly>Hi, You are invited to the viewing on {{inviteDateFormated}} at letting {{propertyData.address.address}} {{#if propertyData.address.area}}, {{propertyData.address.area}} {{/if}}{{#if propertyData.address.county}}, {{propertyData.address.county}} {{/if}}</textarea>
+                </div>
+
+                <!--<div class="input-group date">-->
+                    <!--<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>-->
+                    <!--<input class="set-due-date form-control moveindate" type="text" id="moveindate"/>-->
+                <!--</div>-->
+
+            </div>
+        </form>
+        <p class="color-text" style="margin-top: 20px;">Please note that this will send an email with your contact details.</p>
+
+        <ul>
+            {{#if inviteInProgress}}
+                <li><button class="transparent-btn  btns " disabled="true" type="button">Wait for it... </button></li>
+            {{else}}
+                <li><button class="blue-btn  btns confirmInviteBtn" type="button">Invite </button></li>
+            {{/if}}
+            <li><button class="transparent-btn btns closePopupBtn" disabled="{{inviteInProgress}}" type="button">Cancel</button></li>
+        </ul>
+    </div>
+</template>
+<template name="bidList">
+    <section class="main-holder {{classBidList}}" id="unit_{{_id}}">
+
+    <!--<section class="border-top act-div"></section>-->
+        <div class="container">
+            <div class="act-box">
+                <div class="background-white">
+                    <div class="logo-holder-div">
+                        <div class="logo-holder">
+                            <ul>
+                                <li>
+                                    <h3 class="pad-btm-0">
+                                        {{#if user.profile.picture}}<img class="circular-icon" src="{{user.profile.picture}}" alt="avatar" />{{/if}}
+                                        {{user.profile.name}}
+                                        <span style="font-size:11px;color: #9d9d9d;">OFFER </span> :
+                                        <span style="color:#000;font-size:11px"> {{yourBid}} </span>
+                                        {{#if user.services.facebook}}
+                                        <a title="Connected" href="https://www.facebook.com/{{user.services.facebook.id}}" target="_blank">
+                                            <img src="{{cdnPath '/images/facebook-icon.png'}}" alt="Fb">
+                                            <!--<span style="color:#000;font-size:11px" class="socicon socicon-facebook"></span>-->
+                                        </a>
+                                        {{/if}}
+                                        {{#if user.services.twitter}}
+                                        <a title="Connected" href="https://www.twitter.com/{{user.services.twitter.screenName}}" target="_blank">
+                                            <img src="{{cdnPath '/images/twitter-icon.png'}}" alt="Tw">
+                                            <!--<span style="color:#000;font-size:11px" class="socicon socicon-twitter"></span>-->
+                                        </a>
+                                        {{/if}}
+                                        {{#if user.services.linkedin}}
+                                        <a title="Connected" href="{{user.services.linkedin.publicProfileUrl}}" target="_blank">
+                                            <img src="{{cdnPath '/images/linkedin-icon.png'}}" alt="Li">
+                                        </a>
+                                        {{/if}}
+                                        {{#if user.services.google}}
+                                        <span title="Verified email" class="google-icon-box" target="_blank">
+                                            <img src="{{cdnPath '/images/google-icon.png'}}" alt="G+">
+                                        </span>
+                                        {{/if}}
+                                        <a style="font-size:11px;color: #9d9d9d;" title="Invite for viewing" class="inviteForViewingBtn" href="javascript:void(0);" target="_blank">
+                                            <span style="color:#000;font-size:11px" class="glyphicon glyphicon-envelope"></span>
+                                            {{#unless invitedDate}}INVITE FOR VIEWING{{else}}Invited on {{dateFormat invitedDate}}{{/unless}}
+                                        </a>
+                                    </h3>
+
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li class="left-border">
+                                    {{#if chosen}}
+                                        {{#unless unChoosingInProgress}}
+                                            <button class="transparent-btn unChooseTenant" type="button">Unchoose</button>
+                                        {{else}}
+                                            <button class="transparent-btn" type="button">Saving...</button>
+                                        {{/unless}}
+                                    {{else}}
+                                        {{#unless choosingInProgress}}
+                                            <button class="transparent-btn chooseTenant" type="button">Choose Tenant</button>
+                                        {{else}}
+                                            <button class="transparent-btn" type="button">Saving...</button>
+                                        {{/unless}}
+                                    {{/if}}
+
+
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!--act-box-->
+                {{#if auctionId}}
+                    <div class="apt-info apt-info1 background-white clearfix">
+                        <ul class="superbuilt-div">
+<li>
+<h5>Employer name</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+    {{#if user.profile.references.employerName}} {{user.profile.references.employerName}} {{else}} N/A {{/if}}
+</h6>
+</li>
+<li>
+<h5 title="Affordable if rent offer is within 40&#37; of his salary.">Salary</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+    {{#if user.profile.references.employerTakeHome}}
+        {{#if canAfford user.profile.references.employerTakeHome}}
+            <span title="Affordable if rent offer is within 40&#37; of his salary take home.">Affordable</span>
+        {{else}}
+            <span title="Not affordable if rent offer is more than 40&#37; of his monthly salary take home."> Cannot afford</span> {{/if}}
+    {{else}}
+        N/A
+    {{/if}}
+</h6>
+</li>
+<li>
+<h5>Work reference</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+    {{#if user.profile.references.hasWorkRef}} <a href="{{user.profile.references.workRef.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+</h6>
+</li>
+<li>
+<h5>Passport</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+    {{#if user.profile.references.hasPassport}} <a href="{{user.profile.references.passport.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+</h6>
+</li>
+<li>
+<h5>Landlord reference</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+    {{#if user.profile.references.hasLandlordRef}} <a href="{{user.profile.references.landlordRef.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+</h6>
+</li>
+<li>
+<h5>PPS</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+    {{#if user.profile.references.hasPPS}} <a href="{{user.profile.references.PPS.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+</h6>
+</li>
+<li>
+<h5>Financial reference</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+    {{#if user.profile.references.hasFinancialRef}} <a href="{{user.profile.references.financialRef.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+</h6>
+</li>
+                            <li>
+<h5>Govt. ID </h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+    {{#if user.profile.references.hasGovtID}} <a href="{{user.profile.references.govtID.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+</h6>
+</li>
+<li>
+<h5>Resume</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+{{#if user.profile.references.hasResume}} <a href="{{user.profile.references.resume.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+</h6>
+</li>
+<li>
+<h5>Mobile</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+{{#if user.profile.mobile}} <a href="tel:{{user.profile.mobile}}" target="_blank">{{user.profile.mobile}}</a> {{else}} N/A {{/if}}
+</h6>
+</li>
+<li>
+<h5>Email</h5>
+<h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+{{#if user.profile.email}} <a href="mailto:{{user.profile.email}}" target="_blank">{{user.profile.email}}</a> {{else}} N/A {{/if}}
+</h6>
+</li>
+
+                        </ul>
+                    </div>
+                {{#if bidMessage}}
+                <div class="apt-info background-white clearfix bidMessageArea">
+                    <blockquote class="">
+                    {{bidMessage}}
+                    </blockquote>
+                </div>
+                {{/if}}
+
+                {{/if}}
+                <!--act-box-->
+            </div>
+        </div>
+
+
+
+
+    </section>
+</template>
+<template name="emailEnquiryList">
+    <section class="main-holder {{classBidList}}" id="unit_{{_id}}">
+
+    <!--<section class="border-top act-div"></section>-->
+        <div class="container">
+            <div class="act-box">
+                <div class="background-white">
+                    <div class="logo-holder-div">
+                        <div class="logo-holder">
+                            <ul>
+                                <li>
+                                    <h3 class="pad-btm-0">
+                                        {{fullname}}
+                                        &nbsp;
+                                        <span style="font-size:11px;color: #9d9d9d;">EMAIL: </span>
+                                        <a style="font-size:12px" href="mailto:{{email}}"> {{email}} </a>
+                                        &nbsp;
+                                        <span style="font-size:11px;color: #9d9d9d;">PHONE: </span>
+                                        {{#if mobile}}
+                                            <a style="font-size:12px" href="tel:{{mobile}}"> {{mobile}} </a>
+                                        {{else}}
+                                            <span style="font-size:11px;">N/A</span>
+                                        {{/if}}
+                                    </h3>
+
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li class="left-border">
+                                    <a class="transparent-btn btns" target="_blank" href="mailto:{{email}}" >Email Tenant</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                {{#if message}}
+                <div class="apt-info background-white clearfix bidMessageArea">
+                    <blockquote class="">
+                    {{{message}}}
+                    </blockquote>
+                </div>
+                {{/if}}
+
+
+                <!--act-box-->
+            </div>
+        </div>
+
+
+
+
+    </section>
+</template>
+
+

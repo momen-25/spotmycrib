@@ -1,0 +1,172 @@
+<template name="advertisewithus">
+    <section class="mar-top-20 mar-btm-20">
+        <div class="container background-white ">
+            <div class="filter-holder mar-top-20 pad-btm-20">
+                <div class="autoFrm">
+                    {{>Template.dynamic template=curTemplate}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{stepUpdater}}
+
+</template>
+<template name="aws_step1">
+    <h1>Advertise your property to rent for FREE!</h1><br/>
+
+    <p>List your property to rent in SpotMyCrib. Let thousands of verified tenants apply for your letting. Choose if you are a landlord, agent or the current tenant looking for a replacement so you can move. </p><br/>
+    <p>Enter the details of the property below and click submit.<br/><br/><br/><br/></p>
+
+    {{>advertiseWithUsForm}}
+
+</template>
+<template name="aws_step2">
+    <h1>Advertise your property to rent (step 2 of 3)</h1><br/>
+    <a href="javascript:void(0)" class="backBtn">&lt;&lt; Back to step 1</a>
+    <p>Connect your advert to your account. Login now or signup with your social account. <br/><br/><br/><br/></p>
+
+    {{>loginFormHorizontal isLandLordMode=true}}
+
+</template>
+<template name="aws_step3">
+    <h1>Congratulations! Your property is now live.</h1><br/>
+    <a href="javascript:void(0)" class="backBtn">&lt;&lt; Back to step 1</a>
+    <!--<h2>Add property images. </h2>-->
+    <p style="margin: 10px 0 10px 0px;">Choose add property images button below to add images to your advert to make it clear and attractive. Add description and choose amenities available by choosing edit option below. Choose preview below to view it, use the link from the preview window to share it with others. </p>
+
+    <div class="signin-form cf-1">
+        <div class="clearfix">
+            <div class="styled-full-width">
+                <button class="btns blue-btn addPropImages">Add property images</button>
+                <a href="{{urlFor 'account/editproperty' id=propertyId}}"  class="btns transparent-btn">Edit property</a>
+                {{#if auctionKey}}
+                <a href="{{urlFor 'letting' key=auctionKey}}" target="_blank" class="btns blue-btn ">Preview property</a>
+                {{/if}}
+            </div>
+
+            <div class="w-100"></div>
+
+        </div>
+    </div>
+
+    <h2>Whats next?</h2>
+    <p>Visit <a href="{{urlFor 'account/myProperties'}}">my properties</a> from <a href="{{urlFor 'account/myProperties'}}">here</a> or from top menu to see the list of all your properties. Visit <span class="green-text">view applications</span> from my properties to see list of all applications your property receive. .</p>
+
+</template>
+
+<template name="advertiseWithUsForm">
+    <form class="signin-form cf-1" id="advertiseWithUsFormCF">
+
+
+        <div class="clearfix">
+            <div class="styled-input ">
+                <input type="text" name="address.address" id="address.address" required/>
+                <label id="address.address-error" class="error" for="address.address">This field is required.</label>
+                <br>
+                <label>Name and Street *</label>
+                <span></span>
+            </div>
+            <div class="styled-input ">
+                <input type="text" name="price" required/>
+                <label id="address.address-error" class="error" for="address.address">This field is required.</label>
+                <br>
+                <label>Rent *</label>
+                <span></span>
+            </div>
+            <div class="styled-input styled-input-select">
+                <label>County</label>
+                <select name="address.county" required="" autocomplete="" class="countySelected">
+                    <option value="">(Select One)</option>
+                    {{#each counties}}
+                        <option value="{{value}}"  {{selected}}>{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Area *</label>
+                <select name="address.area" required="" autocomplete="" class="">
+                    <option value="">(Select One)</option>
+                    {{#each areas}}
+                        <option value="{{value}}"  {{selected}}>{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input styled-input-select">
+                <label>Property type *</label>
+                <select name="type" required="" autocomplete="" >
+                    <option value="">(Select One)</option>
+                    {{#each propertyTypes}}
+                        <option value="{{value}}" {{selected}}>{{label}}</option>
+                    {{/each}}
+                </select>
+                <span></span>
+            </div>
+
+
+            <div class="styled-input styled-input-select">
+                <label>Furnished? *</label>
+                <select name="furnished" required="" autocomplete="" >
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <span></span>
+            </div>
+
+            <div class="styled-input underline">
+                <input type="number" name="baths" id="baths" required/>
+                <label>Number of bathrooms</label>
+                <span></span>
+            </div>
+
+            <div class="styled-input underline">
+                <input type="number" name="numBedRoomCount" id="numBedRoomCount" required/>
+                <label>Number of bedrooms</label>
+                <span></span>
+            </div>
+
+            {{#if numBedRoomCount}}
+                <div class="styled-full-width">
+                    <label class="sep-label">Ensuite? </label>
+
+                    {{#each ensuiteLoop numBedRoomCount}}
+                        <div class="styled-input-select styled-input-checkbox max-20">
+                            <div class="checkbox disabled">
+                                <label><input type="checkbox" name="bedrooms.{{@index}}.ensuite" >Bedroom {{i}} Ensuite?</label>
+                            </div>
+                            <label>Bed Type</label>
+                            <select required="" autocomplete="" name="bedrooms.{{@index}}.bedType">
+                                <option value="single">Single</option>
+                                <option value="double">Double</option>
+                                <option value="twin">Twin</option>
+                            </select>
+                            <span></span>
+                        </div>
+                    {{/each}}
+
+                </div><div class="w-100"></div>
+            {{/if}}
+
+
+
+            <div class="styled-full-width">
+                {{#if addPropertyFormSaving}}
+                    <button type="button" class="btns transparent-btn">Saving</button>
+                {{else}}
+                    <button type="submit" class="btns blue-btn addPropertyFormSaveBtn">Save</button>
+                {{/if}}
+                <!--<button type="button" class="btns blue-btn addPropertyFormSaveActivateBtn">Save and Activate</button>-->
+                <button type="button" class="btns transparent-btn addPropertyFormCancelBtn">Cancel</button>
+            </div>
+
+            <div class="w-100"></div>
+        </div>
+    </form>
+
+
+
+</template>

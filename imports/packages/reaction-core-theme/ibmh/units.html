@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>I bid my home</title>
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+   
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    
+    <link href="css/master.css" rel="stylesheet">
+<!--    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">-->
+       
+    <link href="fonts/font-awesome/css/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/Montserrat/stylesheet.css">
+    
+    <link href="plugins/fancybox/css/jquery.fancybox.css" rel="stylesheet">
+    
+    <link href="plugins/nouislider/css/nouislider.css" rel="stylesheet">
+    
+    
+    
+</head>     
+
+<body>
+    <div class="units">
+  <!-- Header -->
+  <section class="header">
+    <div class="container">
+      <div class="logo-holder-div">
+        <div class="logo-holder">
+          <img src="images/spot-my-crib-logo.png">
+        </div>
+        <div class="menu">
+          <ul>
+            <li class="right-border"><a href="javacscript:;">HOME</a></li>
+            <li><a href="javacscript:;">MY BIDS</a></li>
+            <li><a href="javacscript:;"><img src="images/user-img.png"></a></li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </section>
+
+  <section class="logo-below-div">
+    <div class="container">
+      <div class="logo-holder-div">
+        <div class="logo-holder">
+          <ul>
+            <li><span><img src="images/back-arrow.png"></span></li>
+            <li><h3>Puravankara Projects Ltd</h3>
+            <h4>AUCTION CODE :  A45645</h4></li>
+          </ul>  
+        </div>
+        <div class="menu">
+          <ul>
+            <li class="left-border">
+                <h4>VALUE AUCTION</h4>
+                <h3 class="pad-btm-0">100 HOMES</h3>
+            </li>
+            <li class="left-border text-left">
+              <h4>ENDS IN</h4>
+              <h3 class="timer pad-btm-0"><span id="days"></span><i>Days</i><span id="time"></span><i>hrs</i><span id="minutes"></span><i>Mins</i></h3>
+            </li>
+            <li>
+              <button class="blue-btn btns" type="button">VIEW PROJECT DETAILS</button>
+            </li>
+            
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </section>
+
+ <!-- units property div -->
+ <section class="mar-top-20">
+     <div class="container">
+       <!--  <div class="head-border-bottom"><h2>Choose Your Home</h2></div> -->
+        <!-- filter section -->
+        <div class="head-border-bottom">
+          <ul class="new-filter">
+            <li><div class="pad-bot-15">
+                   <h4 class="color-grey text-left"><label> Home type</label></h4>
+                    <select id="myselect" class="form-control">
+                        <option value="1">1BHK</option>
+                        <option value="2">2BHK</option>
+                        <option value="3">3BHK</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div class="pad-bot-15">
+                   <h4 class="color-grey text-left"><label> Facing</label></h4>
+                    <select id="myselect2" class="form-control">
+                        <option value="1">EAST</option>
+                        <option value="2">WEST</option>
+                        <option value="3">NORTH</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                 <div class="input-field">
+                              <h4 class="color-grey text-uppercase text-left pad-btm-30">Floor level</h4>
+                            <div class="range-holder">
+                              <div class="range-value-holder clearfix">
+                                    <div class="left value pull-left">
+                                        <p>3</p>
+                                    </div>
+                                    <div class="right value pull-right">
+                                        <p>25</p>
+                                    </div>
+                                </div>
+                              <div id="range-input"></div>
+                                <div class="input-select-new">
+                                  <select id="input-select"></select>
+                                  <span class="cross-new"><img src="images/clear-cross-btn.png" class="close-icon"></span>
+                                </div>
+                                <div class="input-new">
+                                  <input type="number" min="3" max="25" step="1" id="input-number"><span class="cross-new1"><img src="images/clear-cross-btn.png" class="close-icon"></span>
+                                </div> 
+
+                            </div>
+                        </div>
+                      
+            </li>
+            <li>
+                   <div class="input-field">
+                            <h4 class="color-grey text-uppercase text-left pad-btm-30">Price range</h4>
+                            <div class="range-holder">
+                              <div class="range-value-holder clearfix">
+                                    <div class="left value pull-left">
+                                        <p>67.45 Lakhs</p>
+                                    </div>
+                                    <div class="right value pull-right">
+                                        <p>97.45 Lakhs</p>
+                                    </div>
+                                </div>
+                              <div id="range-input1"></div>
+                               <div class="input-select-new1">
+                                <select id="input-select1"></select><span class="cross-new2"><img src="images/clear-cross-btn.png" class="close-icon"></span>
+                               </div>
+                                <div class="input-new1">
+                                  <input type="number" min="67.45" max="97.45" step="1" id="input-number1"><span class="cross-new3"><img src="images/clear-cross-btn.png" class="close-icon"></span>
+                                </div>
+                            </div>
+                        </div>
+            </li>
+          </ul>
+        </div>
+        <!-- filter section -->
+       <!--  for clear div section -->
+        <div class="clear-all-div clearfix"> 
+         <ul class="for-left-side">
+           <li class="list1"><h5><span>2 BHK <a><img src="images/clear-cross-btn.png"></a></span></h5></li>
+           <!-- <li><h5>Floor<span>2 to 15 <a><img src="/images/clear-cross-btn.png"></a></span></h5></li> -->
+           <li  class="list2"><h5><span>East<a><img src="images/clear-cross-btn.png"></a></span></h5></li>
+         </ul>
+         <ul class="for-right-side">
+           <li><button class="transparent-btn btns for-hide" type="button">CLEAR ALL</button></li>
+         </ul>
+        </div> 
+        <!--  for clear div section -->
+     </div>
+  </section>
+<div class="container text-center mar-top-20 pad-btm-30"><h2>Choose Your Home</h2></div>
+  <!-- accordian section -->
+<section class="main-holder">  
+  <section class="border-top act-div">
+    <div class="container">
+    <div class="act-box">
+     <div class="background-white">
+     <div class="logo-holder-div">
+        <div class="logo-holder">
+          <ul>
+            <li>
+                <h3 class="pad-btm-0">D -1302  2BHK , 12th Floor &nbsp;<span style="font-size:11px;color: #9d9d9d;">AUCTION CODE </span>: <span style="color:#000;font-size:11px"> A45645/1302</span></h3>
+                <!-- <h2 class="pad-btm-0">Purva Sunflower, Whitefield, Bangalore</h2> -->
+            </li>
+          </ul>  
+        </div>
+        
+      </div>
+     </div>
+        <div class="apt-info apt-info1 background-white clearfix">
+            <ul class="superbuilt-div">
+                <li>
+                   <h5>Super built up area</h5>
+                  <h6 class="cursor-ptr" id="super-bulit-up-area2">1629 Sq.ft</h6>
+                </li>
+                <li>
+                  <h5>Developer's Current Price</h5>
+                  <h6>Base:  <i class="fa fa-inr indian-rup"></i>5700 / sq.ft</h6>
+                </li>
+                <li>
+                   <h5></h5>
+                  <h6>Total Price : &nbsp;<span class="color-green"><i class="fa fa-inr indian-rup"></i>85.6 lakhs</span></h6>
+                </li>
+            </ul>
+            <ul class="bid-button-div left-line">
+                <li>
+                   <h5>Bidding Starts at</h5>
+                   <h6>Base:  <i class="fa fa-inr indian-rup"></i>5700 / sq.ft</h6>
+                </li>
+                <li>
+                  <h5>Total price</h5>
+                  <h6>Base:  <i class="fa fa-inr indian-rup"></i>79.8 Lakhs</h6>
+                </li>
+                <li>
+                   <button class="btns blue-btn color-white" type="button">Outbid by <i class="fa fa-inr indian-rup"></i>25/ sq.ft</button>
+                </li>
+            </ul>
+            <div class="see-more-btn">
+              <p>See more<span style="margin-left:8px;"><img src="images/accord-bottom-arrow.png"></span></p>
+            </div>
+        </div>
+        <!--act-box-->
+        
+     </div>
+  </section>
+<!-- accordian section -->
+  <section class="border-top hide-accord">
+      <div class="container">
+      <div class="act-box">
+          <div class="apt-no background-white clearfix">
+              <h3 class="pull-left">D -1302  2BHK , 12 th Floor</h3>
+              
+          </div>
+          <div class="apt-info background-white">
+              <div class="box-bdr">
+              <div class=" box-inner">
+              <div class="clearfix accord-open-border background-halfwhite">
+                  <div class="col-md-3">
+                    <h5>Super built up area</h5>
+                    <h6 class="cursor-ptr" id="super-bulit-up-area2">1629 Sq.ft</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Developer's Current Price</h5>
+                    <h6>Base:  <i class="fa fa-inr indian-rup"></i>5700 / sq.ft</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5></h5>
+                    <h6>Total Price : &nbsp;<span class="color-green"><i class="fa fa-inr indian-rup"></i>85.6 lakhs</span></h6>
+                  </div>
+                  <div class="col-md-3">
+                     <h5></h5>
+                     <h6><span style="margin-right:8px;vertical-align:middle;"><img src="images/eye-icon.png"></span><span style="vertical-align:middle;" class="color-green">Typical floor plan</span></h6>
+                  </div>
+                </div>  
+                <div class="clearfix accord-open-border background-halfwhite">  
+                  <div class="col-md-3">
+                    <h5>Tower</h5>
+                    <h6>A</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Car Park</h5>
+                    <h6>2 (Type  -  Open)</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Category</h5>
+                    <h6>Premium</h6>
+                  </div>
+                  <div class="col-md-3">
+                     <h5>Facing</h5>
+                     <h6>East</h6>
+                  </div>
+                </div> 
+                <div class="clearfix background-halfwhite" style="padding: 15px 0px;"> 
+                  <div class="col-md-3">
+                    <h5>No of toilets</h5>
+                    <h6>2</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Vastu compliant</h5>
+                    <h6>Yes</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Primary view from living room</h5>
+                    <h6>Swimming Pool</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Deficiency</h5>
+                    <h6>The kids room facing the STP</h6>
+                  </div>
+                </div> 
+                  </div>
+                
+                  <div class="clearfix accord-open-border accord-top-border background-halfwhite"> 
+                      <p class="accor-padd">All bids are placed at per sqft only . The Total Price does not include the Stamp Duty and Registration charges. Stamp Duty and Registration charges will be added to the Total Price at the time of registration.</p>
+                </div>
+                  <div class="background-orange">
+                  <div class="clearfix accord-open-border">
+                   <div class="col-md-9 padding0">
+                      <div>
+                      
+                       <div class="col-md-6 pad-left-35 padding0">
+                    
+                     <div class="col-md-6" style="padding:0">
+                      <div>
+                       <h4 class="pad-btm-8">Bidding starts at</h4>
+                       <h3 class="pad-btm-0 color-blue margin0"><span class="big-text-22"><i class="fa fa-inr indian-rup"></i><span>4900</span></span> / SQ.FT</h3>
+                      </div> 
+                     </div>
+                      <div class="col-md-6 padding0">
+                        <div class="left-line">
+                         <h4 class="pad-btm-5">Total Price</h4>
+                         <h3 class="color-green pad-btm-0"><i class="fa fa-inr indian-rup"></i>80.1 lakhs </h3>
+                        </div> 
+                      </div>
+                   </div>
+                    <div class="col-md-6 padding0">
+                    
+                     <!-- <div class="col-md-6 padding0">
+                      <div class="left-line">
+                          <h4 class="pad-btm-8">Current Highest bid </h4>
+                       <h3 class="pad-btm-0 color-blue margin0"><span class="big-text-22"><i class="fa fa-inr indian-rup"></i><span>5100</span></span> / SQ.FT</h3>
+                      </div> 
+                     </div> -->
+                      <!-- <div class="col-md-6 padding0">
+                        <div class="left-line">
+                         <h4 class="pad-btm-5">Total Price</h4>
+                         <h3 class="color-green pad-btm-0"><i class="fa fa-inr indian-rup"></i>80.1 lakhs </h3>
+                        </div> 
+                      </div> -->
+                   </div>
+                      </div>  
+                   </div>
+
+                   <div class="col-md-3 padding0">
+                    
+                    
+                      
+                        <div>
+                         <button class="btns blue-btn color-white" type="button">Outbid by <i class="fa fa-inr indian-rup"></i>25/ sq.ft</button>
+                        </div> 
+                     
+                   </div>
+                 </div>
+              </div>
+          </div>
+            <div class="see-more-btn1">
+              <p>See less<span style="margin-left:8px;"><img src="images/accord-top-arrow.png"></span></p>
+            </div>
+       </div><!--act-box-->
+       </div>
+  </section>
+</section>  
+
+<!-- 2nd section -->
+<section class="main-holder">  
+  <section class="border-top act-div">
+    <div class="container">
+    <div class="act-box">
+     <div class="background-white">
+     <div class="logo-holder-div">
+        <div class="logo-holder">
+          <ul>
+            <li>
+                <h3 class="pad-btm-0">D -1302  2BHK , 12th Floor &nbsp;<span style="font-size:11px;color: #9d9d9d;">AUCTION CODE </span>: <span style="color:#000;font-size:11px"> A45645/1302</span></h3>
+                <!-- <h2 class="pad-btm-0">Purva Sunflower, Whitefield, Bangalore</h2> -->
+            </li>
+          </ul>  
+        </div>
+        
+      </div>
+     </div>
+        <div class="apt-info apt-info1 background-white clearfix">
+            <ul class="superbuilt-div">
+                <li>
+                   <h5>Super built up area</h5>
+                  <h6 class="cursor-ptr" id="super-bulit-up-area2">1629 Sq.ft</h6>
+                </li>
+                <li>
+                  <h5>Developer's Current Price</h5>
+                  <h6>Base:  <i class="fa fa-inr indian-rup"></i>5700 / sq.ft</h6>
+                </li>
+                <li>
+                   <h5></h5>
+                  <h6>Total Price : &nbsp;<span class="color-green"><i class="fa fa-inr indian-rup"></i>85.6 lakhs</span></h6>
+                </li>
+            </ul>
+            <ul class="bid-button-div left-line">
+                <li>
+                   <h5>Bidding Starts at</h5>
+                   <h6>Base:  <i class="fa fa-inr indian-rup"></i>5700 / sq.ft</h6>
+                </li>
+                <li>
+                  <h5>Total price</h5>
+                  <h6>Base:  <i class="fa fa-inr indian-rup"></i>79.8 Lakhs</h6>
+                </li>
+                <li>
+                   <button class="btns blue-btn color-white" type="button">Outbid by <i class="fa fa-inr indian-rup"></i>25/ sq.ft</button>
+                </li>
+            </ul>
+            <div class="see-more-btn">
+              <p>See more<span style="margin-left:8px;"><img src="images/accord-bottom-arrow.png"></span></p>
+            </div>
+        </div>
+        <!--act-box-->
+        
+     </div>
+  </section>
+<!-- accordian section -->
+  <section class="border-top hide-accord">
+      <div class="container">
+      <div class="act-box">
+          <div class="apt-no background-white clearfix">
+              <h3 class="pull-left">D -1302  2BHK , 12 th Floor</h3>
+              
+          </div>
+          <div class="apt-info background-white">
+              <div class="box-bdr">
+              <div class=" box-inner">
+              <div class="clearfix accord-open-border background-halfwhite">
+                  <div class="col-md-3">
+                    <h5>Super built up area</h5>
+                    <h6 class="cursor-ptr" id="super-bulit-up-area2">1629 Sq.ft</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Developer's Current Price</h5>
+                    <h6>Base:  <i class="fa fa-inr indian-rup"></i>5700 / sq.ft</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5></h5>
+                    <h6>Total Price : &nbsp;<span class="color-green"><i class="fa fa-inr indian-rup"></i>85.6 lakhs</span></h6>
+                  </div>
+                  <div class="col-md-3">
+                     <h5></h5>
+                     <h6><span style="margin-right:8px;vertical-align:middle;"><img src="images/eye-icon.png"></span><span style="vertical-align:middle;" class="color-green">Typical floor plan</span></h6>
+                  </div>
+                </div>  
+                <div class="clearfix accord-open-border background-halfwhite">  
+                  <div class="col-md-3">
+                    <h5>Tower</h5>
+                    <h6>A</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Car Park</h5>
+                    <h6>2 (Type  -  Open)</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Category</h5>
+                    <h6>Premium</h6>
+                  </div>
+                  <div class="col-md-3">
+                     <h5>Facing</h5>
+                     <h6>East</h6>
+                  </div>
+                </div> 
+                <div class="clearfix background-halfwhite" style="padding: 15px 0px;"> 
+                  <div class="col-md-3">
+                    <h5>No of toilets</h5>
+                    <h6>2</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Vastu compliant</h5>
+                    <h6>Yes</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Primary view from living room</h5>
+                    <h6>Swimming Pool</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Deficiency</h5>
+                    <h6>The kids room facing the STP</h6>
+                  </div>
+                </div> 
+                  </div>
+                
+                  <div class="clearfix accord-open-border accord-top-border background-halfwhite"> 
+                      <p class="accor-padd">All bids are placed at per sqft only . The Total Price does not include the Stamp Duty and Registration charges. Stamp Duty and Registration charges will be added to the Total Price at the time of registration.</p>
+                </div>
+                  <div class="background-orange">
+                <div class="clearfix accord-open-border pad-top-btm-30">
+                 <div class="col-md-8 padding0">
+                    <div>
+                    
+                     <div class="col-md-6 pad-left-35 padding0">
+                  
+                   <div class="col-md-6" style="padding:0">
+                    <div>
+                     <h4 class="pad-btm-8">Your Bid</h4>
+                     <h3 class="pad-btm-0 color-blue margin0"><span class="big-text-22"><i class="fa fa-inr indian-rup"></i><span>5100</span></span> / SQ.FT</h3>
+                    </div> 
+                   </div>
+                    <div class="col-md-6 padding0">
+                      <div class="left-line">
+                          <h4 class="pad-btm-0">Total </h4>
+                       <h3 class="color-green pad-btm-0"><i class="fa fa-inr indian-rup"></i>80.1 lakhs </h3>
+                      </div> 
+                    </div>
+                 </div>
+                      <div class="col-md-6 padding0">
+                  
+                   <div class="col-md-6 padding0">
+                    <div class="left-line download-div">
+                        <div class="download-icon"><img src="images/download-icon.png" alt=""></div> 
+                        <h3 class="download-text"><a href="javascript:;" class="color-green">Download price break up</a></h3>
+                    </div> 
+                   </div>
+                    <div class="col-md-6 padding0">
+                      <div class="left-line">
+                          <h4 class="pad-btm-8">You save</h4>
+                       <h3 class="pad-btm-0 color-blue margin0"><span class="big-text-22"><i class="fa fa-inr indian-rup"></i><span>5.6</span></span> lakhs</h3>
+                      </div> 
+                    </div>
+                 </div>
+                    </div>  
+                 </div>
+
+                 <div class="col-md-4 padding0">
+                  
+                  
+                    
+                      <div>
+                       <button class="blue-btn btns " type="button" id="my-bid-confirm">CONFIRM YOUR BID</button>
+                    <button class="transparent-btn" type="button">CANCEL</button>
+                      </div> 
+                   
+                 </div>
+               </div>
+                </div>
+              </div>
+         
+            <div class="see-more-btn1">
+              <p>See less<span style="margin-left:8px;"><img src="images/accord-top-arrow.png"></span></p>
+            </div>
+             </div>
+       </div><!--act-box-->
+       </div>
+  </section>
+</section>  
+
+<!-- 2nd section -->
+
+<!-- 3rd section-->
+<section class="main-holder">  
+  <section class="border-top act-div">
+    <div class="container">
+    <div class="act-box">
+     <div class="background-white">
+     <div class="logo-holder-div">
+        <div class="logo-holder">
+          <ul>
+            <li>
+                <h3 class="pad-btm-0">D -1302  2BHK , 12th Floor &nbsp;<span style="font-size:11px;color: #9d9d9d;">AUCTION CODE </span>: <span style="color:#000;font-size:11px"> A45645/1302</span></h3>
+                <!-- <h2 class="pad-btm-0">Purva Sunflower, Whitefield, Bangalore</h2> -->
+            </li>
+          </ul>  
+        </div>
+        
+      </div>
+     </div>
+        <div class="apt-info apt-info1 background-white clearfix">
+            <ul class="superbuilt-div">
+                <li>
+                   <h5>Super built up area</h5>
+                  <h6 class="cursor-ptr" id="super-bulit-up-area2">1629 Sq.ft</h6>
+                </li>
+                <li>
+                  <h5>Developer's Current Price</h5>
+                  <h6>Base:  <i class="fa fa-inr indian-rup"></i>5700 / sq.ft</h6>
+                </li>
+                <li>
+                   <h5></h5>
+                  <h6>Total Price : &nbsp;<span class="color-green"><i class="fa fa-inr indian-rup"></i>85.6 lakhs</span></h6>
+                </li>
+            </ul>
+            <ul class="bid-button-div left-line">
+                <li>
+                   <h5>Bidding Starts at</h5>
+                   <h6>Base:  <i class="fa fa-inr indian-rup"></i>5700 / sq.ft</h6>
+                </li>
+                <li>
+                  <h5>Total price</h5>
+                  <h6>Base:  <i class="fa fa-inr indian-rup"></i>79.8 Lakhs</h6>
+                </li>
+                <li>
+                   <button class="btns blue-btn color-white" type="button">Outbid by <i class="fa fa-inr indian-rup"></i>25/ sq.ft</button>
+                </li>
+            </ul>
+            <div class="see-more-btn">
+              <p>See more<span style="margin-left:8px;"><img src="images/accord-bottom-arrow.png"></span></p>
+            </div>
+        </div>
+        <!--act-box-->
+        
+     </div>
+  </section>
+<!-- accordian section -->
+  <section class="border-top hide-accord">
+      <div class="container">
+      <div class="act-box">
+          <div class="apt-no background-white clearfix">
+              <h3 class="pull-left">D -1302  2BHK , 12 th Floor</h3>
+              
+          </div>
+          <div class="apt-info background-white">
+              <div class="box-bdr">
+              <div class=" box-inner">
+              <div class="clearfix accord-open-border background-halfwhite">
+                  <div class="col-md-3">
+                    <h5>Super built up area</h5>
+                    <h6 class="cursor-ptr" id="super-bulit-up-area2">1629 Sq.ft</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Developer's Current Price</h5>
+                    <h6>Base:  <i class="fa fa-inr indian-rup"></i>5700 / sq.ft</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5></h5>
+                    <h6>Total Price : &nbsp;<span class="color-green"><i class="fa fa-inr indian-rup"></i>85.6 lakhs</span></h6>
+                  </div>
+                  <div class="col-md-3">
+                     <h5></h5>
+                     <h6><span style="margin-right:8px;vertical-align:middle;"><img src="images/eye-icon.png"></span><span style="vertical-align:middle;" class="color-green">Typical floor plan</span></h6>
+                  </div>
+                </div>  
+                <div class="clearfix accord-open-border background-halfwhite">  
+                  <div class="col-md-3">
+                    <h5>Tower</h5>
+                    <h6>A</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Car Park</h5>
+                    <h6>2 (Type  -  Open)</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Category</h5>
+                    <h6>Premium</h6>
+                  </div>
+                  <div class="col-md-3">
+                     <h5>Facing</h5>
+                     <h6>East</h6>
+                  </div>
+                </div> 
+                <div class="clearfix background-halfwhite" style="padding: 15px 0px;"> 
+                  <div class="col-md-3">
+                    <h5>No of toilets</h5>
+                    <h6>2</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Vastu compliant</h5>
+                    <h6>Yes</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Primary view from living room</h5>
+                    <h6>Swimming Pool</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Deficiency</h5>
+                    <h6>The kids room facing the STP</h6>
+                  </div>
+                </div> 
+                  </div>
+                
+                  <div class="clearfix accord-open-border accord-top-border background-halfwhite"> 
+                      <p class="accor-padd">All bids are placed at per sqft only . The Total Price does not include the Stamp Duty and Registration charges. Stamp Duty and Registration charges will be added to the Total Price at the time of registration.</p>
+                </div>
+                <div class="background-orange">
+                <div class="clearfix accord-open-border">
+                 <div class="col-md-9 padding0">
+                    <div>
+                    
+                     <div class="col-md-6 pad-left-35 padding0">
+                  
+                   <div class="col-md-6" style="padding:0">
+                    <div>
+                     <h4 class="pad-btm-8">Your Bid</h4>
+                     <h3 class="pad-btm-0 color-blue margin0"><span class="big-text-22"><i class="fa fa-inr indian-rup"></i><span>5100</span></span> / SQ.FT</h3>
+                    </div> 
+                   </div>
+                    <div class="col-md-6 padding0">
+                      <div class="left-line">
+                       <h4 class="pad-btm-5">Total Price</h4>
+                       <h3 class="color-green pad-btm-0"><i class="fa fa-inr indian-rup"></i>80.1 lakhs </h3>
+                      </div> 
+                    </div>
+                 </div>
+                      <div class="col-md-6 padding0">
+                  
+                   <div class="col-md-6 padding0">
+                    <div class="left-line">
+                        <h4 class="pad-btm-8">Current Highest bid </h4>
+                     <h3 class="pad-btm-0 color-blue margin0"><span class="big-text-22"><i class="fa fa-inr indian-rup"></i><span>5100</span></span> / SQ.FT</h3>
+                    </div> 
+                   </div>
+                    <div class="col-md-6 padding0">
+                      <div class="left-line">
+                       <h4 class="pad-btm-5">Total Price</h4>
+                       <h3 class="color-green pad-btm-0"><i class="fa fa-inr indian-rup"></i>80.1 lakhs </h3>
+                      </div> 
+                    </div>
+                 </div>
+                    </div>  
+                 </div>
+
+                 <div class="col-md-3 padding0">
+                  
+                  
+                    
+                      <div>
+                       <button class="btns grey1-btn color-white" type="button">Your bid is highest</button>
+                      </div> 
+                   
+                 </div>
+               </div>
+            
+                </div>
+              </div>
+         
+            <div class="see-more-btn1">
+              <p>See less<span style="margin-left:8px;"><img src="images/accord-top-arrow.png"></span></p>
+            </div>
+             </div>
+             </div>
+       </div><!--act-box-->
+       </div>
+  </section>
+</section> 
+<!-- 3rd section -->
+</div>
+
+
+
+
+   
+    
+</div>
+  <!-- footer -->
+  <section class="footer-div">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4 foot-menu">
+            <ul>
+              <li><a href="javascript:;">ABOUT US </a></li>
+              <li><a href="javascript:;">CONTACT US</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 foot-logo-div"><a href="javascript:;"><img src="images/footer-logo.png"></a></div>
+          <div class="col-md-4 social-icon">
+             <ul>
+              <li><a href="javascript:;"><img src="images/facebook-icon.png"></a></li>
+              <li><a href="javascript:;"><img src="images/twitter-icon.png"></a></li>
+              <li><a href="javascript:;"><img src="images/linkedin-icon.png"></a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </section>
+  <section class="copyright">
+    <div class="container">
+    <ul class="footer-left">
+      <li>Copyright © 2016 IBidMyHome. All rights reserved. </li>
+    </ul>
+     <ul class="footer-right">
+      <li>Privacy Policy</li>
+      <li>Terms and Conditions</li>
+    </ul>
+    </div>
+  </section>
+<!-- footer -->
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="plugins/nouislider/js/nouislider.min.js"></script>
+<script type="text/javascript">
+   
+
+var select = document.getElementById('input-select');
+
+// Append the option elements
+for ( var i = 3; i <= 25; i++ ){
+
+  var option = document.createElement("option");
+    option.text = i;
+    option.value = i;
+
+  select.appendChild(option);
+}
+var html5Slider = document.getElementById('range-input');
+
+noUiSlider.create(html5Slider, {
+  start: [ 3, 25 ],
+  connect: true,
+  range: {
+    'min': 3,
+    'max': 25
+  }
+});
+var inputNumber = document.getElementById('input-number');
+
+html5Slider.noUiSlider.on('update', function( values, handle ) {
+
+  var value = values[handle];
+
+  if ( handle ) {
+    inputNumber.value = value;
+  } else {
+    select.value = Math.round(value);
+  }
+});
+
+select.addEventListener('change', function(){
+  html5Slider.noUiSlider.set([this.value, null]);
+});
+
+inputNumber.addEventListener('change', function(){
+  html5Slider.noUiSlider.set([null, this.value]);
+});
+
+// 2nd slide
+
+var select1 = document.getElementById('input-select1');
+
+// Append the option elements
+for ( var i = 67; i <= 97; i++ ){
+
+  var option = document.createElement("option");
+    option.text = i;
+    option.value = i;
+
+  select1.appendChild(option);
+}
+var html5Slider1 = document.getElementById('range-input1');
+
+noUiSlider.create(html5Slider1, {
+  start: [ 67, 97 ],
+  connect: true,
+  range: {
+    'min': 67.45,
+    'max': 97.45
+  }
+});
+var inputNumber1 = document.getElementById('input-number1');
+
+html5Slider1.noUiSlider.on('update', function( values, handle ) {
+
+
+  var value = values[handle];
+
+  if ( handle ) {
+    inputNumber1.value = value;
+  } else {
+    select1.value = Math.round(value);
+  }
+});
+
+select.addEventListener('change', function(){
+  html5Slider1.noUiSlider.set([this.value, null]);
+});
+
+inputNumber1.addEventListener('change', function(){
+  html5Slider1.noUiSlider.set([null, this.value]);
+});
+</script>
+
+<script src="plugins/fancybox/js/jquery.fancybox.js"></script>
+<script>
+
+    $("#filter").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#filter-popup'
+        });
+    });
+
+    $("#super-bulit-up-area").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#super-bulit-up-area-popup'
+        });
+    });
+
+</script>
+
+<script type="text/javascript">  
+     
+  $(document).ready(function(){
+   $(".see-more-btn").click(function(){
+          $(this).parents('.main-holder').find('.hide-accord').addClass("accord");
+          $(this).parents('.main-holder').find('.act-div').addClass("accord");
+   
+    });
+  $(".see-more-btn1").click(function(){
+    $(this).parents('.main-holder').find('.hide-accord').removeClass("accord");
+    $(this).parents('.main-holder').find('.act-div').removeClass("accord");
+
+    });
+$("#range-input").click(function(){
+  $('#input-select').css('opacity','1');
+  $('#input-number').css('opacity','1');
+  $('.cross-new').css('opacity','1');
+  $('.cross-new1').css('opacity','1');
+  $('.input-select-new').show();
+   $('.input-new').show();
+  });
+
+
+$("#range-input1").click(function(){
+  $('#input-select1').css('opacity','1');
+  $('#input-number1').css('opacity','1');
+  $('.cross-new2').css('opacity','1');
+  $('.cross-new3').css('opacity','1');
+  $('.input-select-new1').show();
+  $('.input-new1').show();
+  });
+
+ 
+
+  $(".input-select-new span").click(function(){
+  $('#input-select').css('opacity','0');
+  $('.cross-new').css('opacity','0');
+  
+  });
+  $(".input-new").click(function(){
+  $('#input-number').css('opacity','0');
+  $('.cross-new1').css('opacity','0');
+  
+  });
+  $(".input-select-new1 span").click(function(){
+  $('#input-select1').css('opacity','0');
+  $('.cross-new2').css('opacity','0');
+  
+  });
+  $(".input-new1").click(function(){
+  $('#input-number1').css('opacity','0');
+  $('.cross-new3').css('opacity','0');
+  
+  });
+
+  $(".for-hide").click(function(){
+ $('ul.for-left-side').hide();
+ $('.input-select-new').hide();
+ $('.input-new').hide();
+ $('.input-select-new1').hide();
+ $('.input-new1').hide();
+  
+  
+  
+  });
+      
+        });
+    </script> 
+
+<!-- clear all section -->
+
+
+<script>
+$(function(){
+    //Timer for Local time & Date
+    	var time = setInterval(function(){
+    	future_date = new Date("2016/02/29 12:00:00");
+		present_date = new Date();
+		seconds = Math.floor((future_date - (present_date))/1000);
+    	minutes = Math.floor(seconds/60);
+  		hours = Math.floor(minutes/60);
+    	days = Math.floor(hours/24);
+    
+		cur_hours = hours-(days*24);
+		cur_minutes = minutes-(days*24*60)-(cur_hours*60);
+		cur_seconds = seconds-(days*24*60*60)-(cur_hours*60*60)-(cur_minutes*60);
+		
+		$("#days").text(days);
+                $("#time").text(cur_hours);
+                $("#minutes").text(cur_minutes);
+                
+    	},1000);
+});
+</script>
+<script>
+  (function ($) {
+    var p = '<a><img src="images/clear-cross-btn.png" class="close-icon"></a>';
+    var c = '<a><img src="images/clear-cross-btn.png" class="close-icon"></a>';
+  $('.list1 h5 span').hide();
+  $('.list2 h5 span').hide();
+  $( "#myselect" ).change(function() {
+    var t = $( "#myselect option:selected" ).text();
+    $('.list1 h5').show();
+    $('.list1 h5 span').fadeIn().html("Home type: "+t+p);
+    $('ul.for-left-side').show();
+    });
+    $( "#myselect2" ).change(function() {
+    var a = $( "#myselect2 option:selected" ).text();
+    $('.list2 h5').show();
+    $('.list2 h5 span').fadeIn().html("Facing: "+a+c);
+    $('ul.for-left-side').show();
+    });
+    $("body").on("click", ".close-icon", function(){
+    $(this).parents('h5').fadeOut();
+    });
+    
+
+         })(jQuery);
+</script>
+
+<!-- for slider -->
+</body>  
+</html>
+

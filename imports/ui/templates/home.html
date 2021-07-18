@@ -1,0 +1,593 @@
+<template name="home">
+    <div class="index home">
+      {{> homePage}}
+    </div>
+    <!-- video -->
+    <div id="video-div" style="display:none;">
+        <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/zzGPjQECB64" frameborder="0" allowfullscreen></iframe>-->
+    </div>
+    <!-- video -->
+
+</template>
+
+<template name="homePage">
+
+    <section class="" id="searchform">
+
+        <div class="index-main-banner">
+            <div class="container">
+
+                <div class="index-bnr-cont">
+                    <!-- <h1 class="color-blue "3
+                        Fine homes below the market price
+                    </h1> -->
+                    <div id="homeSliderParent" >
+                        <div id="homeSlider" class="carousel slide carousel-fade" data-interval="3000" data-ride="carousel">
+
+                            <ol class="carousel-indicators">
+                                <li data-target="#homeSlider" data-slide-to="0" class="active"></li>
+                                <li data-target="#homeSlider" data-slide-to="1"></li>
+                                <li data-target="#homeSlider" data-slide-to="2"></li>
+                                <li data-target="#homeSlider" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <p>Find your next dream home</p>
+                                </div>
+                                <div class="item">
+                                    <p>In the most reliable rental platform</p>
+                                </div>
+                                <div class="item">
+                                    <p>With genuine verified landlords</p>
+                                </div>
+                                <div class="item">
+                                    <p>What are you waiting for? Hit find below.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{#if false}}
+
+
+ <div id="home-text-slider" class="owl-carousel owl-theme">
+     {{#if false}}
+            <div class="item">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                    <h1>House search made easy and reliable</h1>
+                </div>
+            </div>
+            <div class="item">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                    <h1>Select from variety of options</h1>
+                </div>
+            </div>
+         <div class="item active">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                 <h1>Apply for the house you like</h1>
+             </div>
+         </div>
+         <div class="item">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                 <h1>Set your rent</h1>
+             </div>
+         </div>
+         <div class="item">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                 <h1>Faster, transparent and reliable application process</h1>
+             </div>
+         </div>
+         <div class="item">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                 <h1>Free! No agent fee / No hidden charges</h1>
+             </div>
+         </div>
+         <div class="item active">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                 <h1>Spending too much time for viewings?</h1>
+             </div>
+         </div>
+         <div class="item">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                 <h1>Tired of waiting in cold long queues?</h1>
+             </div>
+         </div>
+         <div class="item">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                 <h1>Tired of submitting many paper references on every viewing?</h1>
+             </div>
+         </div>
+         <div class="item">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                 <h1>Tired of not getting called for house?</h1>
+             </div>
+         </div>
+{{/if}}
+     <div class="item active">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+             <p>Find your next dream home</p>
+         </div>
+     </div>
+     <div class="item">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+             <p>In the safest rental platform</p>
+         </div>
+     </div>
+     <div class="item">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+             <p>With genuine verified landlords</p>
+         </div>
+     </div>
+     <div class="item">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+             <p>What are you waiting for? Hit find below.</p>
+         </div>
+     </div>
+  </div>
+                    {{/if}}
+
+
+                    <!-- carausel -->
+
+                    <div class="box-places home-page-box-places bigsearchbox">
+                        <ul>
+                              <li>
+   {{>homePageMainForm}}
+                              </li>
+                        </ul>
+                    </div>
+                    <!--<div class="">-->
+                        <!--<a href="#how-works" class="pink-btn oval-btn scroll1">How it works?</a>-->
+                    <!--</div>-->
+                    <!---->
+                    <div class="home-banner" style="margin-top: 50px;">
+                        <a class="btns transparent-btn " href="{{pathFor 'estateagent'}}">I'm a Landlord</a>
+                        <a class="btns blue-btn iamarenterbtn" href="#searchform">I'm a Renter</a>
+                        <!--href="#whatis"-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- </div> -->
+
+    </section>
+
+    <section id="whatis" class="sec-holder how-it-works">
+        <div class="container">
+            <h2>What is SpotMyCrib?</h2>
+            <span class="bottom-line"></span>
+            <div class="container">
+                <p>SpotMyCrib is the safest platform to find your next rental home. It brings 100% verified landlords with genuine rentals to you. Just search for your ideal home, apply, get screened, e-sign your lease and pay rent online. <a href="#how-works" class="scroll1" style="font-size: 15px;">Know more.</a></p>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="how-works" class="sec-holder how-it-works">
+        <div class="container">
+            <h2>How it works</h2>
+            <span class="bottom-line"></span>
+            <!--<div class="">-->
+                <!--<a id="video" class="oval-btn green-btn cursor"><span class="fa fa-play-circle-o play-icon"></span>Watch the video</a>-->
+            <!--</div>-->
+            <ul class="mar-top-30">
+                <li>
+                    <h6 class="pad-btm-30">Search</h6>
+                    <img src="/images/how-it-works/search-and-find-property-apartment-flat.png" alt="Search and find your rental property" class="pad-btm-30" />
+                    <p> Search the key you received from the Landlord. Or visit the property from the link you received. </p>
+                </li>
+                <li>
+                    <h6 class="pad-btm-30">Set Your Rent</h6>
+                    <img src="/images/how-it-works/set-your-rent-apartment.png" alt="Apply and set your rent for Apartment"  class="pad-btm-30"/>
+                    <p>Make your offer for the house and click apply. Remember to upload all your references in your profile.</p>
+                </li>
+                <li>
+                    <h6 class="pad-btm-30">Confirm your Home</h6>
+                    <img src="/images/how-it-works/confirm-your-rent-in-dublin.png" alt="Confirm your rental"  class="pad-btm-30"/>
+                    <p>Landlord chooses a tenant based on your references and your offer. If you are chosen, you would receive a confirmation email. </p>
+                </li>
+            </ul>
+        </div>
+        <div class="container mar-top-30">
+            <a href="{{pathFor 'faqs'}}" class="transparent-btn btns " type="button">Learn more</a>
+            <span class="pad-btm-30 visible-xs visible-sm">&nbsp;</span>
+        </div>
+    </section>
+
+
+{{#if false}}
+    <!-- home page -->
+    <section class="property-list sec-holder">
+        <div class="container">
+            <div class="prop-wrap">
+                <h2>Value Auctions</h2>
+                <span class="bottom-line"></span>
+            </div>
+            <div class="map-menu auction">
+{{#if config}}
+                <h5>Ends on {{endsDate}}</h5>
+                <section>
+                    <section class="proplist-sec">
+
+                        <div class="row blogs">
+
+                          {{#each valueAuctions }}
+                            {{> valueAuctionsGrid}}
+                          {{/each}}
+
+                            <div class="pink-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <a href="{{pathFor 'valueAuctions' }}" class="pink-btn oval-btn ">View
+                                All</a>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </section>
+{{else}}
+  {{>loading}}
+{{/if}}
+            </div>
+        </div>
+    </section>
+{{/if}}
+    <section class="sec-holder about-us">
+        <div class="container">
+            <h1>Manage all your lettings at one place</h1>
+            <h3 style="color:white;margin-top: 10px;">From finding tenants to verifying their social profiles</h3>
+            <h3 style="color:white;margin-top: 0px;">From collecting rents to logging maintenance costs</h3>
+            <div>
+                {{#unless currentUser}}
+                <a href="javascript:;" style="margin-top: 10px;" class="pink-btn oval-btn joinNowBtn">Start Your Free 30-Day Trial</a>
+                {{else}}
+                    <a href="{{pathFor "account/myProperties"}}" style="margin-top: 10px;" class="pink-btn oval-btn postYourProperty">Post your property</a>
+                {{/unless}}
+            </div>
+        </div>
+    </section>
+
+</template>
+
+
+
+
+
+
+<template name="homePageValueAuctions">
+
+    <!-- home page -->
+    <section class="property-list sec-holder">
+    <div class="container">
+        <div class="prop-wrap">
+            <h2>Value Auctions</h2>
+            <span class="bottom-line"></span>
+        </div>
+        <div class="map-menu auction">
+
+            <ul class="filter">
+                <li class="all-btn"><a href="javascript:;" data-cat="all" class="active">ALL</a></li>
+                <li><a href="javascript:;" data-cat="Bangalore">BANGALORE</a></li>
+                <li><a href="javascript:;" data-cat="Cochin">COCHIN</a></li>
+                <li><a href="javascript:;" data-cat="Chennai">CHENNAI</a></li>
+            </ul>
+            <section>
+                <section class="proplist-sec">
+                    <div class="row blogs">
+                      <!--{{#each cityData "Bangalore"}}-->
+                        <!--{{> valueAuctionsGrid}}-->
+                      <!--{{/each}}-->
+                      <!--{{#each cityData "Chennai"}}-->
+                        <!--{{> valueAuctionsGrid}}-->
+                      <!--{{/each}}-->
+                      <!--{{#each cityData "Cochin"}}-->
+                        <!--{{> valueAuctionsGrid}}-->
+                      <!--{{/each}}-->
+
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </div>
+    </div>
+    </section>
+    <!-- home page -->
+</template>
+<template name="homePageMainForm">
+    <form class="propertykey-form">
+      <div class="input-group">
+
+         <!--start -->
+
+        <div class="searchformSec">
+
+            <input type="hidden" name="country" value="ireland"/>
+
+      <div class="profile-text">
+      		<div class="rd-details">
+      			<span>I am looking for an</span>
+      			<label class="account-type-label" for="rd1">
+                <input autocomplete="on" class="account-type-radio propertyType" id="rd1" name="propertyType" value="apartment" type="radio" checked>
+                Apartment
+              </label>
+              <label class="account-type-label">
+                <input autocomplete="on" class="account-type-radio propertyType" name="propertyType" value="house" type="radio">
+                House
+              </label>
+              <label class="account-type-label">
+                <input autocomplete="on" class="account-type-radio propertyType" name="propertyType" value="student" type="radio">
+                Student Accommodation
+              </label>
+      			<label class="account-type-label">
+                <input autocomplete="on" class="account-type-radio propertyType" name="propertyType" value="share" type="radio">
+                Share
+              </label>
+      			<label class="account-type-label">
+                <input autocomplete="on" class="account-type-radio propertyType" name="propertyType" value="holidayhomes" type="radio">
+                Holiday Homes
+              </label>
+
+              <!--{{#if showFilters}}-->
+                   <!--<button class="showFilters">hide filters</button>-->
+               <!--{{else}}-->
+                   <!--<button class="showFilters">show filter</button>-->
+               <!--{{/if}}-->
+               </div>
+               {{#unless showFilters}}
+                   <div class="signin-form">
+                       <div class="frm-group clearfix">
+                           <div class="styled-input styled-input-select">
+                               <select autocomplete="on" name="countySelected" class="countySelected">
+                                   <option value="" selected>Choose City/County</option>
+                                   <option value="" selected>All</option>
+                                   {{#each counties}}
+                                       <option value="{{value}}">{{label}}</option>
+                                   {{/each}}
+                               </select>
+                               <span></span>
+                           </div>
+                           <div class="styled-input styled-input-select">
+                               <select autocomplete="on" name="areaSelected" class="areaSelected">
+                                   <option value="" selected>Choose Area</option>
+                                   <option value="" selected>All</option>
+                                   {{#each areas}}
+                                       <option value="{{value}}">{{label}}</option>
+                                   {{/each}}
+                               </select>
+                               <span></span>
+                           </div>
+                           <div class="styled-input styled-input-select">
+                               <select autocomplete="on" name="maxRent" class="maxRent">
+                                   <option value="" selected>Max Rent</option>
+                                   {{#each maxRent}}
+                                       <option value="{{value}}" >{{label}}</option>
+                                   {{/each}}
+                               </select>
+                               <span></span>
+                           </div>
+                           <div class="styled-input styled-input-select">
+                               <input autocomplete="on" type="text" class="form-control propertykey" name="propertykey" placeholder="Property KEY">
+                           </div>
+                           <div class="styled-input">
+                              <span class="input-group-btn" style="z-index: 0;">
+                                <button class="btn green-btn" type="submit">Find</button>
+                              </span>
+                           </div>
+                       </div>
+                   </div>
+               {{else}}
+                  <div class="signin-form">
+           <div class="frm-group clearfix">
+               <div class="styled-input styled-input-select">
+                   <select autocomplete="on" name="countySelected" required="" class="countySelected">
+                       <option value="">Choose City/County</option>
+                       {{#each counties}}
+                           <option value="{{value}}" {{selected}}>{{label}}</option>
+                       {{/each}}
+                   </select>
+                   <span></span>
+               </div>
+               <div class="styled-input styled-input-select slct-main">
+                   <select autocomplete="on" name="address.area" required="" class="">
+                       <option value="">Choose Area</option>
+                       {{#each areas}}
+                           <option value="{{value}}">{{label}}</option>
+                       {{/each}}
+                   </select>
+                   <span></span>
+               </div>
+
+
+
+              	<div class="styled-input styled-input-select">
+                <label>All Property Type</label>
+                <select autocomplete="on" name="address.area" required="" class="">
+
+
+                    <option value="">All Property Type</option>
+
+
+
+                    <option value="Adamstown">1200</option>
+
+
+
+                    <option value="Arbour Hill">1300</option>
+
+
+
+                    <option value="Ard Na Greine">1400</option>
+
+
+
+                    <option value="Artane">1500</option>
+
+
+
+                    <option value="Ashington">1600</option>
+
+
+
+                    <option value="Ashtown">1700</option>
+                </select>
+                <span></span>
+              </div>
+               <div class="styled-input styled-input-select">
+                   <select autocomplete="on" name="address.area" required="" class="">
+                       <option value="">Min Rent</option>
+                       {{#each minRent}}
+                           <option value="{{value}}" >{{label}}</option>
+                       {{/each}}
+                   </select>
+                   <span></span>
+               </div>
+               <div class="styled-input styled-input-select">
+                   <select autocomplete="on" name="address.area" required="" class="">
+                       <option value="">Max Rent</option>
+                       {{#each maxRent}}
+                           <option value="{{value}}" >{{label}}</option>
+                       {{/each}}
+                   </select>
+                   <span></span>
+               </div>
+              <div class="styled-input styled-input-select">
+                <label>Min Beds</label>
+                <select autocomplete="on" name="address.area" required="" class="">
+
+
+                    <option value="">Min Bads</option>
+
+
+
+                    <option value="Adamstown">1 Beds</option>
+
+
+
+                    <option value="Arbour Hill">2 Beds</option>
+
+
+
+                    <option value="Ard Na Greine">3 Beds</option>
+
+
+
+                    <option value="Artane">4 Beds</option>
+
+
+
+                    <option value="Ashington">5 Beds</option>
+
+
+
+                    <option value="Ashtown">6 Beds</option>
+                </select>
+                <span></span>
+              </div>
+               <div class="styled-input styled-input-select">
+                <label>Max Beds</label>
+                <select autocomplete="on" name="address.area" required="" class="">
+
+
+                    <option value="">Max Bads</option>
+
+
+
+                    <option value="Adamstown">1 Beds</option>
+
+
+
+                    <option value="Arbour Hill">2 Beds</option>
+
+
+
+                    <option value="Ard Na Greine">3 Beds</option>
+
+
+
+                    <option value="Artane">4 Beds</option>
+
+
+
+                    <option value="Ashington">5 Beds</option>
+
+
+
+                    <option value="Ashtown">6 Beds</option>
+                </select>
+                <span></span>
+              </div>
+              <div class="styled-input styled-input-select">
+                <label>Max Size</label>
+                <select autocomplete="on" name="address.area" required="" class="">
+
+
+                    <option value="">Max Size</option>
+
+
+
+                    <option value="Adamstown">1 Beds</option>
+
+
+
+                    <option value="Arbour Hill">2 Beds</option>
+
+
+
+                    <option value="Ard Na Greine">3 Beds</option>
+
+
+
+                    <option value="Artane">4 Beds</option>
+
+
+
+                    <option value="Ashington">5 Beds</option>
+
+
+
+                    <option value="Ashtown">6 Beds</option>
+                </select>
+                <span></span>
+              </div>
+              	<div class="styled-input">
+                  <span class="input-group-btn" style="z-index: 0;">
+                    <button class="btn green-btn" type="submit">Find!</button>
+                  </span>
+              </div>
+          </div>
+
+
+
+          </div>
+               {{/unless}}
+
+
+
+
+
+
+      </div>
+      </div>
+
+  <!--end-->
+
+      <!--<input type="text" class="form-control propertykey" name="propertykey" placeholder="Enter property KEY. Example: DUN1" style="padding-left: 10px;z-index: 0;">-->
+      <!--<span class="input-group-btn" style="z-index: 0;">-->
+      <!--  <button class="btn green-btn" type="submit">Find!</button>-->
+      <!--</span>-->
+      </div>
+   </form>
+
+
+   <!--This is my dummy code-->
+
+
+</template>
+
+
+

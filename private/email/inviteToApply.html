@@ -1,0 +1,63 @@
+<p>Dear  {{data.user.profile.name}},</p>
+<br />
+
+You are invited to the apply for the rental properties on SpotMyCrib.ie by the landlord.
+<table style="width: 333px;" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td width="146">
+            <p>Landlord Name</p>
+        </td>
+        <td width="187">
+            <p>{{data.agent.profile.name}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Phone</p>
+        </td>
+        <td width="187">
+            <p>{{#if data.agent.profile.mobile}}{{data.agent.profile.mobile}}{{/if}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Email</p>
+        </td>
+        <td width="187">
+            <p>{{data.agent.profile.email}}</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br/>
+<strong>Please visit below links to apply for the properties.</strong>
+<br/><br/>
+<table style="width: 333px;" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+    {{#each data.advertisements}}
+        lettingAuctionCode
+        <tr>
+            <td width="600">
+                <p>{{property.address.address}}</p>
+            </td>
+            <td width="187">
+                <a href="{{urlFor 'letting' key=lettingAuctionCode}}">Link</a>
+            </td>
+        </tr>
+    {{/each}}
+
+    </tbody>
+</table>
+
+
+<p><br />
+    Regards,<br />
+    {{support.name}}<br />
+    {{support.companyName}} <br />
+    {{support.email}}<br />
+    {{support.phone}}</p>
+
+<a href="{{homepage}}">
+    <img src="{{homepage}}images/spot-my-crib-logo.png" alt="SpotMyCrib logo">
+</a>

@@ -1,0 +1,113 @@
+<template name="footerExtended">
+    <!-- footer -->
+    <section class="footer-div">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12 foot-menu">
+                    <div class="col-md-3 col-sm-3 col-xs-12 foot-logo">
+                        <a href="{{urlFor 'home'}}"><img src="{{cdnPath '/images/spot-my-crib-logo.png'}}" height="32px" alt=""></a>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12 pad0">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <ul>
+                                <li><h6 class="pad-bot-2">TENANTS</h6></li>
+                                <li><a href="{{RouteB 'rent-in-dublin-ireland'}}">Rent in Dublin</a></li>
+                                <li><a href="{{RouteB 'rent-in-cork-ireland'}}">Rent in Cork</a></li>
+                                <li><a href="{{RouteB 'rent-in-kildare-ireland'}}">Rent in Kildare</a></li>
+                                <li><a href="{{RouteB 'rent-in-galway-ireland'}}">Rent in Galway</a></li>
+                                <li><a href="{{RouteB 'rent-in-meath-ireland'}}">Rent in Meath</a></li>
+                                <!--<li><a href="{{urlFor 'privacy'}}">Student Accomodiation</a></li>-->
+                                <!--<li><a href="{{urlFor 'cookiepolicy'}}">Apartment Sharing</a></li>-->
+                                <!--<li><a href="{{urlFor 'cookiepolicy'}}">Holiday Homes</a></li>-->
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <ul>
+                                <!--<h6>SpotMyCrib</h6>-->
+                                <li><h6 class="pad-bot-2">LANDLORS</h6></li>
+                                <li><a href="{{urlFor 'advertisewithus'}}">List My Property</a></li>
+                                <li><a href="{{urlFor 'estateagent'}}">Estate Agents/Landlords</a></li>
+                                <li><a href="{{urlFor 'howitworks'}}" >How it Works?</a></li>
+                                <li><a href="{{urlFor 'faqs'}}">FAQs</a></li>
+                                <li><a href="{{urlFor 'contactus'}}">Contact Us</a></li>
+
+                                <!--<li><a id="video1" style="cursor: pointer;">How it Works?</a></li>-->
+                            </ul>
+                        </div>
+                        <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
+                        <!--<ul>-->
+                        <!--&lt;!&ndash;<h6>SpotMyCrib</h6>&ndash;&gt;-->
+                        <!--<li><h6 class="pad-bot-2">COMPANY</h6></li>-->
+                        <!--<li><a href="{{urlFor 'about'}}">About Us</a></li>-->
+                        <!--&lt;!&ndash;<li><a href="{{urlFor 'howitworks'}}" >How it Works?</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="{{urlFor 'estateagent'}}">Estate Agents/Landlords</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="{{urlFor 'faqs'}}">FAQs</a></li>&ndash;&gt;-->
+                        <!--<li><a href="{{urlFor 'contactus'}}">Contact Us</a></li>-->
+
+                        <!--&lt;!&ndash;<li><a id="video1" style="cursor: pointer;">How it Works?</a></li>&ndash;&gt;-->
+                        <!--</ul>-->
+                        <!--</div>-->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <ul>
+                                <!--<ul class="new-footer">-->
+                                <li><h6 class="pad-bot-2">SPOTMYCRIB</h6></li>
+                                <!--<li><h6 class="pad-bot-2">LEGAL</h6></li>-->
+                                <li><a href="{{urlFor 'about'}}">About Us</a></li>
+                                <li><a href="{{urlFor 'bloghome'}}">Blog</a></li>
+                                <li><a href="{{urlFor 'careers'}}">Careers</a></li>
+                                <li><a href="{{urlFor 'gdpr'}}">Data Protection / EU GDPR</a></li>
+                                <li><a href="{{urlFor 'terms'}}">Legal</a></li>
+                                <li><a href="{{urlFor 'privacy'}}">Privacy Policy</a></li>
+                                <li><a href="{{urlFor 'cookiepolicy'}}">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 col-xs-12 social-icon">
+                    <!--<div class="col-md-5 col-sm-12 col-xs-12 padding0">-->
+                    <!--&lt;!&ndash;<ul class="toll-free">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li><a href="tel:+353892213737">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="pull-left menu-padding"><img src="/images/call-icon.png" /></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="pull-right">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h4 class="text-left">CALL US</h4>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h5 style="line-height: 15px;">+353 892213737</h5>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div></a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                    <!--</div>-->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <ul>
+                            <li><a href="https://www.facebook.com/SpotMyCrib/" target="_blank"><img src="{{cdnPath '/images/facebook-icon.png'}}" alt=""></a></li>
+                            <li><a href="https://twitter.com/SpotMyCrib" target="_blank"><img src="{{cdnPath '/images/twitter-icon.png'}}" alt=""></a></li>
+                            <li><a href="https://www.linkedin.com/company/11223356/" target="_blank"><img src="{{cdnPath '/images/linkedin-icon.png'}}" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="copyright" style="display:none;">
+        <div class="container">
+            <ul class="footer-left visible-md">
+                <!--<li>Copyright &copy; 2017 SpotMyCrib. All rights reserved. </li>-->
+                <li>SpotMyCrib. </li>
+            </ul>
+            <!--<ul class="footer-right">-->
+            <!--<li><a href="{{urlFor 'privacy'}}" >Privacy Policy</a></li>-->
+            <!--<li><a href="{{urlFor 'terms'}}">Terms and Conditions</a></li>-->
+            <!--</ul>-->
+            <ul class="footer-left hidden-md">
+                <li>SpotMyCrib. </li>
+            </ul>
+        </div>
+    </section>
+    <!-- footer -->
+
+    <!-- video -->
+    <div id="video-div1" style="display:none;">
+        <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <!-- video -->
+
+</template>

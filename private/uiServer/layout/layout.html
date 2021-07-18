@@ -1,0 +1,146 @@
+{{{getDocType}}}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="{{hostname}}">
+    <link rel="icon" sizes="16x16 32x32" href="/favicon.ico?v=2">
+    <link href="{{hostname}}favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{hostname}}css/bootstrap.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="{{hostname}}css/master.min.css" media="none" onload="if(media!='all')media='all'">
+
+    <noscript>
+        <link href="{{hostname}}css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{hostname}}css/master.min.css">
+    </noscript>
+
+    <script type="text/javascript" defer src="{{hostname}}js/jquery-1.9.1.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script type="text/javascript" defer src="{{hostname}}js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="plugins/fancybox/js/jquery.fancybox.js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="plugins/fancybox/css/jquery.fancybox.css">-->
+
+    <!--<script type="text/javascript" defer src="{{hostname}}js/routes/rental.js"></script>-->
+    <script type="text/javascript" defer src="{{hostname}}js/routes/rental.min.js"></script>
+
+</head>
+<body>
+<section class="header">
+    <div class="container">
+        <div class="logo-holder-div">
+            <div class="xs-menu-icon">
+                <span class="menu-xs sprite"></span>
+            </div>
+
+            <div class="logo-holder">
+                <a href="{{pathFor 'home'}}">
+                    <img src="/images/spot-my-crib-logo.png" alt="" class="logo-big">
+                    <img src="/images/spotmycrib-logo-130.jpg" alt="" class="logo-xs">
+                </a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li class="hidden-xs"><a href="{{urlFor 'advertisewithus'}}" class="btns green-btn addPropertyHeaderBtn" type="button"><span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span> Advertise property</a></li>
+                </ul>
+            </div>
+            <div class="xs-menu visible-xs transition">
+                <div class="xs-menu-close-icon text-right">
+                    <span class="sprite xs-close"></span>
+                </div>
+                <ul class="transition">
+                    <li><a href="{{pathFor 'home'}}">HOME / SEARCH</a></li>
+                    <li><a href="{{pathFor 'advertisewithus'}}">LIST PROPERTY</a></li>
+                    <li><a href="{{pathFor 'estateagent'}}">AGENTS/LANDLORDS</a></li>
+                    <li><a href="{{pathFor 'howitworks'}}">HOW IT WORKS?</a></li>
+                    <li><a href="{{pathFor 'faqs'}}">FAQ</a></li>
+                    <li><a href="{{pathFor 'contactus'}}">CONTACT US</a></li>
+                    <li><a href="{{pathFor 'careers'}}">CAREERS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<main role="main" id="main">
+    {{> Template.dynamic template=template data=data}}
+</main>
+
+<footer class="footer-default">
+    <!-- footer -->
+    <section class="footer-div">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12 foot-menu">
+                    <div class="col-md-3 col-sm-3 col-xs-12 foot-logo">
+                        <a href="{{urlFor 'home'}}"><img src="/images/spot-my-crib-logo.png" height="32px" alt=""></a>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12 pad0">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <ul>
+                                <li><h6 class="pad-bot-2">TENANTS</h6></li>
+                                <li><a href="{{urlFor 'b' slug='rent-in-dublin-ireland'}}">Rent in Dublin</a></li>
+                                <li><a href="{{urlFor 'b' slug='rent-in-cork-ireland'}}">Rent in Cork</a></li>
+                                <li><a href="{{urlFor 'b' slug='rent-in-kildare-ireland'}}">Rent in Kildare</a></li>
+                                <li><a href="{{urlFor 'b' slug='rent-in-galway-ireland'}}">Rent in Galway</a></li>
+                                <li><a href="{{urlFor 'b' slug='rent-in-meath-ireland'}}">Rent in Meath</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <ul>
+                                <li><h6 class="pad-bot-2">LANDLORS</h6></li>
+                                <li><a href="{{urlFor 'advertisewithus'}}">List My Property</a></li>
+                                <li><a href="{{urlFor 'estateagent'}}">Estate Agents/Landlords</a></li>
+                                <li><a href="{{urlFor 'howitworks'}}" >How it Works?</a></li>
+                                <li><a href="{{urlFor 'faqs'}}">FAQs</a></li>
+                                <li><a href="{{urlFor 'contactus'}}">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <ul>
+                                <li><h6 class="pad-bot-2">SPOTMYCRIB</h6></li>
+                                <li><a href="{{urlFor 'about'}}">About Us</a></li>
+                                <li><a href="{{urlFor 'careers'}}">Careers</a></li>
+                                <li><a href="{{urlFor 'gdpr'}}">Data Protection / EU GDPR</a></li>
+                                <li><a href="{{urlFor 'terms'}}">Legal</a></li>
+                                <li><a href="{{urlFor 'privacy'}}">Privacy Policy</a></li>
+                                <li><a href="{{urlFor 'cookiepolicy'}}">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 col-xs-12 social-icon">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <ul>
+                            <li><a href="https://www.facebook.com/SpotMyCrib/" target="_blank"><img src="/images/facebook-icon.png" alt=""></a></li>
+                            <li><a href="https://twitter.com/SpotMyCrib" target="_blank"><img src="/images/twitter-icon.png" alt=""></a></li>
+                            <li><a href="https://www.linkedin.com/company/11223356/" target="_blank"><img src="/images/linkedin-icon.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="copyright" style="display:none;">
+        <div class="container">
+            <ul class="footer-left visible-md">
+                <li>SpotMyCrib. </li>
+            </ul>
+            <ul class="footer-left hidden-md">
+                <li>SpotMyCrib. </li>
+            </ul>
+        </div>
+    </section>
+    <!-- footer -->
+</footer>
+
+
+
+
+</body>
+</html>

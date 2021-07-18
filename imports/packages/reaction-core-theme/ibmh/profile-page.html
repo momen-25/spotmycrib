@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>I bid my home</title>
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+   
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    
+    <link href="css/master.css" rel="stylesheet">
+<!--    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">-->
+       
+    <link href="fonts/font-awesome/css/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/Montserrat/stylesheet.css">
+    
+    <link href="plugins/fancybox/css/jquery.fancybox.css" rel="stylesheet">
+    
+    <link href="plugins/nouislider/css/nouislider.css" rel="stylesheet">
+    
+    
+    
+</head>     
+
+<body>
+    <div class="profile-page">
+  <!-- Header -->
+  <section class="header">
+    <div class="container">
+      <div class="logo-holder-div">
+        <div class="logo-holder">
+            <img src="images/spot-my-crib-logo.png" alt="">
+        </div>
+        <div class="menu">
+          <ul>
+            <li class="right-border"><a href="javacscript:;">HOME</a></li>
+            <li><a href="javacscript:;">MY BIDS</a></li>
+            <li><a href="javacscript:;"><img src="images/user-img.png" alt=""></a></li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </section>
+
+  <section class="logo-below-div">
+    <div class="container">
+      <div class="head-border-bottom no-bdr"><h2>My Profile</h2></div>
+    </div>
+  </section>
+
+  <section class="myprofile-info mar-top-20 mar-btm-30">
+       <div class="container">
+      <div class="head-border-bottom"><h2 class="text-center">Naveen Gunasekhar Reddy</h2></div>
+      <div class="background-white pad-btm-30">
+      <div class="padding30">
+          <h3 class="text-center">Available Bidding Chance(s) - 01</h3>
+      </div>
+      <div class="grey-box ">
+          <form action="">
+              <div class="inp-wrap mar-btm-20">
+              <label>
+                  City you are interested in
+              </label>
+                  <div class="inp-hold">
+                      <input type="text" placeholder="Bangalore" value="Bangalore" class="form-control db-data"/>
+                      <span class="overlay-text">Bangalore</span>
+                      <button class="color-green green-bdr-btm change-clk change-click transition" type="button">Change</button>
+                      <div class="cancel-div transition"><button class="color-green green-bdr-btm cancel-clk" type="button">Cancel</button></div>
+                  </div>
+              </div>
+              <div class="inp-wrap mar-btm-20">
+              <label>
+                  Email
+              </label>
+                  <div class="inp-hold">
+                      <input type="email" value="abc@gmail.com" class="form-control"/>
+                      <span class="overlay-text">abc@gmail.com</span>
+                      <button class="color-green green-bdr-btm change-clk change-click transition" type="button">Change</button>
+                      <div class="cancel-div transition"><button class="color-green green-bdr-btm cancel-clk" type="button">Cancel</button></div>
+                  </div>
+              </div>
+              <div class="inp-wrap mar-btm-20">
+              <label>
+                  Mobile
+              </label>
+                  <div class="inp-hold">
+                      <input type="number"  value="0987654321" class="form-control"/>
+                      <span class="overlay-text">0987654321</span>
+                      <button class="color-green green-bdr-btm change-clk change-click transition" type="button">Change</button>
+                      <div class="cancel-div transition"><button class="color-green green-bdr-btm cancel-clk" type="button">Cancel</button></div>
+                  </div>
+              </div>
+              
+                <div class="inp-wrap mar-btm-20">
+                  <div class="request-hold hideen-div">
+                      <h5>Email not verified?</h5>
+                      <span class="color-green green-bdr-btm request-clk">Send verification link</span>
+                      <span class="sent-req color-grey transition"><span class="fa-check fa color-green pad-right-10"></span>Request Sent</span>
+                      
+                  </div>
+                </div>
+                <div class="inp-wrap">
+              <label>
+                  Password
+              </label>
+                  <div class="inp-hold">
+                      <input type="password"value="abcdef" class="form-control new-change"/>
+                      <span class="overlay-text"></span>
+                      <button id="change-pass" class="changepass1" type="button">Change Password</button>
+                      
+                  </div>
+              </div>
+          </form>
+      </div>
+          </div>
+       </div>
+  </section>
+</div>
+<!-- change password  --> 
+<div id="changepass-div" style="display:none;">
+  
+   <div class="refund-div"><h2>Change Password</h2></div>
+   <div class="profile-text">
+      
+                    <form>
+            <div class="styled-input">
+              <input type="password" name="name" id="password" class="text-left" required/><br>
+              <label>ENTER CURRENT PASSWORD</label><label class="eyebtn"><img src="images/pass-eye.png"></label>
+              <span></span>
+            </div>
+              <div class="styled-input">
+              <input type="password" name="email" id="email" required/>
+              <label>ENTER NEW PASSWORD</label>
+              <span></span> 
+            </div>
+              
+              <div class="styled-input">
+              <input type="password" name="phone" id="phone" onKeyPress="return isNumberKey(event);" required/>
+              <label>CONFIRM NEW PASSWORD</label>
+              <span></span> </div>
+            
+             <p class="color-text">Passwords do not match!!</p>
+            <ul>
+        <li><button class="transparent-btn btns" type="button">CANCEL</button></li>
+        <li><button class="blue-btn btns" type="button">APPLY</button></li>
+      </ul>
+   
+          </form>     
+    </div>
+  </div>
+  <!-- footer -->
+  <section class="footer-div">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4 foot-menu">
+            <ul>
+              <li><a href="javascript:;">ABOUT US </a></li>
+              <li><a href="javascript:;">CONTACT US</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 foot-logo-div"><a href="javascript:;"><img src="images/footer-logo.png"></a></div>
+          <div class="col-md-4 social-icon">
+             <ul>
+              <li><a href="javascript:;"><img src="images/facebook-icon.png"></a></li>
+              <li><a href="javascript:;"><img src="images/twitter-icon.png"></a></li>
+              <li><a href="javascript:;"><img src="images/linkedin-icon.png"></a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </section>
+  <section class="copyright">
+    <div class="container">
+    <ul class="footer-left">
+      <li>Copyright © 2016 IBidMyHome. All rights reserved. </li>
+    </ul>
+     <ul class="footer-right">
+      <li>Privacy Policy</li>
+      <li>Terms and Conditions</li>
+    </ul>
+    </div>
+  </section>
+<!-- footer -->
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="plugins/nouislider/js/nouislider.min.js"></script>
+<script type="text/javascript">
+   var slider = document.getElementById('range-input');
+   var slider1 = document.getElementById('range-input1');
+
+      noUiSlider.create(slider, {
+
+       start: [3, 25],
+
+       connect: true,
+
+       step: 1,
+
+       range: {
+
+         'min': 3,
+
+         'max': 25
+
+       },
+
+       format: wNumb({
+
+         decimals: 0
+
+       })
+
+      });
+      
+       noUiSlider.create(slider1, {
+
+       start: [64, 94],
+
+       connect: true,
+
+       step: 1,
+
+       range: {
+
+         'min': 64,
+
+         'max': 94
+
+       },
+
+       format: wNumb({
+
+         decimals: 0
+
+       })
+
+      });
+</script>
+
+<script src="plugins/fancybox/js/jquery.fancybox.js"></script>
+<script>
+   
+
+
+    $(document).ready(function () {
+        $('.eyebtn').click(function () {
+            if ($("#password").hasClass("shown"))
+            {
+                $("#password").attr("type", "password");
+                $("#password").removeClass("shown");
+
+            } else
+            {
+                $("#password").attr("type", "text");
+                $("#password").addClass("shown");
+            }
+
+
+        });
+
+           $("#change-pass").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'href': '#changepass-div'
+        });
+    });
+
+    });
+    
+</script>
+
+<script>
+    $(document).ready(function(){
+        
+         $('.change-click').click(function(){
+            $(this).parent('div.inp-hold').find('.overlay-text').fadeOut();
+            $(this).parent('div.inp-hold').find('button.change-click').html('Save');
+            $(this).parent('div.inp-hold').find('button.change-click').css('right','60px');
+            $(this).parent('div.inp-hold').find('div.cancel-div').css('display','block');
+	});
+        $('.request-clk').click(function(){
+            $('.hideen-div').fadeOut();
+            
+        });
+
+    });
+</script>
+
+</body>  
+</html>
+

@@ -1,0 +1,30 @@
+{
+  "EMAIL_CONFIG":{
+    "name":"Mathew",
+    "companyName":"SpotMyCrib",
+    "email":"support@spotmycrib.com",
+    "phone":""
+
+  },
+  "SUPPORT_DATA":{
+    "name":"Customer Support",
+    "email":"support@spotmycrib.com"
+  },
+  "NO_REPLY":{
+    "name":"SpotMyCrib",
+    "email":"noreply@spotmycrib.com"
+  },
+  "public": {
+    "analyticsSettings": {
+      "Google Analytics": {"trackingId": "UA-105652570-1"}
+    },
+    "ga": {
+      "id": "UA-105652570-1"
+    },
+    "hotjar": {
+      "hjid": "679825",
+      "hjsv": "6"
+    },
+    "CDN_ENABLED":true
+  }
+}

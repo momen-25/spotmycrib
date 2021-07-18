@@ -1,0 +1,225 @@
+<template name="productsExtended">
+</template>
+<template name="home">
+    <div class="index home">
+      {{> homePage}}
+    </div>
+    <!-- video -->
+    <div id="video-div" style="display:none;">
+        <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/zzGPjQECB64" frameborder="0" allowfullscreen></iframe>-->
+    </div>
+    <!-- video -->
+
+</template>
+
+<template name="homePage">
+
+    <section class="home-banner">
+
+        <div class="index-main-banner">
+            <div class="container">
+
+                <div class="index-bnr-cont">
+                    <!-- <h1 class="color-blue "3
+                        Fine homes below the market price
+                    </h1> -->
+
+ <div id="home-text-slider" class="owl-carousel owl-theme">
+     {{#if false}}
+            <div class="item">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                    <h1>House search made easy and reliable</h1>
+                </div>
+            </div>
+            <div class="item">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+                    <h1>Select from variety of options</h1>
+                </div>
+            </div>
+
+{{/if}}
+     <div class="item active">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+             <h1>Apply for the house you like</h1>
+         </div>
+     </div>
+     <div class="item">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+             <h1>Set your rent</h1>
+         </div>
+     </div>
+     <div class="item">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+             <h1>Faster, transparent and reliable application process</h1>
+         </div>
+     </div>
+     <div class="item">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-box-div new-text-box">
+             <h1>Free! No agent fee / No hidden charges</h1>
+         </div>
+     </div>
+  </div>
+
+
+
+                    <!-- carausel -->
+
+                    <div class="box-places">
+                        <ul>
+                              <li>
+   <form class="propertykey-form">
+      <div class="input-group">
+      <input type="text" class="form-control propertykey" name="propertykey" placeholder="Enter property KEY. Example: DUN1" style="padding-left: 10px;">
+      <span class="input-group-btn">
+        <button class="btn green-btn" type="submit">Find!</button>
+      </span>
+      </div>
+   </form>
+                              </li>
+                        </ul>
+                    </div>
+                    <div class="">
+                    <a href="#how-works" class="pink-btn oval-btn scroll1">How it works?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- </div> -->
+
+    </section>
+
+    <section id="how-works" class="sec-holder how-it-works">
+        <div class="container">
+            <h2>How it works</h2>
+            <span class="bottom-line"></span>
+            <!--<div class="">-->
+                <!--<a id="video" class="oval-btn green-btn cursor"><span class="fa fa-play-circle-o play-icon"></span>Watch the video</a>-->
+            <!--</div>-->
+            <ul class="mar-top-30">
+                <li>
+                    <h6 class="pad-btm-30">Search KEY</h6>
+                    <img src="/images/how-it-works/2.png" alt="" class="pad-btm-30" />
+                    <p> Search the key you received from the Landlord. </p>
+                </li>
+                <li>
+                    <h6 class="pad-btm-30">Set Your Rent</h6>
+                    <img src="/images/how-it-works/3.png" alt=""  class="pad-btm-30"/>
+                    <p>Make your offer for the house when you apply. Upload all your references in your profile and click apply. </p>
+                </li>
+                {{#if false}}
+                <li>
+                    <h6 class="pad-btm-30">Bid for your dream home</h6>
+                    <img src="/images/how-it-works/3.png" alt=""  class="pad-btm-30"/>
+                    <p>Place a bid higher than the previous bidder by clicking on "Out Bid".  Out bidding will be by a pre-decided amount per sq. feet. Bid on more than one unit by paying the "Auction Participation Fee" again.</p>
+                </li>
+                {{/if}}
+                <li>
+                    <h6 class="pad-btm-30">Confirm your Home</h6>
+                    <img src="/images/how-it-works/4.png" alt=""  class="pad-btm-30"/>
+                    <p>Landlord chooses a tenant based on your references and your offer. If you are chosen, you would receive a confirmation email. </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+{{#if false}}
+    <!-- home page -->
+    <section class="property-list sec-holder">
+        <div class="container">
+            <div class="prop-wrap">
+                <h2>Value Auctions</h2>
+                <span class="bottom-line"></span>
+            </div>
+            <div class="map-menu auction">
+{{#if config}}
+                <h5>Ends on {{endsDate}}</h5>
+                <section>
+                    <section class="proplist-sec">
+
+                        <div class="row blogs">
+
+                          {{#each valueAuctions }}
+                            {{> valueAuctionsGrid}}
+                          {{/each}}
+
+                            <div class="pink-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <a href="{{pathFor 'valueAuctions' }}" class="pink-btn oval-btn ">View
+                                All</a>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </section>
+{{else}}
+  {{>loading}}
+{{/if}}
+            </div>
+        </div>
+    </section>
+{{/if}}
+    <section class="sec-holder about-us">
+        <div class="container">
+            <h1>Manage all your lettings at one place</h1>
+            <h3 style="color:white;margin-top: 10px;">From finding tenants to verifing their social profiles</h3>
+            <h3 style="color:white;margin-top: 0px;">From collecting rents to logging maintainance</h3>
+            <div>
+                <a href="javascript:;" style="margin-top: 10px;" class="pink-btn oval-btn joinNowBtn">Start Your Free 30-Day Trial</a>
+            </div>
+        </div>
+    </section>
+
+</template>
+
+
+
+
+
+
+<template name="homePageValueAuctions">
+
+    <!-- home page -->
+    <section class="property-list sec-holder">
+    <div class="container">
+        <div class="prop-wrap">
+            <h2>Value Auctions</h2>
+            <span class="bottom-line"></span>
+        </div>
+        <div class="map-menu auction">
+
+            <ul class="filter">
+                <li class="all-btn"><a href="javascript:;" data-cat="all" class="active">ALL</a></li>
+                <li><a href="javascript:;" data-cat="Bangalore">BANGALORE</a></li>
+                <li><a href="javascript:;" data-cat="Cochin">COCHIN</a></li>
+                <li><a href="javascript:;" data-cat="Chennai">CHENNAI</a></li>
+            </ul>
+            <section>
+                <section class="proplist-sec">
+                    <div class="row blogs">
+                      {{#each cityData "Bangalore"}}
+                        {{> valueAuctionsGrid}}
+                      {{/each}}
+                      {{#each cityData "Chennai"}}
+                        {{> valueAuctionsGrid}}
+                      {{/each}}
+                      {{#each cityData "Cochin"}}
+                        {{> valueAuctionsGrid}}
+                      {{/each}}
+
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </div>
+    </div>
+    </section>
+    <!-- home page -->
+</template>
+
+
+

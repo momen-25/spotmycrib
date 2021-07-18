@@ -1,0 +1,185 @@
+<template name="tenant">
+{{#if isSubsLoaded}}
+
+{{#if userLoggedIn}}
+
+    {{#if isViewingHisProfile}}
+        {{> userProfile}}
+    {{else}}
+        {{#if isPublicProfile}}
+            {{#each user}}
+                {{> tenantDetail user=this}}
+            {{/each}}
+        {{else}}
+            <section class="main-holder ">
+                <div class="container text-center mar-top-20 pad-btm-30">
+                    <div class="filter-holder">
+                        <div class="head-border-bottom">
+                            {{#if userFound}}
+                                <strong>{{titleCase userFirstName}} profile is private. Request tenant to make their profile public from their profile settings.</strong><br/><br/>
+                                <!--<a class="blue-btn btns " type="button">Find other tenants.</a>-->
+                            {{else}}
+                                <strong>Tenant not found. Please check your tenant username and try again.</strong><br/><br/>
+                                <!--<a class="blue-btn btns " type="button">Find other tenants.</a>-->
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {{/if}}
+    {{/if}}
+
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loginPageHorizontal}}
+    </section>
+{{/if}}
+{{else}}
+    <section class="mar-top-20 mar-btm-20 no-print loginPageHorizontal">
+        {{>loading}}
+    </section>
+{{/if}}
+</template>
+
+<template name="tenantDetail">
+        <section class="main-holder border-top mar-top-30 mar-btm-30" id="unit_{{_id}}">
+
+            <!--<section class="border-top act-div"></section>-->
+            <div class="container">
+                <div class="act-box">
+                    <div class="background-white">
+                        <div class="logo-holder-div">
+                            <div class="logo-holder">
+                                <ul>
+                                    <li>
+                                        <h3 class="pad-btm-0">
+                                            {{#if user.profile.picture}}<img style="margin-bottom: 10px;" class="circular-icon" src="{{user.profile.picture}}" alt="avatar" />{{/if}}
+                                            {{titleCase user.profile.name}}&#39;s References
+
+                                            {{#if user.services.facebook}}
+                                                <a title="Connected" href="https://www.facebook.com/{{user.services.facebook.id}}" target="_blank">
+                                                    <img src="{{cdnPath '/images/facebook-icon.png'}}" alt="Fb">
+                                                    <!--<span style="color:#000;font-size:11px" class="socicon socicon-facebook"></span>-->
+                                                </a>
+                                            {{/if}}
+                                            {{#if user.services.twitter}}
+                                                <a title="Connected" href="https://www.twitter.com/{{user.services.twitter.screenName}}" target="_blank">
+                                                    <img src="{{cdnPath '/images/twitter-icon.png'}}" alt="Tw">
+                                                    <!--<span style="color:#000;font-size:11px" class="socicon socicon-twitter"></span>-->
+                                                </a>
+                                            {{/if}}
+                                            {{#if user.services.linkedin}}
+                                                <a title="Connected" href="{{user.services.linkedin.publicProfileUrl}}" target="_blank">
+                                                    <img src="{{cdnPath '/images/linkedin-icon.png'}}" alt="Li">
+                                                </a>
+                                            {{/if}}
+                                            {{#if user.services.google}}
+                                                <span title="Verified email" class="google-icon-box" target="_blank">
+                                            <img src="{{cdnPath '/images/google-icon.png'}}" alt="G+">
+                                        </span>
+                                            {{/if}}
+
+                                        </h3>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--<div class="menu">-->
+                                <!--<ul>-->
+                                    <!--<li class="left-border">-->
+                                        <!--<button class="transparent-btn unChooseTenant" type="button">Unchoose</button>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+
+                    <!--act-box-->
+
+                        <div class="apt-info apt-info1 background-white clearfix">
+                            <ul class="superbuilt-div">
+                                <li>
+                                    <h5>Employer name</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.references.employerName}} {{user.profile.references.employerName}} {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5 title="Affordable if rent offer is within 40&#37; of his salary.">Salary</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.references.employerTakeHome}}
+                                            Hidden
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5>Work reference</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.references.hasWorkRef}} <a href="{{user.profile.references.workRef.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5>Passport</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.references.hasPassport}} <a href="{{user.profile.references.passport.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5>Landlord reference</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.references.hasLandlordRef}} <a href="{{user.profile.references.landlordRef.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5>PPS</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.references.hasPPS}} <a href="{{user.profile.references.PPS.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5>Financial reference</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.references.hasFinancialRef}} <a href="{{user.profile.references.financialRef.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5>Govt. ID </h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.references.hasGovtID}} <a href="{{user.profile.references.govtID.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5>Resume</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.references.hasResume}} <a href="{{user.profile.references.resume.url}}" target="_blank">View</a> {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5>Mobile</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.mobile}} <a href="tel:{{user.profile.mobile}}" target="_blank">{{user.profile.mobile}}</a> {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+                                <li>
+                                    <h5>Email</h5>
+                                    <h6 class="cursor-ptr color-blue showSubaPopup" id="super-bulit-up-area2">
+                                        {{#if user.profile.email}} <a href="mailto:{{user.profile.email}}" target="_blank">{{user.profile.email}}</a> {{else}} N/A {{/if}}
+                                    </h6>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    <!--act-box-->
+                </div>
+            </div>
+
+
+
+
+        </section>
+</template>
+

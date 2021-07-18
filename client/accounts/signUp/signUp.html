@@ -1,0 +1,172 @@
+<template name="loginFormSignUpView">
+
+    <div class="refund-div"><h2>Sign Up</h2></div>
+
+    <div class="profile-text userSignup-div">
+
+        {{#unless onPage}}
+            {{>socialLoginButtons buttonFor='signup' usedInDlg='signup'}}
+            <div class="seperator" style="margin: 0 0 30px 0px;"><span></span></div>
+        {{/unless}}
+
+        <h5>Enter your details below</h5>
+
+        <form class="signin-form">
+            <div class="form-border">
+
+                <div class="styled-input {{hasError messages.errors.fullName}}">
+                    <input autocomplete="name" class="login-input-fullName" type="text" name="name" required for="email-{{uniqueId}}"  value="{{credentials.fullName}}"/><br>
+                    <label for="email-{{uniqueId}}">FULL NAME</label>
+                    <span></span>
+                  {{#if hasError messages.errors.fullName}}
+                      <span class="help-block">
+                        {{messages.errors.fullName}}
+                      </span>
+                  {{/if}}
+                </div>
+
+                <div class="styled-input {{hasError messages.errors.email}}">
+                    <input autocomplete="email" class=" login-input-email" type="email" value="{{credentials.email}}" name="email"  required for="email-{{uniqueId}}" />
+                    <label for="email-{{uniqueId}}" >EMAIL ID</label>
+                    <span></span>
+                  {{#if hasError messages.errors.email}}
+                      <span class="help-block">
+                        {{messages.errors.email}}
+                      </span>
+                  {{/if}}
+                </div>
+
+                <div class="styled-input {{hasError messages.errors.password }}">
+                    <input autocomplete="new-password" class="login-input-password" type="password" value="{{credentials.password}}" name="password"  required for="password-{{uniqueId}}"/>
+                    <label for="password-{{uniqueId}}">PASSWORD</label>
+                    <span></span>
+                  {{#if hasError messages.errors.password}}
+                      <span class="help-block">
+                        {{#each messages.errors.password}}
+                            <p>{{reason}}</p>
+                        {{/each}}
+                      </span>
+                  {{/if}}
+                </div>
+
+                <div class="styled-input {{hasError messages.errors.mobile}}">
+                    <input autocomplete="tel" class="login-input-mobile SignupFormMobileField" type="text" value="{{credentials.mobile}}" name="mobile" for="mobile-{{uniqueId}}" />
+                    <label for="mobile-{{uniqueId}}" >MOBILE</label>
+                    <span></span>
+                  {{#if hasError messages.errors.mobile}}
+                      <span class="help-block" style="background: #f9f9f9 !important;height: 36px;border-top: 1px solid rgb(68, 68, 68);">
+                        {{messages.errors.mobile}}
+                      </span>
+                  {{/if}}
+                </div>
+            </div>
+            {{> loginFormMessages messages=messages}}
+            <div class="signup-btn">
+{{#if isLoading}}
+        <button class="transparent-btn btns" >Loading...</button>
+{{else}}
+                <button class="blue-btn btns" type="Submit" data-event-category="accounts" data-event-action="register">SIGN UP</button>
+{{/if}}
+                {{#unless onPage}}
+                    <p>Already have an account? <a href="javascript:;"><span style="color:#0c67a6;" data-event-category="accounts" data-event-action="signIn" >Sign In</span></a></p>
+                {{/unless}}
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+</template>
+<template name="loginFormSignUpViewLandlord">
+    <!--landLordSignup-->
+    
+    
+    <!--Put your signup code here.-->
+    
+    
+    
+        <div class="landlordSignup-div signup-div">
+    
+     <div class="refund-div"><h2>Landlord Join Now</h2> </div>
+      <div class="profile-text">
+      	<div class="row">
+      		<div class="col-md-12 rd-details">
+      			<span>I am a</span>
+      			<label class="account-type-label" for="rd1">
+                <input class="account-type-radio" name="accountType" value="LANDLORD" type="radio" checked>
+                Landlord
+              </label>
+              <label class="account-type-label">
+                <input class="account-type-radio" name="accountType" value="LANDLORD" type="radio">
+                Agent
+              </label>
+              <label class="account-type-label">
+                <input class="account-type-radio" name="accountType" value="LANDLORD" type="radio">
+                Building Manager
+              </label>
+      			<label class="account-type-label">
+                <input class="account-type-radio" name="accountType" value="LANDLORD" type="radio">
+                Tenant
+              </label>
+      		</div>
+      	</div>
+          
+              
+          <form class="signin-form">
+            <div class="form-border">
+           <div class="row frm-group">
+            <div class="col-sm-6">
+            <div class="styled-input">
+              <input autocomplete="name" type="text" name="name" class="login-input-fullName" required/><br>
+              <label>FULL NAME</label>
+              <span></span>
+              </div>
+            </div>
+              <div class="col-sm-6">
+              	<div class="styled-input">
+              <input autocomplete="email" type="email" name="email" class="login-input-email" required/>
+              <label>EMAIL ID</label>
+              <span></span> 
+              </div>
+            </div>
+              
+              <div class="col-sm-6">
+              	<div class="styled-input">
+              <input autocomplete="new-password" type="password" name="password" class="login-input-password" required/>
+              <label>PASSWORD</label>
+              <span></span> </div>
+              </div>
+
+              <div class="col-sm-6">
+              	<div class="styled-input">
+              <input autocomplete="tel" type="number" name="mobile" class="login-input-mobile SignupFormMobileField" required/>
+              <label>MOBILE</label>
+              <span></span> 
+              </div>
+            </div>
+          </div>
+
+                {{> loginFormMessages messages=messages}}
+
+            </div>  
+          <div class="signup-btn">
+          	<div class="styled-input">
+                {{#if isLoading}}
+                    <button class="transparent-btn btns" >Loading...</button>
+                {{else}}
+                    <button class="blue-btn btns" type="submit">SIGN UP</button>
+                {{/if}}
+          </div>
+              {{#unless onPage}}
+                  <p style="padding-top:0;">Already have an account? <a href="javascript:;"><span style="color:#0c67a6;" data-event-category="accounts" data-event-action="signIn" >Sign In</span></a></p>
+              {{/unless}}
+           </div>
+          </form>
+           
+      </div>
+  </div>
+
+</template>

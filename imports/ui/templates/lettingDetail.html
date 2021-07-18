@@ -1,0 +1,454 @@
+<template name="lettingDetail">
+    <div class="property-details-page">
+        {{#if data}}
+        <section class="scroll-menu-div">
+            <div class="container">
+                <div class="scroll-menu">
+                    <div class="left-menu">
+                        <ul>
+                            <li><a href="{{currentURL}}#imagessection" class="active scroll1">PHOTOS</a></li>
+                            <!--<li><a href="#project" class="scroll1">LOCATION</a></li>-->
+                            <li><a href="{{currentURL}}#detailssection" class="scroll1">DETAILS</a></li>
+                            <li><a href="{{currentURL}}#amenitiessection" class="scroll1">AMENITIES</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="right-menu">
+                        <ul>
+                            <li class="left-line">
+                                <p>Applications received</p>
+                                <p class="pad-btm-0 text-center">{{data.applicationsReceivedCount}}</p>
+                            </li>
+                            <!--<li class="left-line">-->
+                                <!--<p class="pad-btm-0 text-left">Apply before :  {{dateFormat data.endDate}}</p>-->
+                            <!--</li>-->
+                            <li class="left-line">
+                                <p>Owner's Current Rent</p>
+                                <p class="pad-btm-0 text-center">&euro; {{data.price}}</p>
+                            </li>
+                            <li>
+                            {{#if myBid}}
+                                <button class="green-btn  btns viewMyApplication" disabled=true type="button">Already applied</button>
+                            {{else}}
+                                {{#if isPageLocked}}
+                                    <buttons class="transparent-btn btns ">Loading...</buttons>
+                                {{else}}
+                                    <buttons class="blue-btn btns headerApplyNowBtn applyNowBtn">Apply for this house</buttons>
+                                {{/if}}
+                            {{/if}}
+
+                            </li>
+                            <!--<li><button class="green-btn btns" id="book-site-visit">BOOK A SITE VISIT</button></li>-->
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner">
+            <div class="container">
+                <div class="row">
+                    <div id="imagessection" class="col-md-7 padding0">
+                        <figure>
+                            <div class="banner-holder">
+                                {{>imagesSlider}}
+                                {{#if false}}<!--<img src="/images/property-banner1.jpg" alt="" class="img-responsive"/>-->
+                                    <!-- <div class="overlay"></div> -->{{/if}}
+                            </div>
+                            {{#if isAgent}}
+                                <figcaption>
+                                    <h2>{{isAgent.name}}</h2>
+                                    <h5 style="padding:0">{{isAgent.address1}}</h5>
+                                </figcaption>
+                            {{/if}}
+                            {{#if false}}
+                                <!--<figcaption>-->
+                                <!--<p><span style="font-family: 'montserratextra_bold';">25%</span> Less than market price</p>-->
+                                <!--<h1>Purva Goldcrest </h1>-->
+                                <!--<h5>Off Kanakapura Road, Bangalore</h5>-->
+                                <!--</figcaption>-->
+                                <!--<figure class="location-img"><a href="http://www.google.com/maps/place/{{data.PD.address.geoCodeLat}},{{data.PD.address.geoCodeLong}}" target="blank"><img src="/images/location-img.png" alt="location" /></a></figure>-->
+                            {{/if}}
+                        </figure>
+                    </div>
+                    <div class="col-md-5 purva-bg" style="">
+                        <div class="purva">
+                            {{#if isAgent}}
+                                <img src="{{isAgent.logourl}}" alt="{{isAgent.name}}" style="{{isAgent.style}}"/>
+                            {{/if}}
+                            {{#if false}}<!--<img src="/images/property-list/thumbnail/purva-small-img.png" alt="" />-->{{/if}}
+                            <h1>{{titleCase data.PD.address.address}}{{#if data.PD.address.area}}, {{titleCase data.PD.address.area}} {{/if}}{{#if data.PD.address.county}}, {{titleCase data.PD.address.county}} {{/if}}</h1>
+                            <p style=" margin-bottom: 10px;">{{titleCase data.PD.type}} to rent in {{#if data.PD.address.area}}, {{titleCase data.PD.address.area}} {{/if}}{{#if data.PD.address.county}}, {{titleCase data.PD.address.county}}{{/if}}. Its {{#if data.PD.furnished}}a furnished{{else}}an Unfurnished{{/if}} {{titleCase data.PD.type}} with {{data.PD.bedroomsCount}} beds, {{data.PD.baths}} baths, {{#unless data.PD.ensuiteCount}}no{{else}}{{data.PD.ensuiteCount}}{{/unless}} Ensuite and {{#unless data.PD.doubleBedCount}}has no{{else}}{{data.PD.doubleBedCount}}{{/unless}} Double bed property/accommodation, your next my home. {{#if isAgent}}Its posted by {{isAgent.name}}.{{/if}} Click apply below to send your interest to the landlord and he would contact you soon. </p>
+                            {{#if false}}
+                            <ul>
+                                <li>
+                                    <p>{{titleCase data.PD.type}} </p>
+                                </li>
+                                {{#if data.PD.furnished}}
+                                <li>
+                                    <p>Furnished </p>
+                                </li>
+                                {{else}}
+                                    <li>
+                                        <p>Unfurnished </p>
+                                    </li>
+                                {{/if}}
+                                <li>
+                                    <p><span style="color:#b3b3b3;">Beds</span> :  {{data.PD.bedroomsCount}}</p>
+                                </li>
+                                <li>
+                                    <p><span style="color:#b3b3b3;">Baths</span> :  {{data.PD.baths}}</p>
+                                </li>
+
+                            </ul>
+                            <ul>
+                                <li>
+                                    <p><span style="color:#b3b3b3;">Views</span> :  {{data.views}}</p>
+                                </li>
+                            </ul>
+                                <!--<p style="color:#39b54a;font-family: 'montserratregular';padding: 15px 0px;">How it works?</p>-->
+                            {{/if}}
+                            <ul>
+                                <li>
+                                    <p><span style="color:#b3b3b3;">Views</span> :  {{data.views}}</p>
+                                </li>
+                                <li>
+                                    <a href="{{urlFor 'howitworks'}}"><p style="color:#39b54a;font-family: 'montserratregular';padding: 0px;">How it works?</p></a>
+                                </li>
+                                <li>
+                                    <a href="{{urlFor 'contactus'}}"><p style="color:#39b54a;font-family: 'montserratregular';padding: 0px;">Need help?</p></a>
+                                </li>
+                            </ul>
+                            <p>&nbsp;</p>
+                            <div class="purva-developer">
+                                <h5><span style="color: #b3b3b3;">Owner's Current Rent :</span>&euro; {{data.price}}</h5>
+                                <!--<h4>Bidding starts at</h4>-->
+                                <!--<h2><i class="fa fa-inr indian-rup"></i>4900 / Sq.ft</h2>-->
+                            </div>
+                            <div class="purva-btns">
+                                <ul>
+                                    <li>
+                                        {{#if myBid}}
+                                            <button class="green-btn  btns viewMyApplication" disabled=true type="button">Already applied</button> &nbsp;
+                                            {{#unless hasAllReqReferences}}
+                                                    <button style="" class="transparent-btn btns mainUploadRefBtn" type="button" title="You dont have all your references updated in your profile. Missing files are  {{addCommaToEach refListArr}}">Upload references</button>
+                                                {{else}}
+                                                <button style="" class="transparent-btn btns mainUpdateRefBtn" type="button" title="View your references">Update references</button>
+                                            {{/unless}}
+                                        {{else}}
+                                            {{#if isPageLocked}}
+                                                <buttons class="transparent-btn btns ">Loading...</buttons>
+                                            {{else}}
+                                                <buttons class="blue-btn btns mainApplyNowBtn applyNowBtn">Apply for this house</buttons>
+                                            {{/if}}
+                                            {{#unless hasAllReqReferences}}
+                                                <button class="transparent-btn btns mainUploadRefBtn" type="button" title="You dont have all your references updated in your profile. Missing files are  {{addCommaToEach refListArr}}">Upload references</button>
+                                            {{else}}
+                                                <button class="transparent-btn btns mainUpdateRefBtn " type="button" title="View your references">Update references</button>
+                                            {{/unless}}
+                                        {{/if}}
+
+                                    </li>
+                                    <!--<li><buttons class="transparent-btn btns">Book a site visit</buttons></li>-->
+                                </ul>
+                            </div>
+            {{#if false}}
+{{#if otherBids.needed}}
+                            <div class="purva-btns purva-developer otherBids" style="margin-top: 20px;">
+                                <ul>
+                                {{#each otherBids.arr}}
+                                    {{#if isCurUserBid}}
+                                        <li> <h5><span class="green-text">Your offer : &euro; {{this.yourBid}}</span></h5></li>
+                                    {{else}}
+                                        <li> <h5><span style="color: #b3b3b3;">Other offer : </span>&euro; {{this.yourBid}}</h5></li>
+
+                                    {{/if}}
+                                {{/each}}
+                                    <!--<li>Other offer - € 1450</li>-->
+                                    <!--<li>Other offer - € 1500</li>-->
+                                    <!--<li>Your offer - € 1550</li>-->
+                                    <!--<li>Other offer - € 1450</li>-->
+                                    <!--<li>Other offer - € 1450</li>-->
+                                </ul>
+                            </div>
+    {{else}}
+    <div class="purva-btns purva-developer otherBids" style="margin-top: 20px;">
+        <ul>
+            {{#each otherBids.arr}}
+                <li> <h5><span class="green-text">Be the first one to apply. </span></h5></li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/if}}
+    {{/if}}
+                            <!--<div class="download-div1">-->
+                                <!--<ul>-->
+                                    <!--<li><span><img src="/images/download-icon1.png" alt="download"></span>Brochure</li>-->
+                                    <!--<li><span><img src="/images/download-icon1.png" alt="download"></span>Approval books</li>-->
+                                    <!--<li><span><img src="/images/eye-icon.png" alt="download"></span>Floor Plans</li>-->
+                                <!--</ul>-->
+
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="main-sec">
+            <div class="container">
+                <div class="row">
+
+                    <div id="detailssection" class="border mar-btm-20 background-white">
+                        <div class="head-border-bottom head-border-bottomTitleArea"><h2>Details</h2></div>
+                        <div class="developer proj-dtls ">
+                            <div class="clearfix">
+                                <div class="col-md-9">
+                                    <div>
+                                        <ul class="list-inline">
+                                            <li class="">
+                                                <h3>Rent type</h3>
+                                                <h4 class="pad-btm-0">{{titleCase data.rentType}}</h4>
+                                            </li>
+
+                                            <li class="left-line">
+                                                <h3>Available from</h3>
+                                                <h4 class="pad-btm-0">{{dateFormat data.readyFrom}}</h4>
+                                            </li>
+
+                                            <li class="left-line">
+                                                <h3>Available until</h3>
+                                                <h4 class="pad-btm-0">{{data.lease}}</h4>
+                                            </li>
+
+                                            <!--<li class="left-line">-->
+                                                <!--<h3>Apply before</h3>-->
+                                                <!--<h4 class="pad-btm-0">{{dateFormat data.endDate}}</h4>-->
+                                            <!--</li>-->
+                                        </ul>
+                                        <div class="project-detail">
+                                            <ul class="bdr-btm">
+                                                <li>
+                                                    <span class="color-grey">Location</span>
+                                                    <h5 class="heading-reg"> {{data.PD.address.address}}, {{data.PD.address.area}}, {{data.PD.address.county}}</h5>
+                                                </li>
+                                                <li class="pad-left-35">
+                                                    <span class="color-grey">BER</span>
+                                                    <h5 class="heading-reg"> {{addCommaToEach data.PD.BER}}</h5>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="mar-top-20 ">
+                                        <h5 class="heading-reg">Description</h5>
+                                        <p class="color-grey pad-btm-10">{{{nlToBr data.PD.about}}}</p>
+                                        <!--<a href="javascript:;" class="text-underline" >Read More</a>-->
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-3">
+                                    <h5 class="heading-reg">Bedrooms : {{data.PD.bedroomsCount}}</h5>
+                                    <div class="handed-proj-bg clearfix">
+                                        <div class="col-md-6">
+                                            <div>
+                                                <h3>{{data.PD.doubleBedCount}}</h3>
+                                                <h4 class="pad-btm-0">Double</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" style="padding:0">
+                                            <div class="left-line">
+                                                <h3>{{data.PD.ensuiteCount}}</h3>
+                                                <h4 class="pad-btm-0">Ensuite</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="heading-reg mar-top-30">Contact</h5>
+                                    <div class="handed-proj-bg clearfix">
+                                        <!--<div class="col-md-12 color-grey"  style="font-size:13px">Apply for this property to view contact details</div>-->
+                                        {{#if data.primaryContact.phone}}
+                                            {{#each data.contacts}}
+                                            <div class="col-md-12">
+                                                <div>
+                                                    <h3>{{name}} : <a href="tel:{{phone}}">{{phone}}</a></h3>
+                                                    <!--<h4 class="pad-btm-0"></h4>-->
+                                                </div>
+                                            </div>
+                                            {{/each}}
+                                        {{else}}
+                                        <div class="col-md-12">Apply for this property to mail owner</div>
+                                        {{/if}}
+                                        <!--<div class="col-md-6" style="padding:0">-->
+                                            <!--<div class="left-line">-->
+                                                <!--<h3>60%</h3>-->
+                                                <!--<h4 class="pad-btm-0">open space </h4>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    </div>
+
+                                    <!--{{#if data.primaryContact.email}}-->
+                                    <!--<div class="plan-btndiv">-->
+                                        <!--<a href="mailto:{{data.primaryContact.email}}" class="transparent-btn btns">Email</a>-->
+                                    <!--</div>-->
+                                    <!--{{/if}}-->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="amenitiessection" class="mar-btm-30 amenities">
+                        <div class="head-border-bottom head-border-bottomTitleArea"><h2>Amenities</h2></div>
+                        <div class="amenitiy-block">
+                            <ul>
+                                <!--<li class="pad-right-30"><p><span><img src="/images/club-icon.png"></span>Club House</p></li>-->
+                                {{#each data.PD.amenitiesWithImgs}}
+                                    <li><p><span><img src="{{src}}"></span>{{titleCase name}}</p></li>
+                                {{/each}}
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+        <div id="confirm-apply-pop" style="display:none;" class="verification-div1">
+
+            <div class="refund-div"><h2>Confirm Apply</h2></div>
+            <div class="profile-text">
+                <h3>Landlords asking rent is {{data.price}}</h3>
+                <!--<h5 class="no-capitalize">Please enter your offer</h5>-->
+
+                <form class="signin-form">
+                    <div class="form-border" style=" padding: 20px 0;">
+
+                        <div class="styled-input underline" style="border-bottom:1px solid #2169a8;">
+                            <input class="bidPrice" type="number" placeholder="{{data.price}}" value="{{data.price}}" name="number" id="bidPrice" required min="{{priceRange.min}}" max="{{priceRange.max}}" />
+                        <!--readonly style="visibility:hidden;"-->
+
+                        </div>
+
+                        <div class="styled-input underline">
+                            <textarea class="form-control bidMessage" id="bidMessage" rows="3" placeholder="You may enter a personal message to landlord if you wish." maxlength="500"></textarea>
+                        </div>
+
+                        <!--<div class="input-group date">-->
+                            <!--<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>-->
+                            <!--<input class="set-due-date form-control moveindate" type="text" id="moveindate"/>-->
+                        <!--</div>-->
+
+                    </div>
+                </form>
+                <p class="color-text" style="margin-top: 20px;">We will submit all the references available in your profile. </p>
+                {{#if false}}
+                {{#unless hasAllReqReferences}}
+                    <div class="radio-bg register">
+                        <h3 style="line-height: 22px;margin-bottom: 10px;">Oops! You dont have all your references updated in your profile. </h3>
+                        <p class="color-text">Missing files are
+                            {{addCommaToEach refListArr}}
+                            <a href="javascript:void(0);" class="pd_cap_a ">Upload them now?</a>
+                        </p>
+                        <p><button class="transparent-btn btns pd_cap_btn " type="button">Upload references </button></p>
+                        <p>Your chances of getting the house will be more if you apply with all the references. To proceed anyways click Submit below.</p>
+                    </div>
+                {{/unless}}
+                {{/if}}
+                <ul>
+                    {{#if isApplicationInProgress}}
+                        <li><button class="transparent-btn  btns " disabled="true" type="button">Applying... </button></li>
+                    {{else}}
+                        <li><button class="blue-btn  btns confirmApplyBtn" type="button">Submit </button></li>
+                    {{/if}}
+                    <li><button class="transparent-btn btns cap_closePopupBtn" disabled="{{isApplicationInProgress}}" type="button">Cancel</button></li>
+                </ul>
+            </div>
+        </div>
+
+        {{else}}
+            <section class="mar-top-20 ">
+                <div class="container text-center mar-top-20 pad-btm-30">
+                    <div class="filter-holder">
+                        <div class="mar-top-30">
+                            {{#if alreadyLeased}}
+                                <strong>Property already leased. Your landlord would contact you if you are chosen as a tenant.</strong><br/><br/>
+                                <button class="blue-btn btns backBtn" type="button">Try again</button>
+                            {{else}}
+                                <strong>This property is not found. Please check your key and try again.</strong><br/><br/>
+                                <button class="blue-btn btns noPropBackBtn" type="button">Try again</button>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {{/if}}
+    </div>
+
+</template>
+
+
+<template name="imagesSlider">
+
+
+    <div id="lettingDetailCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <!--<ol class="carousel-indicators">-->
+            <!--<li data-target="#lettingDetailCarousel" data-slide-to="0" class="active"></li>-->
+            <!--<li data-target="#lettingDetailCarousel" data-slide-to="1"></li>-->
+            <!--<li data-target="#lettingDetailCarousel" data-slide-to="2"></li>-->
+        <!--</ol>-->
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+            <!--<div class="item active">-->
+                <!--<img src="/images/gallery/model-appartment/1.jpg" />-->
+            <!--</div>-->
+            {{#if images}}
+                {{#each images}}
+                    <div class="item {{isActive @index}}">
+                        <img src="{{this}}" class="img-responsive"/>
+                    </div>
+                {{/each}}
+            {{else}}
+                <div class="item active">
+                    <img src="/images/no-photo.png" class="img-responsive"/>
+                </div>
+            {{/if}}
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#lettingDetailCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#lettingDetailCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
