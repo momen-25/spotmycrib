@@ -1,0 +1,401 @@
+{
+  "builtBy": "meteor/34",
+  "unibuildDependencies": {
+    "os.json": {
+      "files": {
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/package.js": "2cc197b7030b3884db4dba9e340205bb5e2568c0",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/.npm/package/npm-shrinkwrap.json": "289d76859b9b82cff0066df1d2e4fea36d4f0bd4",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib/both.js": "9a8495806b25deb3d899c91dadb3c11541d3b1d6",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/main.js": "3761c81ca1f79fd13f3d20e5cd48f9ce005c2deb",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib/flow_router.js": "a92cf067e63e54bfbf0882cb251e49e7761fb4fb",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/client.js": "d6793c1a6042c42afb019589d4e74f7e43e50237",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/fakescript.js": "af2d6fa976019fee39628de369be1f48db3899d3",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/init.js": "f19d69da832a294a61e7ea1bf35d0c296a203cef",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/server.js": "22fb5167438b8465869c422c815dabe3128e3754"
+      },
+      "potentiallyUnusedFiles": [
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/main.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib/flow_router.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/client.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/fakescript.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/init.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/server.js"
+      ],
+      "directories": [
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "main.js",
+            "package.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "lib/",
+            "test/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "both.js",
+            "flow_router.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "client.js",
+            "fakescript.js",
+            "init.js",
+            "server.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        }
+      ]
+    },
+    "web.browser.json": {
+      "files": {
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/package.js": "2cc197b7030b3884db4dba9e340205bb5e2568c0",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/.npm/package/npm-shrinkwrap.json": "289d76859b9b82cff0066df1d2e4fea36d4f0bd4",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/main.js": "3761c81ca1f79fd13f3d20e5cd48f9ce005c2deb",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib/both.js": "9a8495806b25deb3d899c91dadb3c11541d3b1d6",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib/flow_router.js": "a92cf067e63e54bfbf0882cb251e49e7761fb4fb",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/client.js": "d6793c1a6042c42afb019589d4e74f7e43e50237",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/fakescript.js": "af2d6fa976019fee39628de369be1f48db3899d3",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/init.js": "f19d69da832a294a61e7ea1bf35d0c296a203cef",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/server.js": "22fb5167438b8465869c422c815dabe3128e3754"
+      },
+      "potentiallyUnusedFiles": [
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/client.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/fakescript.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/init.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/server.js"
+      ],
+      "directories": [
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "main.js",
+            "package.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "lib/",
+            "test/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "both.js",
+            "flow_router.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "client.js",
+            "fakescript.js",
+            "init.js",
+            "server.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        }
+      ]
+    },
+    "web.browser.legacy.json": {
+      "files": {
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/package.js": "2cc197b7030b3884db4dba9e340205bb5e2568c0",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/.npm/package/npm-shrinkwrap.json": "289d76859b9b82cff0066df1d2e4fea36d4f0bd4",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/main.js": "3761c81ca1f79fd13f3d20e5cd48f9ce005c2deb",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib/both.js": "9a8495806b25deb3d899c91dadb3c11541d3b1d6",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib/flow_router.js": "a92cf067e63e54bfbf0882cb251e49e7761fb4fb",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/client.js": "d6793c1a6042c42afb019589d4e74f7e43e50237",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/fakescript.js": "af2d6fa976019fee39628de369be1f48db3899d3",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/init.js": "f19d69da832a294a61e7ea1bf35d0c296a203cef",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/server.js": "22fb5167438b8465869c422c815dabe3128e3754"
+      },
+      "potentiallyUnusedFiles": [
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/client.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/fakescript.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/init.js",
+        "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test/server.js"
+      ],
+      "directories": [
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "main.js",
+            "package.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "lib/",
+            "test/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "both.js",
+            "flow_router.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/lib",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "client.js",
+            "fakescript.js",
+            "init.js",
+            "server.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/test",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        }
+      ]
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/home/momen/projects/spotmycrib-master/packages/meteor-dochead/package.js": "2cc197b7030b3884db4dba9e340205bb5e2568c0"
+    },
+    "potentiallyUnusedFiles": [],
+    "directories": []
+  },
+  "pluginProviderPackageMap": {
+    "kadira:dochead": {
+      "kind": "local",
+      "sourceRoot": "/home/momen/projects/spotmycrib-master/packages/meteor-dochead"
+    },
+    "meteor": {
+      "kind": "versioned",
+      "version": "1.9.3"
+    },
+    "es5-shim": {
+      "kind": "versioned",
+      "version": "4.8.0"
+    },
+    "ecmascript": {
+      "kind": "versioned",
+      "version": "0.15.1"
+    },
+    "tracker": {
+      "kind": "versioned",
+      "version": "1.2.0"
+    },
+    "modules": {
+      "kind": "versioned",
+      "version": "0.16.0"
+    },
+    "ecmascript-runtime": {
+      "kind": "versioned",
+      "version": "0.7.0"
+    },
+    "babel-runtime": {
+      "kind": "versioned",
+      "version": "1.5.0"
+    },
+    "promise": {
+      "kind": "versioned",
+      "version": "0.11.2"
+    },
+    "dynamic-import": {
+      "kind": "versioned",
+      "version": "0.6.0"
+    },
+    "ecmascript-runtime-client": {
+      "kind": "versioned",
+      "version": "0.11.1"
+    },
+    "ecmascript-runtime-server": {
+      "kind": "versioned",
+      "version": "0.10.1"
+    }
+  },
+  "includeCordovaUnibuild": false
+}

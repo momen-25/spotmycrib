@@ -1,0 +1,102 @@
+<p>Dear  {{data.agent.profile.name}},</p>
+<br />
+
+An application received for the {{data.project.type}}. Details of your application registered with us are as below.
+<br/><br/>
+<table style="width: 333px;" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td width="146">
+            <p>Name</p>
+        </td>
+        <td width="187">
+            <p>{{data.user.profile.name}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Phone</p>
+        </td>
+        <td width="187">
+            <p>{{#if data.user.profile.mobile}}{{data.user.profile.mobile}}{{/if}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Email</p>
+        </td>
+        <td width="187">
+            <p>{{data.user.profile.email}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Location</p>
+        </td>
+        <td width="187">
+            <p>{{titleCase data.project.address.address}}{{#if data.project.address.area}}, {{titleCase data.project.address.area}} {{/if}}{{#if data.project.address.county}}, {{titleCase data.project.address.county}} {{/if}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Offer rent</p>
+        </td>
+        <td width="187">
+            <p>&euro; {{data.offerFormated}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Landlords asking rent</p>
+        </td>
+        <td width="187">
+            <p>&euro; {{data.rentFormated}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Furnished</p>
+        </td>
+        <td width="187">
+            <p> {{#if data.project.furnished}}Yes{{else}}No{{/if}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Beds</p>
+        </td>
+        <td width="187">
+            <p>{{data.bedsCount}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Baths</p>
+        </td>
+        <td width="187">
+            <p>{{data.project.baths}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Message</p>
+        </td>
+        <td width="187">
+            <p>{{data.application.bidMessage}}</p>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+<p><br />
+Regards,<br />
+{{support.name}}<br />
+{{support.companyName}} <br />
+{{support.email}}<br />
+{{support.phone}}</p>
+
+<a href="{{homepage}}?utm_source=applicationReceivedEmail&utm_medium=email&utm_campaign=applicationReceivedEmail&utm_content=footerLogoLink">
+    <img src="{{cdnHomepage}}images/spot-my-crib-logo.png" alt="SpotMyCrib logo">
+</a>

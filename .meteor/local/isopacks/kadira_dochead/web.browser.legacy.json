@@ -1,0 +1,118 @@
+{
+  "format": "isopack-2-unibuild",
+  "declaredExports": [
+    {
+      "name": "DocHead",
+      "testOnly": false
+    }
+  ],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "es5-shim",
+      "constraint": "4.5.8"
+    },
+    {
+      "package": "ecmascript",
+      "constraint": "0.4.1"
+    },
+    {
+      "package": "tracker",
+      "constraint": "1.0.11"
+    },
+    {
+      "package": "jns:flow-router-ssr",
+      "constraint": "3.12.1",
+      "weak": true
+    }
+  ],
+  "resources": [
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/main.js",
+      "length": 40,
+      "offset": 0,
+      "path": "main.js",
+      "hash": "3761c81ca1f79fd13f3d20e5cd48f9ce005c2deb",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/lib/both.js",
+      "length": 2266,
+      "offset": 0,
+      "path": "lib/both.js",
+      "hash": "9a8495806b25deb3d899c91dadb3c11541d3b1d6",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/lib/flow_router.js",
+      "length": 244,
+      "offset": 0,
+      "path": "lib/flow_router.js",
+      "hash": "a92cf067e63e54bfbf0882cb251e49e7761fb4fb",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/client.js",
+      "length": 2495,
+      "offset": 0,
+      "path": "test/client.js",
+      "hash": "d6793c1a6042c42afb019589d4e74f7e43e50237",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/fakescript.js",
+      "length": 31,
+      "offset": 0,
+      "path": "test/fakescript.js",
+      "hash": "af2d6fa976019fee39628de369be1f48db3899d3",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/init.js",
+      "length": 157,
+      "offset": 0,
+      "path": "test/init.js",
+      "hash": "f19d69da832a294a61e7ea1bf35d0c296a203cef",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/server.js",
+      "length": 1547,
+      "offset": 0,
+      "path": "test/server.js",
+      "hash": "22fb5167438b8465869c422c815dabe3128e3754",
+      "fileOptions": {
+        "lazy": true
+      }
+    }
+  ],
+  "node_modules": "npm/node_modules"
+}

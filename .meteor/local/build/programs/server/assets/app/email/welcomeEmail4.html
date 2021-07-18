@@ -1,0 +1,376 @@
+<style type="text/css">
+    * {
+        font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        -webkit-text-size-adjust: none;
+        width: 100% !important;
+        height: 100%;
+    }
+    table.head-wrap {
+        width: 100%;
+        background-color: #ffffff;
+    }
+    .container {
+        display: block !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+        clear: both !important;
+    }
+    .content {
+        padding: 5px;
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+    }
+    .content table {
+        width: 100%;
+    }
+    img {
+        max-width: 100%;
+    }
+    .collapse {
+        margin: 0 !important;
+    }
+    .collapse {
+        margin: 0;
+        padding: 0;
+    }
+    h6 {
+        font-weight: 900;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #444;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        line-height: 1.1;
+        margin-bottom: 15px;
+        color: #000;
+    }
+    a {
+        color: #2BA6CB;
+    }
+    table.body-wrap {
+        width: 100%;
+    }
+    p, ul {
+        margin-bottom: 10px;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 1.3;
+    }
+    h5 {
+        font-weight: 600;
+        font-size: 21px;
+    }
+    h4 {
+        font-weight: 600;
+        font-size: 18px;
+        margin: 0px 0px 10px 0px;
+    }
+    table.footer-wrap {
+        width: 100%;
+        clear: both !important;
+    }
+    .btn {
+        text-decoration: none;
+        color: #FFF;
+        background-color: #eb237a;
+        padding: 5px 35px;
+        font-weight: bold;
+        margin-right: 10px;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        border-radius: 20px;
+    }
+</style>
+
+<div bgcolor="#FFFFFF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+
+    <!-- HEADER -->
+    <table class="head-wrap" bgcolor="#999999">
+        <tr>
+            <td></td>
+            <td class="header container" align="">
+
+                <!-- /content -->
+                <div class="content">
+                    <table bgcolor="#fff" >
+                        <tr>
+                            <td><img src="{{homepage}}images/email-s1-images/logo.png"/></td>
+                            <td align="center" style="width:30px;"><h6 class="collapse"><a href="https://twitter.com/SpotMyCrib"><img src="{{homepage}}images/email-s1-images/t_icon.png"/></a></h6></td>
+                            <td align="center" style="width:30px;"><h6 class="collapse"><a href="https://www.facebook.com/SpotMyCrib"><img src="{{homepage}}images/email-s1-images/f_icon.png"/></a></h6></td>
+                            <td align="center" style="width:30px;"><h6 class="collapse"><a href="https://www.linkedin.com/company/11223356/"><img src="{{homepage}}images/email-s1-images/in_icon.png"/></a></h6></td>
+
+                        </tr>
+                    </table>
+                </div><!-- /content -->
+
+            </td>
+            <td></td>
+        </tr>
+    </table><!-- /HEADER -->
+
+    <!-- BODY -->
+    <table class="body-wrap" bgcolor="">
+        <tr>
+            <td></td>
+            <td class="container" align="" bgcolor="#FFFFFF">
+
+                <!-- content -->
+                <div class="content">
+                    <table>
+                        <tr>
+                            <td>
+                                <!-- A Real Hero (and a real human being) -->
+                                <p><img src="{{homepage}}images/email-s1-images/bnner_img2.png"/></p><!-- /hero -->
+
+                            </td>
+                        </tr>
+                    </table>
+                </div><!-- /content -->
+                <div class="content">
+                    <table>
+                        <tr>
+                            <td>
+                                <h5 class=""  style="margin-bottom:5px;">You're Invited to Visit The House!</h5>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td align="left"><img src="{{homepage}}images/email-s1-images/line_bg.png"/></td>
+                        </tr>
+                    </table>
+
+                    <table bgcolor="">
+                        <tr>
+                            <td class="small" width="20%" style="vertical-align: top; padding:15px 0px;"><img src="{{homepage}}images/email-s1-images/time_date.png" /></td>
+                            <td style="padding-left:20px;">
+                                <h4>Dear {{data.user.profile.name}},</h4>
+                                <p class="" style="font-size:15px;">You are invited to the viewing on {{data.inviteDateFormated}} for the {{data.project.type}} at {{ data.project.address.address}}. Contact details of the Landlord are as below</p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <!-- content -->
+                <div class="content" style="background-color:#2e8cc9; padding:10px 20px;">
+                    <table>
+                        <tr><td align="left"><h4 style="color:#fff; padding:10px 0px; margin:0px;" >Details of your application registered with us are as below.</h4></td></tr>
+                    </table>
+
+
+                </div><!-- /content -->
+                <div class="content" style="background-color:#d3e6ec; padding:10px 20px;">
+                    <table bgcolor="">
+                        <tr>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; font-weight:700;">Landlord Name: </p>
+
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; ">{{data.user.profile.name}}</p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; font-weight:700; ">Phone:</p>
+
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; ">{{data.user.profile.mobile}}</p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; font-weight:700; ">Email:</p>
+
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; ">{{data.user.profile.email}}</p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; font-weight:700; ">Location:</p>
+
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; ">{{data.project.address.address}},{{data.project.address.area}},{{data.project.address.county}}</p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; font-weight:700; ">Offer Rent:</p>
+
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; ">&euro; {{data.offerFormated}}</p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; font-weight:700;">Landlords asking Rent:</p>
+
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; ">&euro; {{data.rentFormated}}</p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px;  font-weight:700;">Furnished:</p>
+
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; ">{{data.project.furnished}}</p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; font-weight:700; ">Beds:</p>
+
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <p style="color:#434343; padding-top:10px; ">{{data.bedsCount}}</p>
+
+                            </td>
+                        </tr>
+
+
+                    </table>
+                </div>
+                <!-- content -->
+                <div class="content" style="padding:10px 0px 0px; margin:20px 0px 0px;">
+                    <table bgcolor="">
+                        <tr>
+                            <td class="small" width="47%" style="vertical-align: top; padding:16px 10px 10px 20px; text-align:left; background-color:#2e8cc9;">
+                                <p style="color:#fff; padding-top:10px; font-size:16px; ">Landlord Name: Contact Details of the Landlord are as below:</p>
+                                <p style="color:#fff; padding-top:10px; font-weight:700;">{{data.agent.profile.name}}</p>
+                                <p style="color:#fff; padding-top:10px; margin:0px; ">{{data.agent.profile.mobile}}</p>
+                                <p style="color:#fff;">{{data.agent.profile.email}}</p>
+
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding-right:10px; text-align:left;">
+                                <table bgcolor="">
+                                    <tr>
+                                        <td>
+                                            <p style="color:#434343; padding:0px 20px; ">If above date is not ok, Please rechedule your appointment</p>
+                                            <p style="color:#434343; padding:0px 20px 0px; margin:0px; "><a class="btn">Rechedule</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p style="color:#434343; padding:10px 20px 0px; ">If above date is ok. Please confirm your appointment</p>
+                                            <p style="color:#434343; padding:0px 20px 0px; "><a class="btn">Confirm</a></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div><!-- /content -->
+                <div class="content" style="padding:0px 0px; margin:0px 0px;">
+                    <table bgcolor="">
+                        <tr>
+                            <td class="small" width="47%" style="vertical-align: top; padding:0px; text-align:left;">
+                                <img src="{{homepage}}images/email-s1-images/map.png"/>
+                            </td>
+                            <td class="small" width="45%" style="vertical-align: top; padding:20px 0px; text-align:left;">
+                                <table bgcolor="">
+                                    <tr>
+                                        <td>
+                                            <p style="color:#434343; padding:0px 0px 0px 20px; "><img src="{{homepage}}images/email-s1-images/loca_icon.png" style="padding-right:10px;"/>Bengaluru International Airpor</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p style="color:#434343; padding:0px 20px 0px;"><img src="{{homepage}}images/email-s1-images/phone.png" style="padding-right:10px;"/>+91 (40) 409 122 03</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p style="color:#434343; padding:0px 20px 0px; "><img src="{{homepage}}images/email-s1-images/mail_icon.png" style="padding-right:10px;"/>support@tietechnology.com</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+
+            </td>
+            <td></td>
+        </tr>
+    </table><!-- /BODY -->
+
+    <!-- FOOTER -->
+    <table class="footer-wrap">
+        <tr>
+            <td></td>
+            <td class="container">
+
+                <!-- content -->
+                <div class="content" style="background-color:#2e8cc9">
+                    <table>
+                        <tr>
+                            <td align="center" style=" font-size:22px; color:#fff; padding:10px 0px 15px;">Social Trust</td>
+                        </tr>
+                        <tr>
+
+
+                            <td align="center" style=" margin:0px; padding-bottom:15px;"><img src="{{homepage}}images/email-s1-images/line_bg2.png"/></td>
+                        </tr>
+                        <tr>
+                            <td align="center" style=" margin:0px;">
+                                <p style=" font-size:14px; margin:0px;">
+                                    <a href="https://twitter.com/SpotMyCrib"><img src="{{homepage}}images/email-s1-images/t_icon1.png"/></a>
+                                    <a href="https://www.facebook.com/SpotMyCrib"><img src="{{homepage}}images/email-s1-images/f_icon1.png"/></a>
+                                    <a href="https://www.linkedin.com/company/11223356/"><img src="{{homepage}}images/email-s1-images/in_icon1.png"/></a>
+                                </p>
+
+
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td align="center" style=" font-size:14px; color:#fff; padding:0px 0px;">
+                                <p style=" font-size:14px;">You are receiving this email because your subscribed to our mailing list.<br />
+                                    Click Here to subcribed your email address from this list</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div><!-- /content -->
+                <div class="content" style="background-color:#292929">
+                    <table>
+
+                        <tr>
+                            <td align="center" style=" font-size:12px; color:#fff; padding:5px 0px; margin:0px;">
+                                <p style=" font-size:12px; color:#fff; padding:0px 0px; margin:0px;">Copyright © 2017 SpotMyCrib. All rights reserved.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </td>
+            <td></td>
+        </tr>
+    </table><!-- /FOOTER -->
+
+</div>

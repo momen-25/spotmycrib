@@ -1,0 +1,477 @@
+{
+  "format": "isopack-2-unibuild",
+  "declaredExports": [
+    {
+      "name": "FlowRouter",
+      "testOnly": false
+    }
+  ],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "ecmascript",
+      "constraint": "0.4.1-rc.1"
+    },
+    {
+      "package": "underscore",
+      "constraint": "1.0.6-rc.1"
+    },
+    {
+      "package": "tracker",
+      "constraint": "1.0.11-rc.1"
+    },
+    {
+      "package": "reactive-dict",
+      "constraint": "1.1.5-rc.1"
+    },
+    {
+      "package": "reactive-var",
+      "constraint": "1.0.7-rc.1"
+    },
+    {
+      "package": "ddp",
+      "constraint": "1.2.3-rc.1"
+    },
+    {
+      "package": "ejson",
+      "constraint": "1.0.9-rc.1"
+    },
+    {
+      "package": "modules",
+      "constraint": "0.5.1-rc.1"
+    },
+    {
+      "package": "staringatlights:fast-render",
+      "constraint": "2.16.3"
+    },
+    {
+      "package": "staringatlights:inject-data",
+      "constraint": "2.0.5"
+    }
+  ],
+  "resources": [
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/lib/router.js",
+      "length": 4463,
+      "offset": 0,
+      "path": "lib/router.js",
+      "hash": "06b0b39a251b906229ca6951099329d2cb8ca1eb",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/lib/group.js",
+      "length": 777,
+      "offset": 0,
+      "path": "lib/group.js",
+      "hash": "ec94b2f743e002be80d7e7896841267645a45919",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/lib/route.js",
+      "length": 397,
+      "offset": 0,
+      "path": "lib/route.js",
+      "hash": "30d471668d6203b0704f22773ccbd39e430642b4",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/client/triggers.js",
+      "length": 3002,
+      "offset": 0,
+      "path": "client/triggers.js",
+      "hash": "bc3318ab8937120a45d314412579d6516eb2d0e3",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/client/router.js",
+      "length": 12826,
+      "offset": 0,
+      "path": "client/router.js",
+      "hash": "2afe5e5eb4d647d08e64fb999f1b6f180e7432a8",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/client/group.js",
+      "length": 1158,
+      "offset": 0,
+      "path": "client/group.js",
+      "hash": "734f3db2c4e08af7b6c1f5df92a7507d04b8d7f5",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/client/route.js",
+      "length": 487,
+      "offset": 0,
+      "path": "client/route.js",
+      "hash": "4b051bd3be6152b83fe5732d5d20961a5265e222",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/lib/_init.js",
+      "length": 158,
+      "offset": 0,
+      "path": "lib/_init.js",
+      "hash": "015f8cdda2428c6316fb5219ecf71217ca79fee0",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/client/_init.js",
+      "length": 119,
+      "offset": 0,
+      "path": "client/_init.js",
+      "hash": "0bdbff107abd2d5b9cbbbeb1ba30905226f7acbc",
+      "fileOptions": {
+        "lazy": false
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/lib/__tests__/group.js",
+      "length": 1563,
+      "offset": 0,
+      "path": "lib/__tests__/group.js",
+      "hash": "778dce49965435f0b079b15d1c7f05263526e8af",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/server/_init.js",
+      "length": 298,
+      "offset": 0,
+      "path": "server/_init.js",
+      "hash": "3ced47a1a7bef91a64dda5a21db31d83cdfaf3d5",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/server/group.js",
+      "length": 39,
+      "offset": 0,
+      "path": "server/group.js",
+      "hash": "663eb93691e7cd97456456a13a531d1d573a424c",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/server/route.js",
+      "length": 14269,
+      "offset": 0,
+      "path": "server/route.js",
+      "hash": "8c8829df620a7178f58516de91ff62dfd29b9735",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/server/router.js",
+      "length": 1366,
+      "offset": 0,
+      "path": "server/router.js",
+      "hash": "b9943c9bc8d56c91cfbf70fe774fc6d98f65fae5",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/server/ssr_context.js",
+      "length": 1522,
+      "offset": 0,
+      "path": "server/ssr_context.js",
+      "hash": "8f6f6cfeffd2a01afacdfc9b3312ce4f3c87818c",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/server/__tests__/route.js",
+      "length": 13293,
+      "offset": 0,
+      "path": "server/__tests__/route.js",
+      "hash": "69c411fd9da7f558001c61e4b0a251f3fad9dcaf",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/server/__tests__/ssr_context.js",
+      "length": 4603,
+      "offset": 0,
+      "path": "server/__tests__/ssr_context.js",
+      "hash": "63fa0f06579eb02d2f8209157b6119e2f6be3b8c",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/server/plugins/ssr_data.js",
+      "length": 2152,
+      "offset": 0,
+      "path": "server/plugins/ssr_data.js",
+      "hash": "01b1ca6c38b6e4b948b3e956dac27cf98ca1f89f",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/server/plugins/__tests__/ssr_data.js",
+      "length": 7552,
+      "offset": 0,
+      "path": "server/plugins/__tests__/ssr_data.js",
+      "hash": "bb201d4b6e8bbb6d53dc382ee6cf274a40744c17",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/_engine/describe.js",
+      "length": 3837,
+      "offset": 0,
+      "path": "test/_engine/describe.js",
+      "hash": "a3b483a07b7c81016234340264f9cdee9a9e0c55",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/_engine/utils.js",
+      "length": 805,
+      "offset": 0,
+      "path": "test/_engine/utils.js",
+      "hash": "7ec0a1c2c5de0774666e42d044567a86fa4ca218",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/client/_helpers.js",
+      "length": 215,
+      "offset": 0,
+      "path": "test/client/_helpers.js",
+      "hash": "cebb8141c308790666730c90dc52fefce8ad877f",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/client/router.core.spec.js",
+      "length": 17200,
+      "offset": 0,
+      "path": "test/client/router.core.spec.js",
+      "hash": "44da603f80567820bacd0855d37acaffe612215d",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/client/router.reactivity.spec.js",
+      "length": 4797,
+      "offset": 0,
+      "path": "test/client/router.reactivity.spec.js",
+      "hash": "460d76ded55838f05d29e048216a80470df352a4",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/client/trigger.spec.js",
+      "length": 11959,
+      "offset": 0,
+      "path": "test/client/trigger.spec.js",
+      "hash": "42fc13f02fddb6601099743d0ad67f99b7a44d89",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/client/triggers.js",
+      "length": 6840,
+      "offset": 0,
+      "path": "test/client/triggers.js",
+      "hash": "1487417c0c113df97f28cc6ae70175e879c0e618",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/common/fast_render_route.js",
+      "length": 1265,
+      "offset": 0,
+      "path": "test/common/fast_render_route.js",
+      "hash": "7c8b6d5e62567598524b1f97eb1b5cf0448af87f",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/common/group.spec.js",
+      "length": 1255,
+      "offset": 0,
+      "path": "test/common/group.spec.js",
+      "hash": "8196ee1dff1b8e3c9b47b0ea73da8134e1a5400c",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/common/loader.spec.js",
+      "length": 93,
+      "offset": 0,
+      "path": "test/common/loader.spec.js",
+      "hash": "befb715694a3b1ad2d3fcc8a569ec2cc4fdc2554",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/common/route.spec.js",
+      "length": 348,
+      "offset": 0,
+      "path": "test/common/route.spec.js",
+      "hash": "a0e3d1c9ceb492bb0156482100ac67f306e38862",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/common/router.addons.spec.js",
+      "length": 976,
+      "offset": 0,
+      "path": "test/common/router.addons.spec.js",
+      "hash": "edfc881df56f9502dcbc46005c9d56c0c4524d07",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/common/router.path.spec.js",
+      "length": 3466,
+      "offset": 0,
+      "path": "test/common/router.path.spec.js",
+      "hash": "227393397bb8558bbbb2596565c7f7a21ec39b7d",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/common/router.url.spec.js",
+      "length": 319,
+      "offset": 0,
+      "path": "test/common/router.url.spec.js",
+      "hash": "1b4b6c54a87738f2bb113c4ba06def36c7278774",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/server/_helpers.js",
+      "length": 877,
+      "offset": 0,
+      "path": "test/server/_helpers.js",
+      "hash": "7f1e20b458e829d1f6244f2bcea0f01eb1e11826",
+      "fileOptions": {
+        "lazy": true
+      }
+    },
+    {
+      "type": "source",
+      "extension": "js",
+      "file": "web.browser.legacy/test/server/plugins/fast_render.js",
+      "length": 1169,
+      "offset": 0,
+      "path": "test/server/plugins/fast_render.js",
+      "hash": "46717fb8c84581b5512704a3fe7493984de1d93a",
+      "fileOptions": {
+        "lazy": true
+      }
+    }
+  ],
+  "node_modules": "npm/node_modules"
+}

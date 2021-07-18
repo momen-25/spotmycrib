@@ -1,0 +1,1425 @@
+@charset "utf-8";
+/* CSS Document */
+html{
+    letter-spacing: 1px;
+}
+
+section.faq-content h4{
+    margin: 0 15px;
+}
+/*border*/
+.noUi-active .range-label span{display: none!important;}
+.noUi-target .noUi-active .range-label {border-radius: 50%!important;transform: none!important;height: 15px!important;
+    width: 15px!important;}
+.noUi-horizontal {height: 1px;}
+.noUi-connect {height: 2px;}
+.noUi-horizontal {height: 2px;}
+ .noUi-connect {height: 2px;}
+ .noUi-background {
+    height: 6px;
+    top: 6px;
+    background-color: #005ea6;
+}
+.many_properties_area .contenta{color:#005ea6;}
+.noUi-horizontal .noUi-handle{height:18px;background:#54bf63;}
+.noUi-handle .range-label{background:#54bf63;}
+#lcount{
+    color: black;
+    display: block;
+    text-align: center;
+    font-size: 22px;
+}
+
+.rdc
+{
+    padding:0px;
+}
+.container-fixed {
+    margin: 0 auto;
+    max-width: 992px !important;
+}
+.topheader
+{
+    width:100%;
+    float:left;
+    min-height:750px;
+}
+
+.logo
+{
+    margin:20px 0px;
+}
+.property_listings
+{
+    text-align: center;
+    padding:20px 20px 10px 20px;
+    margin-top: 190px;
+    border: 10px solid rgba(255, 255, 255, 0.38);
+    /*background-color:hsla(200, 93%, 59%, 0.4588235294117647);*/
+}
+.property_listings h2
+{
+    font-size:24px;
+    color:#fff;
+    line-height:30px;
+    text-transform:uppercase;
+    font-weight:900;
+    padding-bottom:15px;
+    max-width: 545px;
+    margin: 0 auto;
+}
+.property_listings h2{
+    font-size:30px;
+    line-height: 40px;
+    max-width: 600px;
+}
+.property_listings h1
+{
+    font-size:24px;
+    color:#fff;
+    line-height:30px;
+    text-transform:uppercase;
+    font-weight:900;
+    padding-bottom:15px;
+    max-width: 545px;
+    margin: 0 auto;
+}
+.property_listings h1{
+    font-size:30px;
+    line-height: 40px;
+    max-width: 600px;
+}
+.green-btn {
+    padding: 10px 40px;
+    background: #59bb64;
+    color: #fff;
+    transition: all 0.1s linear;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.green-btn:hover
+{color: #fff;
+    background: #0B69A8;
+    transition: all 0.1s linear;
+    border: 1px solid #0B69A8;
+}
+.box-places .green-btn {
+    border: 1px solid #59bb64;
+    background: #59bb64;
+    cursor: pointer;
+    height:42px;
+}
+.box-places .knowmore-form .transparent-btn{
+    border: 1px solid #fff;
+    color:black;
+    font-size: 13px;
+    font-family: 'montserratregular';
+    background: #fff;
+    padding: 11px 20px 12px 20px;
+    border-left:0;
+    margin: 0 !important;
+}
+.box-places .knowmore-form .transparent-btn:hover{
+    background: #59bb64;
+    color: #fff;
+    border:1px solid #59bb64;
+    transition: all 0.1s linear;
+}
+.knowmore-form .green-btn{
+    margin: 0 10px 0 0 !important;
+    padding: 11px 20px;
+}
+/*.knowmore-form .green-btn:hover{*/
+    /*color:black;*/
+    /*background: #fff;*/
+    /*border:1px solid #59bb64;*/
+    /*border-left:0px;*/
+    /*transition: all 0.1s linear;*/
+/*}*/
+
+input.form-control {
+    border: none;
+    background-color: #FaFaFa;
+    box-shadow: none;
+    border: 1px solid #dfdfdf;
+    border-radius: 0;
+    padding: 20px;
+    text-align: left;
+    border-radius:0px;
+    color:#333;
+    font-size: 12px;
+}
+.btn-default {
+    color: #fff;
+    background-color: #54bf63;
+    border-color:#54bf63;
+    padding: 18px 50px;
+    border-radius: 5px;
+    font-weight:900;
+}
+.btn-default:hover {
+    color: #fff;
+    background-color: #5cd06c;
+    border-color:#5cd06c;
+    padding: 18px 50px;
+    border-radius: 5px;
+    font-weight:900;
+}
+.box-places {
+    padding: 30px 30px 20px 30px;
+}
+.box-places ul li button:hover {
+    color: #fff;
+    background:#0B69A8;
+    border: 1px solid #0B69A8;
+}
+/*--Spot Your Tenant Section CSS Start--*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*.container {
+  width: 98%;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+}*/
+
+.col {
+    padding: 5%;
+}
+
+.h1, p {
+    color: #333;
+    text-align: left;
+}
+
+h1 {
+    font-size: 1em;
+    line-height: 1em;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1em;
+    color: white;
+}
+
+a {
+    color: inherit;
+}
+a:hover {
+    color: white;
+}
+
+/* the blue circle with only one line of text, centered vertically */
+.oneline:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background: #005ea6;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+/*.oneline:hover:after {
+  background-color: #59bb64;
+}*/
+.oneline div {
+    float: left;
+    width: 100%;
+    padding-top:47%;
+    line-height: 1em;
+    margin-top: -1.7em;
+    text-align: center;
+    color: white;
+    font-size:28px;
+    padding-bottom:5px;
+}
+.oneline strong {
+    font-size: 16px;
+    color: #fff;
+    margin: 0px;
+}
+.oneline p {
+    text-align: center;
+    font-size:14px;
+}
+.col {
+    display: inline-block;
+    position: relative;
+    width: 16%;
+    margin: 4% 2% 5% 6%;
+    padding: 0;
+    background-color: transparent;
+    border-top: none;
+}
+.col .spacer {
+    position: relative;
+    padding-top: 100%;
+}
+
+@media only screen and (min-width:1024px) and (max-width:1040px){
+    .posting_box{
+        height:503px;
+    }
+}
+
+
+
+.spotyourtenant
+{
+    width:100%;
+    float:left;
+    padding:260px 0px;
+    background: url(../images/estateagentpage/bg_03.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 760px;
+}
+.spotyourtenant h2
+{
+    font-size:28px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:30px;
+}
+.spotyourtenant p
+{
+    font-size: 18px;
+    color: #4d4d4d;
+    font-weight: 300;
+    padding-bottom: 30px;
+    line-height: 32px;
+    margin:0px;
+}
+
+/*--Spot Your Tenant Section CSS End--*/
+/*---Many Properties area Section CSS Start---*/
+.many_properties_area
+{
+    width:100%;
+    float:left;
+    padding:100px 0px;
+    background-color: #e4eaf1;
+}
+.many_properties_area h2
+{
+    font-size:28px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:30px;
+    line-height:36px;
+    text-align:center;
+}
+
+.roundarea {
+    border-radius: 50%;
+    /*    background-color: #005ea6;*/
+    width: 19%;
+    height: auto;
+    padding: 73px 24px;
+    margin: 33px;
+    background-image:url(../images/estateagentpage/cricle_bg.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 222px;
+}
+.roundarea div
+{
+    text-align:center;
+    font-size:30px;
+    color:#fff;
+}
+.roundarea p {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    margin: 0px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.roundarea strong {
+    font-size: 16px;
+    color: #fff;
+    margin: 0px;
+}
+.btn-account_area
+{
+    text-align:center;
+    margin:30px 0px;
+}
+.btn-account {
+    color: #fff;
+    background-color: #54bf63;
+    border-color:#54bf63;
+    padding: 18px 50px;
+    border-radius: 5px;
+    font-weight:900;
+    text-align:center;
+    text-transform:uppercase;
+}
+.btn-account:hover {
+    color: #fff;
+    background-color: #5cd06c;
+    border-color:#5cd06c;
+    padding: 18px 50px;
+    border-radius: 5px;
+    font-weight:900;
+}
+
+/*---Many Properties area Section CSS End---*/
+
+/*---Many Properties area Section CSS Start---*/
+.business_area
+{
+    width:100%;
+    float:left;
+    padding:50px 0px;
+}
+.business_area h2
+{
+    font-size:28px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:60px;
+    line-height:36px;
+    text-align:center;
+}
+.competitive img
+{
+    margin:0 auto;
+}
+.competitive h3
+{
+    font-size:15px;
+    color:#4d4d4d;
+    text-transform:uppercase;
+    padding:20px 0px 10px;
+    text-align:center;
+    font-weight:800;
+    line-height:24px;
+}
+.competitive p
+{
+    font-size:14px;
+    color:#4d4d4d;
+    padding:0px 0px;
+    text-align:center;
+    margin:0px;
+}
+.business_area_onesecton
+{
+    padding-bottom:30px;
+}
+/*---How It Work Section Start---*/
+.howitwork_section
+{
+    width:100%;
+    float:left;
+    padding:50px 0px;
+    background-color:#e4eaf1;
+}
+.howitwork_section h2
+{
+    font-size:28px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:30px;
+    line-height:36px;
+    text-align:center;
+}
+.posting_section
+{
+    background-color:#fff;
+    padding:40px 12px;
+    width: 23%;
+    margin: 1%;
+    float: left;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+    min-height: 550px;
+}
+
+.posting_section:hover
+{
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 12px 5px rgba(189, 213, 241, 0.85);
+}
+.posting_section h3 {
+    font-size: 15px;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    padding:0px 0px 10px;
+    text-align: center;
+    font-weight: 800;
+    line-height: 24px;
+}
+.posting_section p {
+    font-size: 13px;
+    color: #4d4d4d;
+    padding: 0px 0px;
+    text-align: center;
+    margin: 0px;
+}
+.posting_section img {
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+/*---How It Work Section End---*/
+.property_area
+{
+    background: url(../images/estateagentpage/bg_01.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 450px;
+    padding: 60px 0px;
+}
+.property_area
+{
+    width:100%;
+    float:left;
+    padding:100px 0 200px 0px;
+}
+.property_area h2
+{
+    font-size:28px;
+    margin-bottom: 20px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:50px;
+    text-align:center;
+    line-height:34px;
+}
+.property_area h3
+{
+    font-size:28px;
+    margin-bottom: 20px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:10px;
+    margin-top:35px;
+
+}
+.property_area p
+{
+    font-size:18px;
+    color:#4d4d4d;
+    font-weight:300;
+    padding-bottom:30px;
+    line-height:30px;
+}
+
+
+.screentenants_area
+{
+    background: url(../images/estateagentpage/bg_02.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 450px;
+    padding: 60px 0px;
+}
+.screentenants_area
+{
+    width:100%;
+    float:left;
+    padding:200px 0px;
+}
+.screentenants_area h2
+{
+    font-size:28px;
+    margin-bottom: 20px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:50px;
+    text-align:center;
+    line-height:30px;
+}
+.screentenants_area h3
+{
+    font-size:28px;
+    margin-bottom: 20px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:10px;
+    margin-top:35px;
+
+}
+.screentenants_area p
+{
+    font-size:18px;
+    color:#4d4d4d;
+    font-weight:300;
+    padding-bottom:30px;
+    line-height:30px;
+}
+
+.screentenants_area .img-responsive, .property_area .img-responsive{
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, .5);
+}
+/*---receive Section End---*/
+.receive_area
+{
+    width:100%;
+    float:left;
+    padding:150px 0px;
+}
+.receive_area h2
+{
+    font-size:22px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:50px;
+    text-align:center;
+    line-height:34px;
+}
+.submit
+{
+    text-align:center;
+}
+.faq-content p.position {
+    position: absolute;
+    left: 35px;
+    top: 0px;
+    font-size: 14px;
+    text-transform: none;
+    font-family: 'montserratregular';
+    color: #242424;
+    line-height: 16px;
+    padding: 4px 8px;
+    margin:0px;
+    /*font-weight: 900;*/
+}
+.faq-content .green-circle {
+    background-color: green;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+    font-size: 12px;
+    font-family: 'montserratsemi_bold';
+    padding: 6px 8px;
+    color: #fff;
+}
+.frequently_area
+{
+    width:100%;
+    float:left;
+    padding:0px;
+    background-color:#ecf2f8;
+    background: url(../images/estateagentpage/bg_04.jpg) no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 450px;
+
+}
+.frequently_area h2
+{
+    font-size:22px;
+    color:#4d4d4d;
+    font-weight:300;
+    text-transform:uppercase;
+    padding-bottom:50px;
+    text-align:center;
+    line-height:34px;
+}
+section.faq-content {
+    border-bottom: 1px solid #eaeaea;
+    background-color: transparent;
+}
+.faq-content p, .faq-content li {
+    color: #9d9d9d;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+.spotmycrib
+{
+    width:100%;
+    float:left;
+    padding:0px 0px;
+    padding:20px 0px;
+    text-align:center;
+}
+ul.footer-left {
+    float: none;
+}
+@media (max-width:1024px){
+    .posting_section
+    {
+        min-height: 660px;
+    }
+    section, section p{
+        text-align: center;
+    }
+    .frequently_area section, .frequently_area section p{
+        text-align: left;
+    }
+    .screentenants_area h3, .property_area h3{
+        font-size: 22px;
+        padding-top: 30px;
+    }
+    .img-responsive{margin: 0 auto;}
+}
+@media (max-width:768px){
+
+
+    .property_listings
+    {
+        margin-top: 130px;
+        padding:20px;
+    }
+    .property_listings h2 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .property_listings h1 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    input.form-control {
+        padding: 20px;
+    }
+    .btn-default {
+        padding: 11px 57px;
+        margin: 10px 0px;
+    }
+    .spotyourtenant {
+        padding: 100px 0px;
+    }
+    .spotyourtenant h2 {
+        font-size: 22px;
+        padding-bottom: 10px;
+        line-height: 30px;
+    }
+    .spotyourtenant p {
+        font-size: 18px;
+        padding-bottom: 30px;
+        line-height: 30px;
+    }
+    .many_properties_area {
+        padding: 50px 0px;
+    }
+    .many_properties_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .round_area1
+    {
+        padding-top:0px;
+    }
+    .roundarea
+    {
+        margin: 15px 0px;
+    }
+    .btn-account {
+
+        padding: 18px 19px;
+    }
+    .business_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .posting_section {
+        width: 47%;
+        margin: 0px 10px 30px;
+        float: left;
+        height: 425px;
+    }
+    .competitive
+    {
+        margin-bottom:30px;
+    }
+    .competitive h3 {
+        font-size: 18px;
+    }
+    .competitive p {
+        font-size: 14px;
+    }
+    .howitwork_section h2 {
+        font-size: 22px;
+    }
+    .posting_section h3 {
+        font-size: 18px;
+    }
+    .property_area {
+        padding: 50px 0px;
+    }
+    .property_area h2 {
+        font-size: 22px;;
+        line-height: 24px;
+    }
+    .property_area p {
+        line-height: 30px;
+        font-size:18px;
+    }
+    .property_area h3 {
+        font-size: 22px;}
+
+    .screentenants_area {
+        padding: 50px 0px;
+    }
+    .screentenants_area p {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .receive_area {
+        padding: 50px 0px;
+    }
+    .receive_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .frequently_area {
+        padding: 50px 0px;
+    }
+    .frequently_area h2 {
+        font-size: 22px;
+        padding-bottom: 20px;
+        line-height: 26px;
+    }
+    #quoteme {
+        padding:0px;
+    }
+    .faq-content p.position {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+}
+@media only screen and (min-width: 768px) {
+    .circle h1 {
+        font-size: 1.6em;
+        line-height: 1em;
+    }
+    .circle p {
+        font-size: 1.2em;
+        line-height: 1em;
+    }
+}
+@media (max-width:640px){
+    .knowmore-form .green-btn{
+        margin: 0 10px 10px 0 !important;
+    }
+    .knowmore-form .input-group{
+        display:inherit;
+    }
+    .knowmore-form .emailaddress{
+        margin-bottom:10px;
+    }
+    .property_listings
+    {
+        margin-top: 130px;
+        padding:20px;
+    }
+    .property_listings h2 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .property_listings h1 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    input.form-control {
+        padding: 20px;
+    }
+    .btn-default {
+        padding: 11px 57px;
+        margin: 10px 0px;
+    }
+    .spotyourtenant {
+        padding: 100px 0px;
+    }
+    .spotyourtenant h2 {
+        font-size: 22px;
+        padding-bottom: 10px;
+        line-height: 30px;
+    }
+    .spotyourtenant p {
+        font-size: 18px;
+        padding-bottom: 30px;
+        line-height: 30px;
+    }
+    .many_properties_area {
+        padding: 50px 0px;
+    }
+    .many_properties_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .round_area1
+    {
+        padding-top:0px;
+    }
+    .roundarea
+    {
+        margin: 15px 0px;
+    }
+    .btn-account {
+
+        padding: 18px 19px;
+    }
+    .business_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .posting_section {
+        width: 100%;
+        margin: 0px 0px 30px;
+        min-height: auto;
+        height: auto;
+    }
+    .competitive
+    {
+        margin-bottom:30px;
+    }
+    .competitive h3 {
+        font-size: 18px;
+    }
+    .competitive p {
+        font-size: 14px;
+    }
+    .howitwork_section h2 {
+        font-size: 22px;
+    }
+    .posting_section h3 {
+        font-size: 18px;
+    }
+    .property_area {
+        padding: 50px 0px;
+    }
+    .property_area h2 {
+        font-size: 22px;;
+        line-height: 24px;
+    }
+    .property_area p {
+        line-height: 30px;
+        font-size:18px;
+    }
+    .property_area h3 {
+        font-size: 22px;}
+
+    .screentenants_area {
+        padding: 50px 0px;
+    }
+    .screentenants_area h3 {
+        font-size: 22px;
+        padding-top: 30px;
+    }
+    .screentenants_area p {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .receive_area {
+        padding: 50px 0px;
+    }
+    .receive_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .frequently_area {
+        padding: 50px 0px;
+    }
+    .frequently_area h2 {
+        font-size: 22px;
+        padding-bottom: 20px;
+        line-height: 26px;
+    }
+    #quoteme {
+        padding:0px;
+    }
+    .faq-content p.position {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .many_properties_area .col {
+        padding: 5%;
+        width: 40%;
+        margin: 0% 10px 1% 10px;
+        float: left;
+    }
+    .many_properties_area .oneline div{
+        font-size: 22px;
+        padding-top: 38%;
+    }
+}
+
+@media only screen  and (min-device-width : 375px)  and (max-device-width : 480px) {
+    .many_properties_area .col {
+        padding: 3%;
+        width: 42%;
+        margin: 0% 10px 1% 10px;
+        float: left;
+    }
+    .many_properties_area .oneline div{
+        font-size: 22px;
+        padding-top: 38%;
+    }
+
+    .property_listings
+    {
+        margin-top: 180px;
+        padding:20px;
+    }
+
+    .property_listings h2 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .property_listings h1 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .green-btn {
+        margin-top: 10px;
+    }
+    input.form-control {
+        padding: 20px;
+    }
+    .btn-default {
+        padding: 11px 57px;
+        margin: 10px 0px;
+    }
+    .spotyourtenant {
+        padding:40px 0px;
+        min-height:340px;
+    }
+    .spotyourtenant h2 {
+        font-size: 22px;
+        padding-bottom: 10px;
+        line-height: 30px;
+    }
+    .spotyourtenant p {
+        font-size: 14px;
+        padding-bottom: 30px;
+        line-height: 30px;
+    }
+    .many_properties_area {
+        padding: 50px 0px;
+    }
+    .many_properties_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .roundarea {
+        width: 25%;
+        padding: 22px 74px;
+    }
+    .round_area1
+    {
+        padding-top:0px;
+    }
+    .roundarea
+    {
+        margin:0px auto;
+    }
+    .btn-account {
+
+        padding: 18px 19px;
+    }
+    .business_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .posting_section {
+        width: 100%;
+        margin: 0px 0px 30px;
+        height:auto;
+    }
+    .competitive
+    {
+        margin-bottom:30px;
+    }
+    .competitive h3 {
+        font-size: 18px;
+    }
+    .competitive p {
+        font-size: 14px;
+    }
+    .howitwork_section h2 {
+        font-size: 22px;
+    }
+    .posting_section h3 {
+        font-size: 18px;
+    }
+    .property_area {
+        padding: 50px 0px;
+    }
+    .property_area h2 {
+        font-size: 22px;;
+        line-height: 24px;
+    }
+    .property_area p {
+        line-height: 30px;
+        font-size:18px;
+    }
+    .property_area h3 {
+        font-size: 22px;}
+
+    .screentenants_area {
+        padding: 50px 0px;
+    }
+    .screentenants_area h3 {
+        font-size: 22px;
+        padding-top: 30px;
+    }
+    .screentenants_area p {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .receive_area {
+        padding: 50px 0px;
+    }
+    .receive_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .frequently_area {
+        padding: 50px 0px;
+    }
+    .frequently_area h2 {
+        font-size: 22px;
+        padding-bottom: 20px;
+        line-height: 26px;
+    }
+    #quoteme {
+        padding:0px;
+    }
+    .faq-content p.position {
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .input-group {
+        position: relative;
+        display: inherit;
+        border-collapse: separate;
+    }
+}
+@media only screen and (min-device-width:700px) and (max-device-width:1000px){
+    .property_box{
+        width:100%;
+    }
+}
+@media only screen  and (min-device-width : 320px)  and (max-device-width : 480px) {
+
+    .property_listings
+    {
+        margin-top: 180px;
+        padding:20px;
+    }
+    .property_listings h2 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .property_listings h1 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .green-btn {
+        margin-top: 10px;
+    }
+    input.form-control {
+        padding: 20px;
+    }
+    .btn-default {
+        padding: 11px 57px;
+        margin: 10px 0px;
+    }
+    .spotyourtenant {
+        padding:40px 0px;
+    }
+    .spotyourtenant h2 {
+        font-size: 22px;
+        padding-bottom: 10px;
+        line-height: 30px;
+    }
+    .spotyourtenant p {
+        font-size: 14px;
+        padding-bottom: 30px;
+        line-height: 30px;
+    }
+    .many_properties_area {
+        padding: 50px 0px;
+    }
+    .many_properties_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .roundarea {
+        width: 25%;
+        padding: 22px 74px;
+    }
+    .round_area1
+    {
+        padding-top:0px;
+    }
+    .roundarea
+    {
+        margin:0px auto;
+    }
+    .btn-account {
+
+        padding: 18px 19px;
+    }
+    .business_area h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .posting_section {
+        width: 100%;
+        margin: 0px 0px 30px;
+    }
+    .competitive
+    {
+        margin-bottom:30px;
+    }
+    .competitive h3 {
+        font-size: 18px;
+    }
+    .competitive p {
+        font-size: 14px;
+    }
+    .howitwork_section h2 {
+        font-size: 22px;
+    }
+    .posting_section h3 {
+        font-size: 18px;
+    }
+    .property_area {
+        padding: 50px 0px;
+    }
+    .property_area h2 {
+        font-size: 18px;;
+        line-height: 24px;
+    }
+    .property_area p {
+        line-height: 20px;
+        font-size:14px;
+    }
+    .property_area h3 {
+        font-size: 16px;
+        margin-top:30px;
+    }
+
+    .screentenants_area {
+        padding: 50px 0px;
+    }
+    .screentenants_area h3 {
+        font-size: 22px;
+        padding-top: 30px;
+    }
+    .screentenants_area p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .receive_area {
+        padding: 50px 0px;
+    }
+    .receive_area h2 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .frequently_area {
+        padding: 50px 0px;
+    }
+    .frequently_area h2 {
+        font-size: 18px;
+        padding-bottom: 20px;
+        line-height: 26px;
+    }
+    #quoteme {
+        padding:0px;
+    }
+    .faq-content p.position {
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .input-group {
+        position: relative;
+        display: inherit;
+        border-collapse: separate;
+    }
+    .faq-content .panel-heading {
+        padding: 20px 0 8px 10px;
+    }
+    .spotyourtenant {
+        min-height: 520px;
+    }
+}
+@media only screen and (min-width: 481px) {
+    .circle h1 {
+        font-size: 1.2em;
+        line-height: 1em;
+    }
+    .circle p {
+        font-size: 1em;
+        line-height: 1em;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .many_properties_area .col {
+        padding: 3%;
+        width: 42%;
+        margin: 0% 10px 1% 10px;
+        float: left;
+    }
+    .many_properties_area .oneline div{
+        font-size: 18px;
+        padding-top: 44%;
+    }
+    .many_properties_area .oneline p{
+        font-size: 12px;
+    }
+}
+@media only screen and (min-width: 350px) {
+
+
+    .circle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: powderblue;
+        color: #333;
+        border-radius: 50%;
+        box-sizing: border-box;
+        text-align: center;
+        display: block;
+        padding: 5px;
+        border: 5px solid #9dd8e0;
+        -webkit-transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+        -o-transition: all 1s ease-out;
+        transition: all 1s ease-out;
+    }
+    .circle:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -2%;
+    }
+    .circle:hover {
+        background-color: maroon;
+        border: 5px solid #4d0000;
+        color: #fff;
+    }
+
+    .outline {
+        border: 5px solid grey;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 50%;
+        box-sizing: border-box;
+    }
+
+
+    .circle h1 {
+        font-size: 0.9em;
+        line-height: 1em;
+    }
+    .circle p {
+        font-size: 0.8em;
+        line-height: 1em;
+        color: white;
+        text-align: center;
+    }
+    .circle a {
+        color: inherit;
+    }
+    .circle > p, .circle > h1, .circle > .wrapcontent {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .circle > p > p, .circle > p > h1, .circle > h1 > p, .circle > h1 > h1, .circle > .wrapcontent > p, .circle > .wrapcontent > h1 {
+        display: block;
+    }
+}
+
+/* ----------- Laptop non Retina Screens and all other bigger ----------- */
+@media screen
+and (min-device-width: 1200px) {
+    .topheader
+    {
+        background:url(../images/estateagentpage/top_bg_nonretina.jpg);
+    }
+    .property_area p{
+        width: 400px;
+    }
+}
+
+/* Tabs */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1200px) {
+    .topheader
+    {
+        background:url(../images/estateagentpage/top_bg_1200_nonretina.jpg);
+    }
+}
+/* mobile and all other smaller */
+@media only screen
+and (max-device-width: 768px){
+    .topheader
+    {
+        background:url(../images/estateagentpage/top_bg.jpg);
+    }
+}
+/* ----------- Laptop Retina Screens and all other bigger ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 1200px),
+only screen and (   min--moz-device-pixel-ratio: 2) and (min-device-width: 1200px),
+only screen and (     -o-min-device-pixel-ratio: 2/1) and (min-device-width: 1200px),
+only screen and (        min-device-pixel-ratio: 2) and (min-device-width: 1200px),
+only screen and (                min-resolution: 192dpi) and (min-device-width: 1200px),
+only screen and (                min-resolution: 2dppx) and (min-device-width: 1200px) {
+    .topheader
+    {
+        background:url(../images/estateagentpage/top_bg_retina.jpg);
+    }
+}
+/* Tabs */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 768px) and (max-device-width: 1200px),
+only screen and (   min--moz-device-pixel-ratio: 2) and (min-device-width: 768px) and (max-device-width: 1200px),
+only screen and (     -o-min-device-pixel-ratio: 2/1) and (min-device-width: 768px) and (max-device-width: 1200px),
+only screen and (        min-device-pixel-ratio: 2) and (min-device-width: 768px) and (max-device-width: 1200px),
+only screen and (                min-resolution: 192dpi) and (min-device-width: 768px) and (max-device-width: 1200px),
+only screen and (                min-resolution: 2dppx) and (min-device-width: 768px) and (max-device-width: 1200px) {
+    .topheader
+    {
+        background:url(../images/estateagentpage/top_bg_1200_retina.jpg);
+    }
+}

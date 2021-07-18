@@ -1,0 +1,1 @@
+[{"type":"js","data":"(function () {\n\n\n\n/* Exports */\nPackage._define(\"jonblum:jquery-cropper\");\n\n})();\n","servePath":"/packages/jonblum_jquery-cropper.js"}]

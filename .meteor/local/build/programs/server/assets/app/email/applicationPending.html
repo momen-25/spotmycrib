@@ -1,0 +1,78 @@
+<p>Dear  {{data.user.profile.name}},</p>
+<p>
+    <strong>Landlord has changed your application status to pending for the {{data.project.type}} at {{ data.project.address.address}}.</strong>
+</p>
+<br/>
+Details of your application registered with us are as below.
+<br/><br/>
+<table style="width: 333px;" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td width="146">
+            <p>Location</p>
+        </td>
+        <td width="187">
+            <p>{{ data.project.address.address}}{{#if data.project.address.area}}, {{ data.project.address.area}} {{/if}}{{#if data.project.address.county}}, {{ data.project.address.county}} {{/if}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Your offer</p>
+        </td>
+        <td width="187">
+            <p>{{data.offerFormated}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Landlords asking rent</p>
+        </td>
+        <td width="187">
+            <p>&euro; {{data.rentFormated}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Furnished</p>
+        </td>
+        <td width="187">
+            <p> {{#if data.project.furnished}}Yes{{else}}No{{/if}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Beds</p>
+        </td>
+        <td width="187">
+            <p>{{data.bedsCount}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="146">
+            <p>Baths</p>
+        </td>
+        <td width="187">
+            <p>{{data.project.baths}}</p>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<br/>
+<p>* Landlord would contact you further for more information. </p>
+
+<p><br />
+Regards,<br />
+{{#if data.agentName}}
+{{data.agentName}}<br />
+{{data.agentEmail}}<br />
+{{else}}
+{{support.name}}<br />
+{{support.companyName}} <br />
+{{support.email}}<br />
+{{support.phone}}
+{{/if}}
+</p>
+<a href="{{homepage}}">
+    <img src="{{homepage}}images/spot-my-crib-logo.png" alt="SpotMyCrib logo">
+</a>

@@ -1,0 +1,1597 @@
+{
+  "builtBy": "meteor/34",
+  "unibuildDependencies": {
+    "os.json": {
+      "files": {
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/package.js": "5a74fa1515122d7e8e45f2c43be8324375b6fd23",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/package.json": "2648ee460f64a17ccf3ead4dd8191de3a094791f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/.npm/package/npm-shrinkwrap.json": "0516fe314f50a8361fc2818b5f39d39739761946",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/router.js": "06b0b39a251b906229ca6951099329d2cb8ca1eb",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/group.js": "ec94b2f743e002be80d7e7896841267645a45919",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/route.js": "30d471668d6203b0704f22773ccbd39e430642b4",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/router.js": "b9943c9bc8d56c91cfbf70fe774fc6d98f65fae5",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/group.js": "663eb93691e7cd97456456a13a531d1d573a424c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/route.js": "8c8829df620a7178f58516de91ff62dfd29b9735",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/ssr_context.js": "8f6f6cfeffd2a01afacdfc9b3312ce4f3c87818c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/_init.js": "015f8cdda2428c6316fb5219ecf71217ca79fee0",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/_init.js": "3ced47a1a7bef91a64dda5a21db31d83cdfaf3d5",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/ssr_data.js": "01b1ca6c38b6e4b948b3e956dac27cf98ca1f89f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/_init.js": "0bdbff107abd2d5b9cbbbeb1ba30905226f7acbc",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/group.js": "734f3db2c4e08af7b6c1f5df92a7507d04b8d7f5",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/route.js": "4b051bd3be6152b83fe5732d5d20961a5265e222",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/router.js": "2afe5e5eb4d647d08e64fb999f1b6f180e7432a8",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/triggers.js": "bc3318ab8937120a45d314412579d6516eb2d0e3",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__/group.js": "778dce49965435f0b079b15d1c7f05263526e8af",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/route.js": "69c411fd9da7f558001c61e4b0a251f3fad9dcaf",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/ssr_context.js": "63fa0f06579eb02d2f8209157b6119e2f6be3b8c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__/ssr_data.js": "bb201d4b6e8bbb6d53dc382ee6cf274a40744c17",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/describe.js": "a3b483a07b7c81016234340264f9cdee9a9e0c55",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/utils.js": "7ec0a1c2c5de0774666e42d044567a86fa4ca218",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/_helpers.js": "cebb8141c308790666730c90dc52fefce8ad877f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.core.spec.js": "44da603f80567820bacd0855d37acaffe612215d",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.reactivity.spec.js": "460d76ded55838f05d29e048216a80470df352a4",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/trigger.spec.js": "42fc13f02fddb6601099743d0ad67f99b7a44d89",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/triggers.js": "1487417c0c113df97f28cc6ae70175e879c0e618",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/fast_render_route.js": "7c8b6d5e62567598524b1f97eb1b5cf0448af87f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/group.spec.js": "8196ee1dff1b8e3c9b47b0ea73da8134e1a5400c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/loader.spec.js": "befb715694a3b1ad2d3fcc8a569ec2cc4fdc2554",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/route.spec.js": "a0e3d1c9ceb492bb0156482100ac67f306e38862",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.addons.spec.js": "edfc881df56f9502dcbc46005c9d56c0c4524d07",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.path.spec.js": "227393397bb8558bbbb2596565c7f7a21ec39b7d",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.url.spec.js": "1b4b6c54a87738f2bb113c4ba06def36c7278774",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/_helpers.js": "7f1e20b458e829d1f6244f2bcea0f01eb1e11826",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins/fast_render.js": "46717fb8c84581b5512704a3fe7493984de1d93a"
+      },
+      "potentiallyUnusedFiles": [
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/_init.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/group.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/route.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/router.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/triggers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__/group.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/route.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/ssr_context.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__/ssr_data.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/describe.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/utils.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/_helpers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.core.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.reactivity.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/trigger.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/triggers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/fast_render_route.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/group.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/loader.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/route.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.addons.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.path.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.url.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/_helpers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins/fast_render.js"
+      ],
+      "directories": [
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "package.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "client/",
+            "lib/",
+            "server/",
+            "test/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/client",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_init.js",
+            "group.js",
+            "route.js",
+            "router.js",
+            "triggers.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/client",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_init.js",
+            "group.js",
+            "route.js",
+            "router.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "__tests__/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "group.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_init.js",
+            "group.js",
+            "route.js",
+            "router.js",
+            "ssr_context.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "__tests__/",
+            "plugins/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "route.js",
+            "ssr_context.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "ssr_data.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "__tests__/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "ssr_data.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "_engine/",
+            "client/",
+            "common/",
+            "server/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "describe.js",
+            "utils.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_helpers.js",
+            "router.core.spec.js",
+            "router.reactivity.spec.js",
+            "trigger.spec.js",
+            "triggers.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "fast_render_route.js",
+            "group.spec.js",
+            "loader.spec.js",
+            "route.spec.js",
+            "router.addons.spec.js",
+            "router.path.spec.js",
+            "router.url.spec.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_helpers.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "plugins/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins",
+          "include": [
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "fast_render.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        }
+      ]
+    },
+    "web.browser.json": {
+      "files": {
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/package.js": "5a74fa1515122d7e8e45f2c43be8324375b6fd23",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/package.json": "2648ee460f64a17ccf3ead4dd8191de3a094791f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/.npm/package/npm-shrinkwrap.json": "0516fe314f50a8361fc2818b5f39d39739761946",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/router.js": "06b0b39a251b906229ca6951099329d2cb8ca1eb",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/group.js": "ec94b2f743e002be80d7e7896841267645a45919",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/route.js": "30d471668d6203b0704f22773ccbd39e430642b4",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/triggers.js": "bc3318ab8937120a45d314412579d6516eb2d0e3",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/router.js": "2afe5e5eb4d647d08e64fb999f1b6f180e7432a8",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/group.js": "734f3db2c4e08af7b6c1f5df92a7507d04b8d7f5",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/route.js": "4b051bd3be6152b83fe5732d5d20961a5265e222",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/_init.js": "015f8cdda2428c6316fb5219ecf71217ca79fee0",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/_init.js": "0bdbff107abd2d5b9cbbbeb1ba30905226f7acbc",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__/group.js": "778dce49965435f0b079b15d1c7f05263526e8af",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/_init.js": "3ced47a1a7bef91a64dda5a21db31d83cdfaf3d5",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/group.js": "663eb93691e7cd97456456a13a531d1d573a424c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/route.js": "8c8829df620a7178f58516de91ff62dfd29b9735",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/router.js": "b9943c9bc8d56c91cfbf70fe774fc6d98f65fae5",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/ssr_context.js": "8f6f6cfeffd2a01afacdfc9b3312ce4f3c87818c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/route.js": "69c411fd9da7f558001c61e4b0a251f3fad9dcaf",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/ssr_context.js": "63fa0f06579eb02d2f8209157b6119e2f6be3b8c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/ssr_data.js": "01b1ca6c38b6e4b948b3e956dac27cf98ca1f89f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__/ssr_data.js": "bb201d4b6e8bbb6d53dc382ee6cf274a40744c17",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/describe.js": "a3b483a07b7c81016234340264f9cdee9a9e0c55",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/utils.js": "7ec0a1c2c5de0774666e42d044567a86fa4ca218",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/_helpers.js": "cebb8141c308790666730c90dc52fefce8ad877f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.core.spec.js": "44da603f80567820bacd0855d37acaffe612215d",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.reactivity.spec.js": "460d76ded55838f05d29e048216a80470df352a4",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/trigger.spec.js": "42fc13f02fddb6601099743d0ad67f99b7a44d89",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/triggers.js": "1487417c0c113df97f28cc6ae70175e879c0e618",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/fast_render_route.js": "7c8b6d5e62567598524b1f97eb1b5cf0448af87f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/group.spec.js": "8196ee1dff1b8e3c9b47b0ea73da8134e1a5400c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/loader.spec.js": "befb715694a3b1ad2d3fcc8a569ec2cc4fdc2554",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/route.spec.js": "a0e3d1c9ceb492bb0156482100ac67f306e38862",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.addons.spec.js": "edfc881df56f9502dcbc46005c9d56c0c4524d07",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.path.spec.js": "227393397bb8558bbbb2596565c7f7a21ec39b7d",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.url.spec.js": "1b4b6c54a87738f2bb113c4ba06def36c7278774",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/_helpers.js": "7f1e20b458e829d1f6244f2bcea0f01eb1e11826",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins/fast_render.js": "46717fb8c84581b5512704a3fe7493984de1d93a"
+      },
+      "potentiallyUnusedFiles": [
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__/group.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/_init.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/group.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/route.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/router.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/ssr_context.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/route.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/ssr_context.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/ssr_data.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__/ssr_data.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/describe.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/utils.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/_helpers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.core.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.reactivity.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/trigger.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/triggers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/fast_render_route.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/group.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/loader.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/route.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.addons.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.path.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.url.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/_helpers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins/fast_render.js"
+      ],
+      "directories": [
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "package.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "client/",
+            "lib/",
+            "server/",
+            "test/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/client",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_init.js",
+            "group.js",
+            "route.js",
+            "router.js",
+            "triggers.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/client",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_init.js",
+            "group.js",
+            "route.js",
+            "router.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "__tests__/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "group.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_init.js",
+            "group.js",
+            "route.js",
+            "router.js",
+            "ssr_context.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "__tests__/",
+            "plugins/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "route.js",
+            "ssr_context.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "ssr_data.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "__tests__/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "ssr_data.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "_engine/",
+            "client/",
+            "common/",
+            "server/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "describe.js",
+            "utils.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_helpers.js",
+            "router.core.spec.js",
+            "router.reactivity.spec.js",
+            "trigger.spec.js",
+            "triggers.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "fast_render_route.js",
+            "group.spec.js",
+            "loader.spec.js",
+            "route.spec.js",
+            "router.addons.spec.js",
+            "router.path.spec.js",
+            "router.url.spec.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_helpers.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "plugins/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "fast_render.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        }
+      ]
+    },
+    "web.browser.legacy.json": {
+      "files": {
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/package.js": "5a74fa1515122d7e8e45f2c43be8324375b6fd23",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/package.json": "2648ee460f64a17ccf3ead4dd8191de3a094791f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/.npm/package/npm-shrinkwrap.json": "0516fe314f50a8361fc2818b5f39d39739761946",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/router.js": "06b0b39a251b906229ca6951099329d2cb8ca1eb",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/group.js": "ec94b2f743e002be80d7e7896841267645a45919",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/route.js": "30d471668d6203b0704f22773ccbd39e430642b4",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/triggers.js": "bc3318ab8937120a45d314412579d6516eb2d0e3",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/router.js": "2afe5e5eb4d647d08e64fb999f1b6f180e7432a8",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/group.js": "734f3db2c4e08af7b6c1f5df92a7507d04b8d7f5",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/route.js": "4b051bd3be6152b83fe5732d5d20961a5265e222",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/_init.js": "015f8cdda2428c6316fb5219ecf71217ca79fee0",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/client/_init.js": "0bdbff107abd2d5b9cbbbeb1ba30905226f7acbc",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__/group.js": "778dce49965435f0b079b15d1c7f05263526e8af",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/_init.js": "3ced47a1a7bef91a64dda5a21db31d83cdfaf3d5",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/group.js": "663eb93691e7cd97456456a13a531d1d573a424c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/route.js": "8c8829df620a7178f58516de91ff62dfd29b9735",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/router.js": "b9943c9bc8d56c91cfbf70fe774fc6d98f65fae5",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/ssr_context.js": "8f6f6cfeffd2a01afacdfc9b3312ce4f3c87818c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/route.js": "69c411fd9da7f558001c61e4b0a251f3fad9dcaf",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/ssr_context.js": "63fa0f06579eb02d2f8209157b6119e2f6be3b8c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/ssr_data.js": "01b1ca6c38b6e4b948b3e956dac27cf98ca1f89f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__/ssr_data.js": "bb201d4b6e8bbb6d53dc382ee6cf274a40744c17",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/describe.js": "a3b483a07b7c81016234340264f9cdee9a9e0c55",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/utils.js": "7ec0a1c2c5de0774666e42d044567a86fa4ca218",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/_helpers.js": "cebb8141c308790666730c90dc52fefce8ad877f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.core.spec.js": "44da603f80567820bacd0855d37acaffe612215d",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.reactivity.spec.js": "460d76ded55838f05d29e048216a80470df352a4",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/trigger.spec.js": "42fc13f02fddb6601099743d0ad67f99b7a44d89",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/triggers.js": "1487417c0c113df97f28cc6ae70175e879c0e618",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/fast_render_route.js": "7c8b6d5e62567598524b1f97eb1b5cf0448af87f",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/group.spec.js": "8196ee1dff1b8e3c9b47b0ea73da8134e1a5400c",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/loader.spec.js": "befb715694a3b1ad2d3fcc8a569ec2cc4fdc2554",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/route.spec.js": "a0e3d1c9ceb492bb0156482100ac67f306e38862",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.addons.spec.js": "edfc881df56f9502dcbc46005c9d56c0c4524d07",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.path.spec.js": "227393397bb8558bbbb2596565c7f7a21ec39b7d",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.url.spec.js": "1b4b6c54a87738f2bb113c4ba06def36c7278774",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/_helpers.js": "7f1e20b458e829d1f6244f2bcea0f01eb1e11826",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins/fast_render.js": "46717fb8c84581b5512704a3fe7493984de1d93a"
+      },
+      "potentiallyUnusedFiles": [
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__/group.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/_init.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/group.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/route.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/router.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/ssr_context.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/route.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__/ssr_context.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/ssr_data.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__/ssr_data.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/describe.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine/utils.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/_helpers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.core.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/router.reactivity.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/trigger.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client/triggers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/fast_render_route.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/group.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/loader.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/route.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.addons.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.path.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common/router.url.spec.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/_helpers.js",
+        "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins/fast_render.js"
+      ],
+      "directories": [
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "package.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "client/",
+            "lib/",
+            "server/",
+            "test/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/client",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_init.js",
+            "group.js",
+            "route.js",
+            "router.js",
+            "triggers.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/client",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_init.js",
+            "group.js",
+            "route.js",
+            "router.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "__tests__/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "group.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/lib/__tests__",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_init.js",
+            "group.js",
+            "route.js",
+            "router.js",
+            "ssr_context.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "__tests__/",
+            "plugins/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "route.js",
+            "ssr_context.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/__tests__",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "ssr_data.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "__tests__/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "ssr_data.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/server/plugins/__tests__",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "_engine/",
+            "client/",
+            "common/",
+            "server/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "describe.js",
+            "utils.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/_engine",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_helpers.js",
+            "router.core.spec.js",
+            "router.reactivity.spec.js",
+            "trigger.spec.js",
+            "triggers.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/client",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "fast_render_route.js",
+            "group.spec.js",
+            "loader.spec.js",
+            "route.spec.js",
+            "router.addons.spec.js",
+            "router.path.spec.js",
+            "router.url.spec.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/common",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "_helpers.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": [
+            "plugins/"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins",
+          "include": [
+            "\\.css$",
+            "\\.js$",
+            "\\.jsx$",
+            "\\.mjs$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "names": [
+            ".meteorignore"
+          ],
+          "contents": [
+            "fast_render.js"
+          ]
+        },
+        {
+          "absPath": "/home/momen/projects/spotmycrib-master/packages/flow-router/test/server/plugins",
+          "include": [
+            "\\/$"
+          ],
+          "exclude": [
+            "^\\."
+          ],
+          "contents": []
+        }
+      ]
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/home/momen/projects/spotmycrib-master/packages/flow-router/package.js": "5a74fa1515122d7e8e45f2c43be8324375b6fd23",
+      "/home/momen/projects/spotmycrib-master/packages/flow-router/package.json": "2648ee460f64a17ccf3ead4dd8191de3a094791f"
+    },
+    "potentiallyUnusedFiles": [],
+    "directories": []
+  },
+  "pluginProviderPackageMap": {
+    "jns:flow-router-ssr": {
+      "kind": "local",
+      "sourceRoot": "/home/momen/projects/spotmycrib-master/packages/flow-router"
+    },
+    "meteor": {
+      "kind": "versioned",
+      "version": "1.9.3"
+    },
+    "ecmascript": {
+      "kind": "versioned",
+      "version": "0.15.1"
+    },
+    "underscore": {
+      "kind": "versioned",
+      "version": "1.0.10"
+    },
+    "tracker": {
+      "kind": "versioned",
+      "version": "1.2.0"
+    },
+    "reactive-dict": {
+      "kind": "versioned",
+      "version": "1.3.0"
+    },
+    "reactive-var": {
+      "kind": "versioned",
+      "version": "1.0.11"
+    },
+    "ddp": {
+      "kind": "versioned",
+      "version": "1.4.0"
+    },
+    "ejson": {
+      "kind": "versioned",
+      "version": "1.1.1"
+    },
+    "modules": {
+      "kind": "versioned",
+      "version": "0.16.0"
+    },
+    "staringatlights:fast-render": {
+      "kind": "versioned",
+      "version": "2.16.5"
+    },
+    "meteorhacks:picker": {
+      "kind": "versioned",
+      "version": "1.0.3"
+    },
+    "staringatlights:inject-data": {
+      "kind": "versioned",
+      "version": "2.0.5"
+    },
+    "ecmascript-runtime": {
+      "kind": "versioned",
+      "version": "0.7.0"
+    },
+    "babel-runtime": {
+      "kind": "versioned",
+      "version": "1.5.0"
+    },
+    "promise": {
+      "kind": "versioned",
+      "version": "0.11.2"
+    },
+    "dynamic-import": {
+      "kind": "versioned",
+      "version": "0.6.0"
+    },
+    "ddp-client": {
+      "kind": "versioned",
+      "version": "2.4.1"
+    },
+    "ddp-server": {
+      "kind": "versioned",
+      "version": "2.3.3"
+    },
+    "ecmascript-runtime-client": {
+      "kind": "versioned",
+      "version": "0.11.1"
+    },
+    "ecmascript-runtime-server": {
+      "kind": "versioned",
+      "version": "0.10.1"
+    }
+  },
+  "includeCordovaUnibuild": false
+}
